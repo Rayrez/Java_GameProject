@@ -5,10 +5,14 @@ package entity;
  * @author Pierre GARRIDO
  * @version 0.1
  */
-public enum Breakability {
+public enum Capacities {
 
     /** The breakable. */
     BREAKABLE,
     /** The unbreakable. */
-    UNBREAKABLE;
+    UNBREAKABLE,
+    /** The collectible. */
+    COLLECTIBLE,
+    /** The penetrable */
+    PENETRABLE;
 }

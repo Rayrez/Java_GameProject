@@ -1,12 +1,13 @@
 package entity;
 
-public abstract class Breakable extends Entity {
-	
+public class Penetrable extends Entity {
+
 	private Capacities capacity;
 
-	public Breakable(char symbol, String fileName) {
+	public Penetrable(char symbol, String fileName) {
 		super(symbol, fileName);
-		this.capacity = Capacities.BREAKABLE;
+		this.capacity = Capacities.PENETRABLE;
+		
 	}
 
 	@Override

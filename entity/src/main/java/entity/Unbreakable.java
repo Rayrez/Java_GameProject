@@ -2,14 +2,15 @@ package entity;
 
 public abstract class Unbreakable extends Entity {
 	
-	private Breakability capacity;
+	private Capacities capacity;
 
 	public Unbreakable(char symbol, String fileName) {
 		super(symbol, fileName);
-		this.capacity = Breakability.UNBREAKABLE;
+		this.capacity = Capacities.UNBREAKABLE;
 	}
 
-	public Breakability getCapacity() {
+	@Override
+	public Capacities getCapacity() {
 		return this.capacity;
 	}
 }

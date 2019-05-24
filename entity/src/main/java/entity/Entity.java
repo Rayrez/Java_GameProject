@@ -8,8 +8,8 @@ package entity;
 public abstract class Entity {
 	
 	private Sprite baseSprite;
-	private int x;
-	private int y;
+	protected int x;
+	protected int y;
 	
 	public Entity(char symbol, String fileName) {
 		this.baseSprite = new Sprite(symbol, fileName);
@@ -28,5 +28,8 @@ public abstract class Entity {
 	public int getY() {
 		return this.y;
 	}
-
+	
+	public Capacities getCapacity() {
+		return null;
+	}
 }
