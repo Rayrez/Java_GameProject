@@ -1,9 +1,12 @@
-package entity;
+package entity.unbreakable;
+
+import entity.Capacities;
+import entity.Entity;
 
 public abstract class Unbreakable extends Entity {
 
-	public Unbreakable(char symbol, String fileName, int xP, int yP) {
-		super(symbol, fileName, xP, yP);
+	public Unbreakable(char symbol, String fileName) {
+		super(symbol, fileName);
 		this.capacity = Capacities.UNBREAKABLE;
 	}
 

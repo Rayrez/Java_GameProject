@@ -8,14 +8,13 @@ package entity;
 public abstract class Entity {
 	
 	private Sprite baseSprite;
+	private boolean set = false;
 	protected int x;
 	protected int y;
 	protected Capacities capacity;
 	
-	public Entity(char symbol, String fileName, int xP, int yP) {
+	public Entity(char symbol, String fileName) {
 		this.baseSprite = new Sprite(symbol, fileName);
-		this.x = xP;
-		this.y = yP;
 	}
 	
 	public Sprite getBaseSprite() {
@@ -28,6 +27,16 @@ public abstract class Entity {
 
 	public int getY() {
 		return this.y;
+	}
+	
+	public void setXY(int xP, int yP) {
+		if(!set) {
+			this.x = xP;
+			this.y = yP;
+		}
+		else
+			throw new RuntimeException("This entity is already set !");
+		
 	}
 	
 	public Capacities getCapacity() {

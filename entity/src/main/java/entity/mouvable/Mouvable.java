@@ -1,11 +1,15 @@
-package entity;
+package entity.mouvable;
+
+import entity.Capacities;
+import entity.Entity;
 
 public abstract class Mouvable extends Entity {
 	
 	protected boolean submittedToGravity;
+	protected boolean alive = true;
 	
-	public Mouvable(char symbol, String fileName, int xP, int yP) {
-		super(symbol, fileName, xP, yP);
+	public Mouvable(char symbol, String fileName) {
+		super(symbol, fileName);
 		this.capacity = Capacities.MOVABLE;
 	}
 	
@@ -19,5 +23,13 @@ public abstract class Mouvable extends Entity {
 	
 	public boolean isSubmittedToGravity() {
 		return this.submittedToGravity;
+	}
+	
+	public boolean isAlive() {
+		return this.alive;
+	}
+	
+	public void kill() {
+		this.alive = false;
 	}
 }

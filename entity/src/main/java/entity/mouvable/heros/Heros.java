@@ -1,28 +1,22 @@
-package entity;
+package entity.mouvable.heros;
+
+import entity.Direction;
+import entity.Living;
+import entity.Sprite;
+import entity.mouvable.Mouvable;
 
 public class Heros extends Mouvable implements Living {
 	
 	private Sprite left;
 	private Sprite right;
 	private Sprite usedSprite;
-	private boolean alive;
 	private Direction dir;
 
-	public Heros(int xP, int yP) {
-		super('H', "images/sprites/face.gif", xP, yP);
+	public Heros() {
+		super('H', "images/sprites/face.gif");
 		this.right = new Sprite('J', "images/sprites/right.gif");
 		this.left = new Sprite('L', "images/sprites/left.gif");
 		this.setUsedSprite(this.getBaseSprite());
-	}
-
-	@Override
-	public boolean isAlive() {
-		return this.alive;
-	}
-
-	@Override
-	public void kill() {
-		this.alive = false;
 	}
 
 	public Direction getDir() {
