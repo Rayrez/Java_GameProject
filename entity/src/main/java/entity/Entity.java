@@ -26,7 +26,7 @@ public abstract class Entity {
 	}
 
 	public int getY() {
-		return this.x;
+		return this.y;
 	}
 
 }
