@@ -12,7 +12,7 @@ public class Heros extends Mouvable implements Living {
 		super('H', "images/sprites/face.gif", xP, yP);
 		this.right = new Sprite('J', "images/sprites/right.gif");
 		this.left = new Sprite('L', "images/sprites/left.gif");
-		this.usedSprite = this.getBaseSprite();
+		this.setUsedSprite(this.getBaseSprite());
 	}
 
 	@Override
@@ -33,12 +33,20 @@ public class Heros extends Mouvable implements Living {
 		this.dir = dirP;
 		
 		if(dirP == Direction.FACE)
-			this.usedSprite = this.getBaseSprite();
+			this.setUsedSprite(this.getBaseSprite());
 		else if(dirP == Direction.LEFT)
-			this.usedSprite = this.left;
+			this.setUsedSprite(this.left);
 		else if(dirP == Direction.RIGHT)
-			this.usedSprite = this.right;
+			this.setUsedSprite(this.right);
 		else
 			throw new RuntimeException("Invalid direction");
+	}
+
+	public Sprite getUsedSprite() {
+		return this.usedSprite;
+	}
+
+	public void setUsedSprite(Sprite usedSpriteP) {
+		this.usedSprite = usedSpriteP;
 	}
 }
