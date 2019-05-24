@@ -1,11 +1,9 @@
 package entity;
 
 public abstract class Breakable extends Entity {
-	
-	private Capacities capacity;
 
-	public Breakable(char symbol, String fileName) {
-		super(symbol, fileName);
+	public Breakable(char symbol, String fileName, int xP, int yP) {
+		super(symbol, fileName, xP, yP);
 		this.capacity = Capacities.BREAKABLE;
 	}
 

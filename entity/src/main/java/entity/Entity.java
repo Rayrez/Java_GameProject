@@ -3,18 +3,19 @@ package entity;
 /**
  * The Class Entity.
  *
- * @author Jean-Aymeric Diet
+ * @author Pierre GARRIDO
  */
 public abstract class Entity {
 	
 	private Sprite baseSprite;
 	protected int x;
 	protected int y;
+	protected Capacities capacity;
 	
-	public Entity(char symbol, String fileName) {
+	public Entity(char symbol, String fileName, int xP, int yP) {
 		this.baseSprite = new Sprite(symbol, fileName);
-		this.x = 0;
-		this.y = 0;
+		this.x = xP;
+		this.y = yP;
 	}
 	
 	public Sprite getBaseSprite() {

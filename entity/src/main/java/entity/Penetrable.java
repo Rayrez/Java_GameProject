@@ -1,11 +1,9 @@
 package entity;
 
-public class Penetrable extends Entity {
+public abstract class Penetrable extends Entity {
 
-	private Capacities capacity;
-
-	public Penetrable(char symbol, String fileName) {
-		super(symbol, fileName);
+	public Penetrable(char symbol, String fileName, int xP, int yP) {
+		super(symbol, fileName, xP, yP);
 		this.capacity = Capacities.PENETRABLE;
 		
 	}

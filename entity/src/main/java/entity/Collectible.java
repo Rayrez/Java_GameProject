@@ -1,16 +1,14 @@
 package entity;
 
-public class Collectible extends Entity {
-
-	private Capacities capicity;
+public abstract class Collectible extends Entity {
 	
-	public Collectible(char symbol, String fileName) {
-		super(symbol, fileName);
-		this.capicity = Capacities.COLLECTIBLE;
+	public Collectible(char symbol, String fileName, int xP, int yP) {
+		super(symbol, fileName, xP, yP);
+		this.capacity = Capacities.COLLECTIBLE;
 	}
 	
 	@Override
 	public Capacities getCapacity() {
-		return this.capicity;
+		return this.capacity;
 	}
 }
