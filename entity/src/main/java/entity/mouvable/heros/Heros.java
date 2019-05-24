@@ -1,11 +1,10 @@
 package entity.mouvable.heros;
 
 import entity.Direction;
-import entity.Living;
 import entity.Sprite;
 import entity.mouvable.Mouvable;
 
-public class Heros extends Mouvable implements Living {
+public class Heros extends Mouvable {
 	
 	private Sprite left;
 	private Sprite right;
