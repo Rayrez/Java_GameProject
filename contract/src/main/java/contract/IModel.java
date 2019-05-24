@@ -2,7 +2,8 @@ package contract;
 
 import java.util.Observable;
 
-import entity.HelloWorld;
+import entity.Entity;
+import contract.Order;
 
 /**
  * The Interface IModel.
@@ -12,19 +13,21 @@ import entity.HelloWorld;
 public interface IModel {
 
 	/**
-	 * Gets the hello world.
+	 * Gets the map.
 	 *
-	 * @return the helloworld entity
+	 * @return map
 	 */
-	HelloWorld getHelloWorld();
-
+	Entity[][] getMap();
+	
 	/**
-	 * Load the message.
+	 * Permit to give a model order
 	 *
-	 * @param code
-	 *          the code
+	 * @param order
+	 *           the order
 	 */
-	void loadHelloWorld(String code);
+	void giveOrder(Order order);
+	
+	
 
 	/**
 	 * Gets the observable.
