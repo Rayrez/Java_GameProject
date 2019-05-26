@@ -20,6 +20,7 @@ public class Sprite {
 			this.spriteImage = ImageIO.read(new File(this.fileName));
 		} catch (IOException e) {
 			e.printStackTrace();
+			throw new RuntimeException("Fail to open and read the given file");
 		}
 	}
 	
