@@ -12,10 +12,11 @@ public class Heros extends Mouvable {
 	private Direction dir;
 
 	public Heros() {
-		super('H', "images/sprites/face.gif");
-		this.right = new Sprite('J', "images/sprites/right.gif");
-		this.left = new Sprite('L', "images/sprites/left.gif");
+		super('H', "../images/sprites/face.gif");
+		this.right = new Sprite('J', "../images/sprites/right.gif");
+		this.left = new Sprite('L', "../images/sprites/left.gif");
 		this.setUsedSprite(this.getBaseSprite());
+		this.dir = Direction.FACE;
 	}
 
 	public Direction getDir() {

@@ -2,12 +2,6 @@ package entity;
 
 import static org.junit.Assert.*;
 
-import java.awt.Image;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
