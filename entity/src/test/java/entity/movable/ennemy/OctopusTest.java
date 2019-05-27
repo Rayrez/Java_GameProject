@@ -1,4 +1,4 @@
-package entity.movable.collectible;
+package entity.movable.ennemy;
 
 import static org.junit.Assert.*;
 
@@ -9,10 +9,11 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import entity.Capacities;
+import entity.movable.heros.Heros;
 
-public class DiamondTest {
+public class OctopusTest {
 	
-	Diamond diamond;
+	Octopus octopus;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -24,7 +25,7 @@ public class DiamondTest {
 
 	@Before
 	public void setUp() throws Exception {
-		this.diamond = new Diamond();
+		this.octopus = new Octopus();
 	}
 
 	@After
@@ -32,27 +33,24 @@ public class DiamondTest {
 	}
 
 	@Test
-	public void testDiamond() {
-		assertEquals(this.diamond.getBaseSprite().getIcon(), 'V');
+	public void testKillSb() {
+		Heros heros = new Heros();
+		octopus.killSb(heros);
+		assertEquals(heros.isAlive(), false);
 	}
 
 	@Test
 	public void testGetCapacity() {
-		assertEquals(this.diamond.getCapacity(), Capacities.COLLECTIBLE);
-	}
-
-	@Test
-	public void testGetName() {
-		assertEquals(this.diamond.getName(), "Diamond");
+		assertEquals(this.octopus.getCapacity(), Capacities.MOVABLE);
 	}
 
 	@Test
 	public void testSetX() {
-		this.diamond.setX(8);
-		assertEquals(this.diamond.getX(), 8);
+		this.octopus.setX(8);
+		assertEquals(this.octopus.getX(), 8);
 		
 		try {
-			this.diamond.setX(-8);
+			this.octopus.setX(-8);
 			fail("Setting a negative value should generate an exception");
 		} catch (Exception e) {
 			assertEquals(e.getMessage(), "X and Y should be greather than 0");
@@ -61,11 +59,11 @@ public class DiamondTest {
 
 	@Test
 	public void testSetY() {
-		this.diamond.setY(8);
-		assertEquals(this.diamond.getY(), 8);
+		this.octopus.setY(6);
+		assertEquals(this.octopus.getY(), 6);
 		
 		try {
-			this.diamond.setY(-89);
+			this.octopus.setY(-8);
 			fail("Setting a negative value should generate an exception");
 		} catch (Exception e) {
 			assertEquals(e.getMessage(), "X and Y should be greather than 0");
@@ -74,59 +72,59 @@ public class DiamondTest {
 
 	@Test
 	public void testIsSubmittedToGravity() {
-		assertEquals(this.diamond.isSubmittedToGravity(), true);
+		assertEquals(this.octopus.isSubmittedToGravity(), false);
 	}
 
 	@Test
 	public void testIsAlive() {
-		assertEquals(this.diamond.isAlive(), true);
+		assertEquals(this.octopus.isAlive(), true);
 	}
 
 	@Test
 	public void testKill() {
-		this.diamond.kill();
-		assertEquals(this.diamond.isAlive(), false);
+		this.octopus.kill();
+		assertEquals(this.octopus.isAlive(), false);
 	}
 
 	@Test
 	public void testGetBaseSprite() {
-		assertEquals(this.diamond.getBaseSprite().getIcon(), 'V');
+		assertEquals(this.octopus.getBaseSprite().getIcon(), 'K');
 	}
 
 	@Test
 	public void testGetX() {
-		this.diamond.setXY(2, 2);
-		assertEquals(this.diamond.getX(), 2);
+		this.octopus.setXY(2, 2);
+		assertEquals(this.octopus.getX(), 2);
 	}
 
 	@Test
 	public void testGetY() {
-		this.diamond.setXY(2, 2);
-		assertEquals(this.diamond.getY(), 2);
+		this.octopus.setXY(2, 2);
+		assertEquals(this.octopus.getY(), 2);
 	}
 
 	@Test
 	public void testSetXY() {
 		
 		try {
-			this.diamond.setXY(5, 6);
-			this.diamond.setXY(7, 1);
+			this.octopus.setXY(5, 6);
+			this.octopus.setXY(7, 1);
 			fail("A multiple use of setXY should generate an exception");
 		} catch (Exception e) {
 			assertEquals(e.getMessage(), "This entity is already set !");
 		}
 		
-		this.diamond = new Diamond();
+		this.octopus = new Octopus();
 		try {
-			this.diamond.setXY(-2, 6);
+			this.octopus.setXY(-2, 6);
 			fail("Setting a negative value should generate an exception");
 		} catch (Exception e) {
 			assertEquals(e.getMessage(), "X and Y should be greather than 0");
 		}
 		
-		this.diamond = new Diamond();
+		this.octopus = new Octopus();
 		try {
-			this.diamond.setXY(12, -58);
+			this.octopus.setXY(12, -58);
 			fail("Setting a negative value should generate an exception");
 		} catch (Exception e) {
 			assertEquals(e.getMessage(), "X and Y should be greather than 0");
