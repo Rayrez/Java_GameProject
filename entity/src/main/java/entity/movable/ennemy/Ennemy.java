@@ -1,6 +1,6 @@
-package entity.mouvable.ennemy;
+package entity.movable.ennemy;
 
-import entity.mouvable.Mouvable;
+import entity.movable.Mouvable;
 
 public class Ennemy extends Mouvable {
 

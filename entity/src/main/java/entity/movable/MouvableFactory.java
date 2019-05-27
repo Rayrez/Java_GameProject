@@ -1,4 +1,4 @@
-package entity.mouvable;
+package entity.movable;
 
 public abstract class MouvableFactory {
 	

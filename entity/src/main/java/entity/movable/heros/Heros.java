@@ -1,8 +1,8 @@
-package entity.mouvable.heros;
+package entity.movable.heros;
 
 import entity.Direction;
 import entity.Sprite;
-import entity.mouvable.Mouvable;
+import entity.movable.Mouvable;
 
 public class Heros extends Mouvable {
 	

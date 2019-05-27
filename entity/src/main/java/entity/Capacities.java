@@ -15,6 +15,6 @@ public enum Capacities {
     COLLECTIBLE,
     /** The penetrable */
     PENETRABLE,
-    /** The mouvable */
+    /** The movable */
     MOVABLE;
 }

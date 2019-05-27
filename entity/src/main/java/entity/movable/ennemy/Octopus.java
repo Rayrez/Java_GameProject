@@ -1,4 +1,4 @@
-package entity.mouvable.ennemy;
+package entity.movable.ennemy;
 
 public class Octopus extends Ennemy {
 	

@@ -1,4 +1,4 @@
-package entity.mouvable;
+package entity.movable;
 
 import entity.Capacities;
 import entity.Entity;
@@ -14,11 +14,25 @@ public abstract class Mouvable extends Entity {
 	}
 	
 	public void setX(int xP) {
-		this.x = xP;
+		if(xP < 0)
+		{
+			throw new RuntimeException("X and Y should be greather than 0");
+		}
+		else
+		{
+			this.x = xP;
+		}
 	}
 	
 	public void setY(int yP) {
-		this.x = yP;
+		if(yP < 0)
+		{
+			throw new RuntimeException("X and Y should be greather than 0");
+		}
+		else
+		{
+			this.y = yP;
+		}
 	}
 	
 	public boolean isSubmittedToGravity() {
@@ -31,5 +45,10 @@ public abstract class Mouvable extends Entity {
 	
 	public void kill() {
 		this.alive = false;
+	}
+	
+	@Override
+	public Capacities getCapacity() {
+		return this.capacity;
 	}
 }

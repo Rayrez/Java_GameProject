@@ -1,4 +1,4 @@
-package entity.mouvable.collectible;
+package entity.movable.collectible;
 
 public abstract class CollectibleFactory {
 	

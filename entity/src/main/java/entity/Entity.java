@@ -31,8 +31,16 @@ public abstract class Entity {
 	
 	public void setXY(int xP, int yP) {
 		if(!set) {
-			this.x = xP;
-			this.y = yP;
+			if(xP < 0 || yP < 0)
+			{
+				throw new RuntimeException("X and Y should be greather than 0");
+			}
+			else
+			{
+				this.x = xP;
+				this.y = yP;
+				this.set = true;
+			}
 		}
 		else
 			throw new RuntimeException("This entity is already set !");
