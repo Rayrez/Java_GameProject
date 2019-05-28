@@ -1,10 +1,11 @@
 package view;
 
+import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 import javax.swing.SwingUtilities;
 
-import contract.ControllerOrder;
+import contract.Order;
 import contract.IController;
 import contract.IModel;
 import contract.IView;
@@ -30,25 +31,24 @@ public final class View implements IView, Runnable {
 		SwingUtilities.invokeLater(this);
 	}
 
-	/**
-	 * Key code to controller order.
-	 *
-	 * @param keyCode
-	 *          the key code
-	 * @return the controller order
-	 */
-	protected static ControllerOrder keyCodeToControllerOrder(final int keyCode) {
-		switch (keyCode) {
-			case KeyEvent.VK_G:
-				return ControllerOrder.English;
-			case KeyEvent.VK_F:
-				return ControllerOrder.Francais;
-			case KeyEvent.VK_D:
-				return ControllerOrder.Deutsch;
-			case KeyEvent.VK_I:
-				return ControllerOrder.Indonesia;
-			default:
-				return ControllerOrder.English;
+
+	public class Al extends KeyAdapter{
+
+		public void Keypressed(KeyEvent e){
+			int keycode = e.getKeyCode();
+
+			if (keycode == KeyEvent.VK_UP){
+
+			}
+			if (keycode == KeyEvent.VK_DOWN){
+
+			}
+			if (keycode == KeyEvent.VK_LEFT){
+
+			}
+			if (keycode == KeyEvent.VK_RIGHT){
+
+			}
 		}
 	}
 

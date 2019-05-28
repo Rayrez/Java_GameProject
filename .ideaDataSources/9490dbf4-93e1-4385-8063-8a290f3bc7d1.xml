@@ -12,6 +12,7 @@
     </schema>
     <schema id="3" parent="1" name="java_gameproject">
       <Current>1</Current>
+      <Visible>1</Visible>
       <Collation>utf8_bin</Collation>
     </schema>
     <schema id="4" parent="1" name="jpublankproject">
@@ -917,5 +918,33 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
+    <table id="231" parent="3" name="maps"/>
+    <routine id="232" parent="3" name="getMaps">
+      <SourceTextLength>23</SourceTextLength>
+      <Definer>root@localhost</Definer>
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <column id="233" parent="231" name="P_Key">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="234" parent="231" name="map">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+      <Collation>utf8_general_ci</Collation>
+    </column>
+    <key id="235" parent="231" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>P_Key</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <argument id="236" parent="232" name="I">
+      <Position>1</Position>
+      <DataType>int(30)|0s</DataType>
+    </argument>
   </database-model>
 </dataSource>

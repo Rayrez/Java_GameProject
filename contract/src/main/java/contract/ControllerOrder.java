@@ -5,10 +5,10 @@ package contract;
  *
  * @author Pierre GARRIDO
  */
-public enum Order {
-	MouvLeft,
+public enum ControllerOrder {
+	MoveLeft,
 	MoveRight,
 	MoveUp,
-	MouvDown,
+	MoveDown,
 	Pause
 }
