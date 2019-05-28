@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 27 mai 2019 à 18:30
+-- Généré le :  mar. 28 mai 2019 à 06:55
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -173,15 +173,15 @@ CREATE TABLE IF NOT EXISTS `map4` (
 --
 
 INSERT INTO `map4` (`COL 1`) VALUES
-('X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X'),
-('X;O;O;O;O;O;O;O;O;O;O;O;P;O;O;O;O;O;O;O;O;O;O;H;X'),
+('X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X'),
+('X;O;O;O;O;O;O;O;O;O;O;O;M;O;O;O;O;O;O;O;O;O;O;H;X'),
 ('X;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;X'),
 ('X;O;O;O;O;O;O;R;R;R;R;R;R;R;R;R;R;R;O;O;O;O;O;O;X'),
 ('X;O;O;O;O;O;O;D;D;D;D;D;D;D;D;D;D;D;O;O;O;O;O;O;X'),
 ('X;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;X'),
 ('X;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;X'),
 ('X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X'),
-('X;O;O;O;O;O;O;O;O;O;O;O;P;O;O;O;O;O;O;O;O;O;O;O;X'),
+('X;O;O;O;O;O;O;O;O;O;O;O;M;O;O;O;O;O;O;O;O;O;O;O;X'),
 ('X;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;X'),
 ('X;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;X'),
 ('X;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;X'),
@@ -191,7 +191,7 @@ INSERT INTO `map4` (`COL 1`) VALUES
 ('X;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;X'),
 ('X;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;X'),
 ('X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X'),
-('X;O;O;O;O;O;O;O;O;O;O;O;P;O;O;O;O;O;O;O;O;O;O;O;X'),
+('X;O;O;O;O;O;O;O;O;O;O;O;M;O;O;O;O;O;O;O;O;O;O;O;X'),
 ('X;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;X'),
 ('X;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;O;X'),
 ('X;O;O;R;R;R;R;O;O;O;O;O;O;O;O;O;O;O;R;R;R;R;O;O;X'),
