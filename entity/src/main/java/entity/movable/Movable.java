@@ -3,12 +3,12 @@ package entity.movable;
 import entity.Capacities;
 import entity.Entity;
 
-public abstract class Mouvable extends Entity {
+public abstract class Movable extends Entity {
 	
 	protected boolean submittedToGravity;
 	protected boolean alive = true;
 	
-	public Mouvable(char symbol, String fileName) {
+	public Movable(char symbol, String fileName) {
 		super(symbol, fileName);
 		this.capacity = Capacities.MOVABLE;
 	}

@@ -1,6 +1,6 @@
 package entity.movable;
 
-public class Rock extends Mouvable {
+public class Rock extends Movable {
 
 	public Rock() {
 		super('R', "../images/sprites/rock.gif");
