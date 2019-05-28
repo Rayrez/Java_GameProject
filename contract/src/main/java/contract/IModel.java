@@ -35,6 +35,13 @@ public interface IModel {
 	int getScore();
 
 	/**
+    * Gets the number of remaining diamonds.
+    *
+    * @return the number of remaining diamond
+    */
+	public int getDiamonds_remaining();
+	
+	/**
 	 * Gets the observable.
 	 *
 	 * @return the observable
