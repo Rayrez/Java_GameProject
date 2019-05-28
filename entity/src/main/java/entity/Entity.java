@@ -7,7 +7,7 @@ package entity;
  */
 public abstract class Entity {
 	
-	private Sprite baseSprite;
+	protected Sprite baseSprite;
 	private boolean set = false;
 	protected int x;
 	protected int y;

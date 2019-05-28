@@ -8,14 +8,14 @@ public class Heros extends Movable {
 	
 	private Sprite left;
 	private Sprite right;
-	private Sprite usedSprite;
+	private Sprite face;
 	private Direction dir;
 
 	public Heros() {
 		super('H', "../images/sprites/face.gif");
 		this.right = new Sprite('J', "../images/sprites/right.gif");
 		this.left = new Sprite('L', "../images/sprites/left.gif");
-		this.setUsedSprite(this.getBaseSprite());
+		this.face = this.getBaseSprite();
 		this.dir = Direction.FACE;
 	}
 
@@ -27,20 +27,17 @@ public class Heros extends Movable {
 		this.dir = dirP;
 		
 		if(dirP == Direction.FACE)
-			this.setUsedSprite(this.getBaseSprite());
+			this.setBaseSprite(this.face);
 		else if(dirP == Direction.LEFT)
-			this.setUsedSprite(this.left);
+			this.setBaseSprite(this.left);
 		else if(dirP == Direction.RIGHT)
-			this.setUsedSprite(this.right);
+			this.setBaseSprite(this.right);
 		else
 			throw new RuntimeException("Invalid direction");
 	}
-
-	public Sprite getUsedSprite() {
-		return this.usedSprite;
-	}
-
-	public void setUsedSprite(Sprite usedSpriteP) {
-		this.usedSprite = usedSpriteP;
+	
+	private void setBaseSprite(Sprite sP)
+	{
+		this.baseSprite = sP;
 	}
 }

@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import entity.Capacities;
 import entity.Direction;
+import entity.Sprite;
 
 public class TestHeros {
 	
@@ -59,15 +60,12 @@ public class TestHeros {
 	}
 
 	@Test
-	public void testGetUsedSprite() {
-		assertEquals(this.heros.getUsedSprite(), this.heros.getBaseSprite());
-	}
-
-	@Test
 	public void testSetUsedSprite() {
+		Sprite sprite;
+		sprite = this.heros.getBaseSprite();
 		this.heros.setDir(Direction.LEFT);
 		this.heros.setDir(Direction.FACE);
-		assertEquals(this.heros.getUsedSprite(), this.heros.getBaseSprite());
+		assertEquals(this.heros.getBaseSprite(), sprite);
 	}
 
 	@Test
