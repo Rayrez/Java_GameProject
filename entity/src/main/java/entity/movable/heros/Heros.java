@@ -2,9 +2,9 @@ package entity.movable.heros;
 
 import entity.Direction;
 import entity.Sprite;
-import entity.movable.Mouvable;
+import entity.movable.Movable;
 
-public class Heros extends Mouvable {
+public class Heros extends Movable {
 	
 	private Sprite left;
 	private Sprite right;

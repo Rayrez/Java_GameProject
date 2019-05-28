@@ -1,9 +1,9 @@
 package entity.movable.collectible;
 
 import entity.Capacities;
-import entity.movable.Mouvable;
+import entity.movable.Movable;
 
-public abstract class Collectible extends Mouvable {
+public abstract class Collectible extends Movable {
 	
 	protected String name;
 	

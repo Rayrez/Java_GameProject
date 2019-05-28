@@ -27,7 +27,12 @@ public interface IModel {
 	 */
 	void giveOrder(Order order);
 	
-	
+	/**
+     * Gets the score.
+     *
+     * @return the score
+     */
+	int getScore();
 
 	/**
 	 * Gets the observable.
