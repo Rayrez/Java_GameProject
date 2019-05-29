@@ -31,7 +31,7 @@ public final class Model extends Observable implements IModel {
 	private ArrayList<Penetrable> penetrables;
 	private ArrayList<Unbreakable> unbreakables;
 	private ArrayList<Breakable> breakables;
-	//private boolean pause;
+	private boolean pause;
 
 	/**
 	 * Instantiates a new model.
@@ -111,7 +111,7 @@ public final class Model extends Observable implements IModel {
 	@Override
 	public void giveOrder(ControllerOrder order) {
 		
-		/*if(order == ControllerOrder.Pause)
+		if(order == ControllerOrder.Pause)
 		{
 			if(pause)
 				pause = false;
@@ -149,7 +149,7 @@ public final class Model extends Observable implements IModel {
 					}
 				}
 			}
-		}*/
+		}
 	}
 
 	/**

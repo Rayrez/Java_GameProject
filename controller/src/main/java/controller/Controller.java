@@ -20,7 +20,7 @@ public final class Controller implements IController {
 	 */
 	public Controller() {
 		model = new Model(1);
-		view = new View();
+		view = new View(model);
 	}
 
 	/**
