@@ -17,7 +17,7 @@ public abstract class Movable extends Entity {
 	public void setX(int xP) {
 		if(xP < 0)
 		{
-			throw new RuntimeException("X and Y should be greather than 0");
+			throw new IllegalArgumentException("X and Y should be greather than 0");
 		}
 		else
 		{
@@ -28,7 +28,7 @@ public abstract class Movable extends Entity {
 	public void setY(int yP) {
 		if(yP < 0)
 		{
-			throw new RuntimeException("X and Y should be greather than 0");
+			throw new IllegalArgumentException("X and Y should be greather than 0");
 		}
 		else
 		{
