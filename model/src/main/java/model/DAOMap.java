@@ -61,8 +61,6 @@ public class DAOMap {
 	 *
 	 * @param mapNumber
 	 *          The number of the map
-	 * @param map
-	 *          The map
 	 * @param movables
 	 *          The movables
 	 * @param collec
@@ -80,8 +78,9 @@ public class DAOMap {
 	 * @throws SQLException
 	 * @throws RuntimeException
 	 */
-	public void load(int mapNumber, Entity[][] map, ArrayList<Movable> movables, ArrayList<Collectible> collec, Heros heros, ArrayList<Ennemy> enemies, ArrayList<Penetrable> penetrables, ArrayList<Unbreakable> unbreakables, ArrayList<Breakable> breakables, Exit exit) throws SQLException, RuntimeException {
-		java.sql.PreparedStatement statement = this.connection.prepareStatement("CALL getMap(?);");
+	public Entity[][] load(int mapNumber, ArrayList<Movable> movables, ArrayList<Collectible> collec, Heros heros, ArrayList<Ennemy> enemies, ArrayList<Penetrable> penetrables, ArrayList<Unbreakable> unbreakables, ArrayList<Breakable> breakables, Exit exit) throws SQLException, RuntimeException {
+
+		java.sql.PreparedStatement statement = this.connection.prepareStatement("CALL getMaps(?);");
 		statement.setInt(1, mapNumber);
 		
 		ResultSet resul = statement.executeQuery();
@@ -96,15 +95,17 @@ public class DAOMap {
 			
 			int x = 0, y = 0, i = 0;
 			boolean fin = true;
-			
+			Entity[][] map = new Entity[25][28];
+
 			while(fin) {
-				
+
 				if(BreakableFactory.getFromFileSymbol(mapTxt.charAt(i)) != null)
 				{
 					Breakable entity = BreakableFactory.getFromFileSymbol(mapTxt.charAt(i));
 					entity.setXY(x, y);
 					breakables.add(entity);
 					map[x][y] = entity;
+					x++;
 				}
 				else if(PenetrableFactory.getFromFileSymbol(mapTxt.charAt(i)) != null)
 				{
@@ -112,6 +113,7 @@ public class DAOMap {
 					entity.setXY(x, y);
 					penetrables.add(entity);
 					map[x][y] = entity;
+					x++;
 				}
 				else if(UnbreakableFactory.getFromFileSymbol(mapTxt.charAt(i)) != null)
 				{
@@ -119,6 +121,7 @@ public class DAOMap {
 					entity.setXY(x, y);
 					unbreakables.add(entity);
 					map[x][y] = entity;
+					x++;
 				}
 				else if(MovableFactory.getFromFileSymbol(mapTxt.charAt(i)) != null)
 				{
@@ -126,6 +129,7 @@ public class DAOMap {
 					entity.setXY(x, y);
 					movables.add(entity);
 					map[x][y] = entity;
+					x++;
 				}
 				else if(CollectibleFactory.getFromFileSymbol(mapTxt.charAt(i)) != null)
 				{
@@ -134,6 +138,7 @@ public class DAOMap {
 					movables.add(entity);
 					collec.add(entity);
 					map[x][y] = entity;
+					x++;
 				}
 				else if(EnnemyFactory.getFromFileSymbol(mapTxt.charAt(i)) != null)
 				{
@@ -142,6 +147,7 @@ public class DAOMap {
 					movables.add(entity);
 					enemies.add(entity);
 					map[x][y] = entity;
+					x++;
 				}
 				else if(mapTxt.charAt(i) == 'E')
 				{
@@ -150,34 +156,40 @@ public class DAOMap {
 					Background back = new Background();
 					back.setXY(x, y);
 					map[x][y] = back;
+					x++;
 				}
 				else if(mapTxt.charAt(i) == 'H')
 				{
 					heros = new Heros();
 					heros.setXY(x, y);
 					map[x][y] = heros;
+					x++;
+				}
+				else if(mapTxt.charAt(i) == 13)
+				{
+					x = 0;
+				}
+				else if(mapTxt.charAt(i) == 10)
+				{
+					x = 0;
+					y++;
 				}
 				else
 				{
+					System.out.print((int) mapTxt.charAt(i));
 					statement.close();
 					throw new RuntimeException("Unknowed Sprite : "+ mapTxt.charAt(i));
 				}
-				
+
 				i++;
-				x++;
-				
+
 				if(i >= mapTxt.length())
 				{
 					fin = false;
 				}
-				else if(mapTxt.charAt(i) == '\n')
-				{
-					y++;
-					x = 0;
-					i++;
-				}
 			}
 			statement.close();
+			return map;
 		}
 	}
 

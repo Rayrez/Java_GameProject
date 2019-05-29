@@ -11,10 +11,15 @@ public abstract class EnnemyFactory {
 	}
 	
 	public static Ennemy getFromFileSymbol(char symbol) {
-		for (Ennemy entity : entities) {
-            if (entity.getBaseSprite().getIcon() == symbol) {
-                return entity;
-            }
+		int i = 1;
+		for (final Ennemy entity : entities) {
+			if (entity.getBaseSprite().getIcon() == symbol) {
+				if(i == 1)
+					return new Octopus();
+				else
+					return null;
+			}
+			i++;
         }
 		return null;
 	}

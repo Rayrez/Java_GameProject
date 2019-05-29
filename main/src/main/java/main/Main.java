@@ -23,10 +23,7 @@ Main {
      *            the arguments
      */
     public static void main(final String[] args) {
-        final Model model = new Model(1);
-        final View view = new View(model);
-        final Controller controller = new Controller(view, model);
-        view.setController(controller);
+        final Controller controller = new Controller();
         controller.control();
     }
 }

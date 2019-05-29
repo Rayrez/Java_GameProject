@@ -18,10 +18,10 @@ import entity.Entity;
 public final class View extends JFrame implements IView, Runnable, Observer {
 
 	private final IModel model;
+	private Entity[][] map;
 
 	public View(IModel model) {
 		this.model = model;
-
 		this.setTitle("Boulder Dash");
 		this.setSize(407, 510);
 		this.setLocationRelativeTo(null);
@@ -29,8 +29,9 @@ public final class View extends JFrame implements IView, Runnable, Observer {
 		this.setResizable(false);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.getContentPane().add(new JButton("Pause"), BorderLayout.SOUTH);
+		this.map = this.model.getMap();
 		this.setVisible(true);
-
+		this.model.getObservable().addObserver(this);
 	}
 
 	/*
@@ -51,6 +52,19 @@ public final class View extends JFrame implements IView, Runnable, Observer {
 
 	}
 
+	@Override
+	protected void paintComponent(final Graphics g) {
+		int x, y;
+
+		for(x = 0;x < 25;x++)
+		{
+			for(y = 0;y < 28;y++)
+			{
+				g.drawImage(this.map[x][y].getBaseSprite().getImage(), x * 16, y * 16, this);
+			}
+		}
+	}
+
 	/**
 	 * Sets the controller.
 	 *
@@ -62,19 +76,11 @@ public final class View extends JFrame implements IView, Runnable, Observer {
 
 	@Override
 	public void update(Observable o, Object arg) {
-		model.getScore();
-		model.getDiamonds_remaining();
+		this.model.getScore();
+		this.model.getDiamonds_remaining();
 
-		Entity[][] map = model.getMap();
+		this.map = this.model.getMap();
 
-		int x = 0, y = 0;
-
-		for(x = 0;x < 25;x++)
-		{
-			for(y = 0;y < 28;y++)
-			{
-				map[x][y].getBaseSprite().getImage();
-			}
-		}
+		this.repaint();
 	}
 }

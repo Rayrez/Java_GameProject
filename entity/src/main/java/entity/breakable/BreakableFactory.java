@@ -1,7 +1,7 @@
 package entity.breakable;
 
 public abstract class BreakableFactory {
-	
+
 	private static final Dirt dirt = new Dirt();
 	
 	private static Breakable[] entities = {dirt};
@@ -11,10 +11,15 @@ public abstract class BreakableFactory {
 	}
 	
 	public static Breakable getFromFileSymbol(char symbol) {
-		for (Breakable entity : entities) {
-            if (entity.getBaseSprite().getIcon() == symbol) {
-                return entity;
-            }
+		int i = 1;
+		for (final Breakable entity : entities) {
+			if (entity.getBaseSprite().getIcon() == symbol) {
+				if(i == 1)
+					return new Dirt();
+				else
+					return null;
+			}
+			i++;
         }
 		return null;
 	}

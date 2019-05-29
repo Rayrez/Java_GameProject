@@ -20,8 +20,6 @@
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
-    <orderEntry type="module" module-name="contract" />
-    <orderEntry type="module" module-name="entity" />
     <orderEntry type="module-library">
       <library name="junit-4.12.jar">
         <CLASSES>

@@ -11,10 +11,15 @@ public abstract class PenetrableFactory {
 	}
 	
 	public static Penetrable getFromFileSymbol(char symbol) {
-		for (Penetrable entity : entities) {
+		int i = 1;
+		for (final Penetrable entity : entities) {
             if (entity.getBaseSprite().getIcon() == symbol) {
-                return entity;
+				if(i == 1)
+					return new Background();
+				else
+					return null;
             }
+            i++;
         }
 		return null;
 	}

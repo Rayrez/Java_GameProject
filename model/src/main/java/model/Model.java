@@ -3,6 +3,7 @@ package model;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Observable;
+import java.util.Observer;
 
 import contract.*;
 import entity.*;
@@ -50,20 +51,24 @@ public final class Model extends Observable implements IModel {
 	/**
      * Load the initial map.
      *
-     * @param mapNumber
-     *            the number of the map
-     */
+	 * @param mapNumber
+	 *            the number of the map
+	 * @return
+	 */
 	/*
 	 * (non-Javadoc)
 	 *
 	 * @see contract.IModel#getMap(entity.Entity)
 	 */
 	private void loadMap(int mapNumber) {
+		Entity[][] map;
 		try {
 			final DAOMap daoMap = new DAOMap(DBConnection.getInstance().getConnection());
-			daoMap.load(mapNumber, map, mouv, collec, heros, enemies, penetrables, unbreakables, breakables, null);
+			this.map = daoMap.load(mapNumber, mouv, collec, heros, enemies, penetrables, unbreakables, breakables, exit);
 		} catch (final SQLException e) {
-			e.printStackTrace();
+			e.printStackTrace();e.printStackTrace();
+		} catch (final RuntimeException e2) {
+			e2.printStackTrace();
 		}
 	}
 	
@@ -104,7 +109,17 @@ public final class Model extends Observable implements IModel {
 	public Entity[][] getMap() {
 		return this.map;
 	}
-	
+
+	@Override
+	public boolean isDead() {
+		return false;
+	}
+
+	@Override
+	public boolean hasWon() {
+		return false;
+	}
+
 	/**
      * Manage orders
      */
@@ -170,5 +185,12 @@ public final class Model extends Observable implements IModel {
 	@Override
 	public int getDiamonds_remaining() {
 		return this.diamonds_remaining;
+	}
+
+	@Override
+	public void addObserver(Observer o) {
+		super.addObserver(o);
+		this.setChanged();
+		this.notifyObservers();
 	}
 }

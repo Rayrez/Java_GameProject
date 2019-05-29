@@ -21,10 +21,19 @@ public abstract class UnbreakableFactory {
 	}
 	
 	public static Unbreakable getFromFileSymbol(char symbol) {
-		for (Unbreakable entity : entities) {
+		int i = 1;
+		for (final Unbreakable entity : entities) {
             if (entity.getBaseSprite().getIcon() == symbol) {
-                return entity;
+                if(i == 1)
+                	return new BlueWall();
+                else if(i == 2)
+                	return new Explosion();
+                else if(i == 3)
+                	return new GreyWall();
+                else
+                	return null;
             }
+            i++;
         }
 		return null;
 	}

@@ -11,10 +11,15 @@ public abstract class MovableFactory {
 	}
 	
 	public static Movable getFromFileSymbol(char symbol) {
-		for (Movable entity : entities) {
+		int i = 1;
+		for (final Movable entity : entities) {
             if (entity.getBaseSprite().getIcon() == symbol) {
-                return entity;
+				if(i == 1)
+					return new Rock();
+				else
+					return null;
             }
+            i++;
         }
 		return null;
 	}

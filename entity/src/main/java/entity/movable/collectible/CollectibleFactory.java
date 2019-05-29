@@ -11,10 +11,15 @@ public abstract class CollectibleFactory {
 	}
 	
 	public static Collectible getFromFileSymbol(char symbol) {
-		for (Collectible entity : entities) {
-            if (entity.getBaseSprite().getIcon() == symbol) {
-                return entity;
-            }
+		int i = 1;
+		for (final Collectible entity : entities) {
+			if (entity.getBaseSprite().getIcon() == symbol) {
+				if(i == 1)
+					return new Diamond();
+				else
+					return null;
+			}
+			i++;
         }
 		return null;
 	}
