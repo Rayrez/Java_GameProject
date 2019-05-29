@@ -7,6 +7,7 @@ public abstract class Movable extends Entity {
 	
 	protected boolean submittedToGravity;
 	protected boolean alive = true;
+	private boolean mortal = false;
 	
 	public Movable(char symbol, String fileName) {
 		super(symbol, fileName);
@@ -50,5 +51,13 @@ public abstract class Movable extends Entity {
 	@Override
 	public Capacities getCapacity() {
 		return this.capacity;
+	}
+	
+	public void becomeMortal() {
+		this.mortal = true;
+	}
+	
+	public boolean isMortal() {
+		return this.mortal;
 	}
 }

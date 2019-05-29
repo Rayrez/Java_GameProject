@@ -128,5 +128,15 @@ public class RockTest {
 	public void testGetCapacity() {
 		assertEquals(this.rock.getCapacity(), Capacities.MOVABLE);
 	}
+	
+	@Test
+	public void testBecomeMortal() {
+		
+	}
+	
+	@Test
+	public void testIsMortal() {
+		
+	}
 
 }

@@ -3,7 +3,6 @@ package contract;
 import java.util.Observable;
 
 import entity.Entity;
-import contract.Order;
 
 /**
  * The Interface IModel.
@@ -25,7 +24,7 @@ public interface IModel {
 	 * @param order
 	 *           the order
 	 */
-	void giveOrder(Order order);
+	void giveOrder(ControllerOrder order);
 	
 	/**
      * Gets the score.
