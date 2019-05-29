@@ -2,7 +2,7 @@ package entity.penetrable;
 
 public abstract class PenetrableFactory {
 	
-	private static Penetrable background = new Background();
+	private static final Penetrable background = new Background();
 	
 	private static Penetrable[] entities = {background};
 	

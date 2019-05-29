@@ -2,7 +2,7 @@ package entity.movable.collectible;
 
 public abstract class CollectibleFactory {
 	
-	private static Collectible diamond = new Diamond();
+	private static final Collectible diamond = new Diamond();
 	
 	private static Collectible[] entities = {diamond};
 	

@@ -2,7 +2,7 @@ package entity.movable.ennemy;
 
 public abstract class EnnemyFactory {
 	
-	private static Ennemy octopus = new Octopus();
+	private static final Ennemy octopus = new Octopus();
 	
 	private static Ennemy[] entities = {octopus};
 	

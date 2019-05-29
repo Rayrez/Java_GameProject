@@ -2,7 +2,7 @@ package entity.movable;
 
 public abstract class MovableFactory {
 	
-	private static Movable rock = new Rock();
+	private static final Movable rock = new Rock();
 	
 	private static Movable[] entities = {rock};
 	

@@ -2,7 +2,7 @@ package entity.breakable;
 
 public abstract class BreakableFactory {
 	
-	private static Dirt dirt = new Dirt();
+	private static final Dirt dirt = new Dirt();
 	
 	private static Breakable[] entities = {dirt};
 	

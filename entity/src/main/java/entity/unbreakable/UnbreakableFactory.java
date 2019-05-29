@@ -2,9 +2,9 @@ package entity.unbreakable;
 
 public abstract class UnbreakableFactory {
 	
-	private static Unbreakable blueWall = new BlueWall();
-	private static Unbreakable explosion = new Explosion();
-	private static Unbreakable greyWall = new GreyWall();
+	private static final Unbreakable blueWall = new BlueWall();
+	private static final Unbreakable explosion = new Explosion();
+	private static final Unbreakable greyWall = new GreyWall();
 
 	private static Unbreakable[] entities = {blueWall, explosion, greyWall};
 	
