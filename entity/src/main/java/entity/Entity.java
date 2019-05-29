@@ -33,7 +33,7 @@ public abstract class Entity {
 		if(!set) {
 			if(xP < 0 || yP < 0)
 			{
-				throw new RuntimeException("X and Y should be greather than 0");
+				throw new IllegalArgumentException("X and Y should be greather than 0");
 			}
 			else
 			{
