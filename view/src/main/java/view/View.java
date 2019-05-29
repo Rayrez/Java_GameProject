@@ -1,55 +1,36 @@
 package view;
 
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+import javax.swing.*;
+import java.awt.*;
+import java.util.Observable;
+import java.util.Observer;
 
-import javax.swing.SwingUtilities;
+import contract.*;
 
-import contract.Order;
-import contract.IController;
-import contract.IModel;
-import contract.IView;
+import entity.Entity;
+
 
 /**
  * The Class View.
  *
  * @author Jean-Aymeric Diet
  */
-public final class View implements IView, Runnable {
+public final class View extends JFrame implements IView, Runnable, Observer {
 
-	/** The frame. */
-	private final ViewFrame viewFrame;
+	private final IModel model;
 
-	/**
-	 * Instantiates a new view.
-	 *
-	 * @param model
-	 *          the model
-	 */
-	public View(final IModel model) {
-		this.viewFrame = new ViewFrame(model);
-		SwingUtilities.invokeLater(this);
-	}
+	public View(IModel model) {
+		this.model = model;
 
+		this.setTitle("Boulder Dash");
+		this.setSize(407, 510);
+		this.setLocationRelativeTo(null);
+		this.getContentPane().setBackground(Color.BLACK);
+		this.setResizable(false);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.getContentPane().add(new JButton("Pause"), BorderLayout.SOUTH);
+		this.setVisible(true);
 
-	public class Al extends KeyAdapter{
-
-		public void Keypressed(KeyEvent e){
-			int keycode = e.getKeyCode();
-
-			if (keycode == KeyEvent.VK_UP){
-
-			}
-			if (keycode == KeyEvent.VK_DOWN){
-
-			}
-			if (keycode == KeyEvent.VK_LEFT){
-
-			}
-			if (keycode == KeyEvent.VK_RIGHT){
-
-			}
-		}
 	}
 
 	/*
@@ -58,7 +39,7 @@ public final class View implements IView, Runnable {
 	 * @see contract.IView#printMessage(java.lang.String)
 	 */
 	public void printMessage(final String message) {
-		this.viewFrame.printMessage(message);
+
 	}
 
 	/*
@@ -67,7 +48,7 @@ public final class View implements IView, Runnable {
 	 * @see java.lang.Runnable#run()
 	 */
 	public void run() {
-		this.viewFrame.setVisible(true);
+
 	}
 
 	/**
@@ -77,6 +58,23 @@ public final class View implements IView, Runnable {
 	 *          the new controller
 	 */
 	public void setController(final IController controller) {
-		this.viewFrame.setController(controller);
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+		model.getScore();
+		model.getDiamonds_remaining();
+
+		Entity[][] map = model.getMap();
+
+		int x = 0, y = 0;
+
+		for(x = 0;x < 25;x++)
+		{
+			for(y = 0;y < 28;y++)
+			{
+				map[x][y].getBaseSprite().getImage();
+			}
+		}
 	}
 }

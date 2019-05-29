@@ -17,6 +17,20 @@ public interface IModel {
 	 * @return map
 	 */
 	Entity[][] getMap();
+
+	/**
+	 * Gets if the player is dead
+	 *
+	 * @return map
+	 */
+	boolean isDead();
+
+	/**
+	 * Gets if the player have won
+	 *
+	 * @return map
+	 */
+	boolean hasWon();
 	
 	/**
 	 * Permit to give a model order

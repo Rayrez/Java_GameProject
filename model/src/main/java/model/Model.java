@@ -50,7 +50,7 @@ public final class Model extends Observable implements IModel {
 	/**
      * Load the initial map.
      *
-     * @param mapNumer
+     * @param mapNumber
      *            the number of the map
      */
 	/*
