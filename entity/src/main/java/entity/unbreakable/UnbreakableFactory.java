@@ -20,7 +20,7 @@ public abstract class UnbreakableFactory {
 		return greyWall;
 	}
 	
-	public Unbreakable getFromFileSymbol(char symbol) {
+	public static Unbreakable getFromFileSymbol(char symbol) {
 		for (Unbreakable entity : entities) {
             if (entity.getBaseSprite().getIcon() == symbol) {
                 return entity;

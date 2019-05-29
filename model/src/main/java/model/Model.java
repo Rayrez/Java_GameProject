@@ -6,6 +6,7 @@ import java.util.Observable;
 
 import contract.*;
 import entity.*;
+import entity.breakable.Breakable;
 import entity.movable.*;
 import entity.movable.collectible.*;
 import entity.movable.ennemy.*;
@@ -25,10 +26,12 @@ public final class Model extends Observable implements IModel {
 	private ArrayList<Movable> mouv;
 	private ArrayList<Collectible> collec;
 	private Heros heros;
+	private Exit exit;
 	private ArrayList<Ennemy> enemies;
 	private ArrayList<Penetrable> penetrables;
 	private ArrayList<Unbreakable> unbreakables;
-	private boolean pause;
+	private ArrayList<Breakable> breakables;
+	//private boolean pause;
 
 	/**
 	 * Instantiates a new model.
@@ -36,11 +39,11 @@ public final class Model extends Observable implements IModel {
 	public Model(int numberMapP) {
 		this.score = 0;
 		this.mouv = new ArrayList<Movable>();
-		this.collec = new ArrayList<Collectible>();;
-		this.heros = new Heros();
+		this.collec = new ArrayList<Collectible>();
 		this.enemies = new ArrayList<Ennemy>();
 		this.penetrables = new ArrayList<Penetrable>();
 		this.unbreakables = new ArrayList<Unbreakable>();
+		this.breakables = new ArrayList<Breakable>();
 		this.loadMap(numberMapP);
 	}
 
@@ -58,7 +61,7 @@ public final class Model extends Observable implements IModel {
 	private void loadMap(int mapNumber) {
 		try {
 			final DAOMap daoMap = new DAOMap(DBConnection.getInstance().getConnection());
-			daoMap.load(mapNumber, map, mouv, collec, heros, enemies, penetrables, unbreakables);
+			daoMap.load(mapNumber, map, mouv, collec, heros, enemies, penetrables, unbreakables, breakables, null);
 		} catch (final SQLException e) {
 			e.printStackTrace();
 		}
@@ -108,7 +111,7 @@ public final class Model extends Observable implements IModel {
 	@Override
 	public void giveOrder(ControllerOrder order) {
 		
-		if(order == ControllerOrder.Pause)
+		/*if(order == ControllerOrder.Pause)
 		{
 			if(pause)
 				pause = false;
@@ -142,10 +145,11 @@ public final class Model extends Observable implements IModel {
 						penetrables.add(pen);
 						heros.setDir(Direction.RIGHT);
 						heros.setX(heros.getX() - 1);
+						
 					}
 				}
 			}
-		}
+		}*/
 	}
 
 	/**

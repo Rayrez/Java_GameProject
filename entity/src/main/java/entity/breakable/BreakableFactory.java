@@ -6,11 +6,11 @@ public abstract class BreakableFactory {
 	
 	private static Breakable[] entities = {dirt};
 	
-	public Breakable createDirt() {
+	public static Breakable createDirt() {
 		return dirt;
 	}
 	
-	public Breakable getFromFileSymbol(char symbol) {
+	public static Breakable getFromFileSymbol(char symbol) {
 		for (Breakable entity : entities) {
             if (entity.getBaseSprite().getIcon() == symbol) {
                 return entity;

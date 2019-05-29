@@ -10,7 +10,7 @@ public abstract class PenetrableFactory {
 		return background;
 	}
 	
-	public Penetrable getFromFileSymbol(char symbol) {
+	public static Penetrable getFromFileSymbol(char symbol) {
 		for (Penetrable entity : entities) {
             if (entity.getBaseSprite().getIcon() == symbol) {
                 return entity;

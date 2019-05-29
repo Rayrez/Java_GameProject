@@ -10,7 +10,7 @@ public abstract class MovableFactory {
 		return rock;
 	}
 	
-	public Movable getFromFileSymbol(char symbol) {
+	public static Movable getFromFileSymbol(char symbol) {
 		for (Movable entity : entities) {
             if (entity.getBaseSprite().getIcon() == symbol) {
                 return entity;

@@ -10,7 +10,7 @@ public abstract class EnnemyFactory {
 		return octopus;
 	}
 	
-	public Ennemy getFromFileSymbol(char symbol) {
+	public static Ennemy getFromFileSymbol(char symbol) {
 		for (Ennemy entity : entities) {
             if (entity.getBaseSprite().getIcon() == symbol) {
                 return entity;

@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import entity.Capacities;
+import entity.penetrable.Exit;
 
 public class ExitTest {
 	

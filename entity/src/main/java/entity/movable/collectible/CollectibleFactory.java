@@ -10,7 +10,7 @@ public abstract class CollectibleFactory {
 		return diamond;
 	}
 	
-	public Collectible getFromFileSymbol(char symbol) {
+	public static Collectible getFromFileSymbol(char symbol) {
 		for (Collectible entity : entities) {
             if (entity.getBaseSprite().getIcon() == symbol) {
                 return entity;
