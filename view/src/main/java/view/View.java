@@ -31,7 +31,6 @@ public final class View extends JFrame implements IView, Runnable {
 		this.setTitle("Boulder Dash");
 		this.setSize(407, 510);
 		this.setLocationRelativeTo(null);
-		this.getContentPane().setBackground(Color.BLACK);
 		this.setResizable(false);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.getContentPane().add(new JButton("Pause"), BorderLayout.SOUTH);
