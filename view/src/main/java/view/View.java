@@ -15,13 +15,19 @@ import entity.Entity;
  *
  * @author Jean-Aymeric Diet
  */
-public final class View extends JFrame implements IView, Runnable, Observer {
+public final class View extends JFrame implements IView, Runnable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3729391891433730765L;
 	private final IModel model;
-	private Entity[][] map;
+	private Components components;
 
-	public View(IModel model) {
-		this.model = model;
+	public View(IModel modelP) {
+		this.model = modelP;
+		this.components = new Components(modelP);
+		this.setContentPane(this.components);
 		this.setTitle("Boulder Dash");
 		this.setSize(407, 510);
 		this.setLocationRelativeTo(null);
@@ -29,9 +35,8 @@ public final class View extends JFrame implements IView, Runnable, Observer {
 		this.setResizable(false);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.getContentPane().add(new JButton("Pause"), BorderLayout.SOUTH);
-		this.map = this.model.getMap();
+		this.model.getObservable().addObserver(this.components);
 		this.setVisible(true);
-		this.model.getObservable().addObserver(this);
 	}
 
 	/*
@@ -52,19 +57,6 @@ public final class View extends JFrame implements IView, Runnable, Observer {
 
 	}
 
-	@Override
-	protected void paintComponent(final Graphics g) {
-		int x, y;
-
-		for(x = 0;x < 25;x++)
-		{
-			for(y = 0;y < 28;y++)
-			{
-				g.drawImage(this.map[x][y].getBaseSprite().getImage(), x * 16, y * 16, this);
-			}
-		}
-	}
-
 	/**
 	 * Sets the controller.
 	 *
@@ -74,13 +66,4 @@ public final class View extends JFrame implements IView, Runnable, Observer {
 	public void setController(final IController controller) {
 	}
 
-	@Override
-	public void update(Observable o, Object arg) {
-		this.model.getScore();
-		this.model.getDiamonds_remaining();
-
-		this.map = this.model.getMap();
-
-		this.repaint();
-	}
 }
