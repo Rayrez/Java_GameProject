@@ -5,11 +5,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.mysql.jdbc.Statement;
 
 import entity.Entity;
 import entity.breakable.Breakable;
 import entity.breakable.BreakableFactory;
+import entity.breakable.Dirt;
 import entity.movable.Movable;
 import entity.movable.MovableFactory;
 import entity.movable.collectible.Collectible;
@@ -17,7 +17,6 @@ import entity.movable.collectible.CollectibleFactory;
 import entity.movable.ennemy.Ennemy;
 import entity.movable.ennemy.EnnemyFactory;
 import entity.movable.heros.Heros;
-import entity.penetrable.Background;
 import entity.penetrable.Exit;
 import entity.penetrable.Penetrable;
 import entity.penetrable.PenetrableFactory;
@@ -153,9 +152,9 @@ public class DAOMap {
 				{
 					exit = new Exit();
 					exit.setXY(x, y);
-					Background back = new Background();
-					back.setXY(x, y);
-					map[x][y] = back;
+					Dirt dirt = new Dirt();
+					dirt.setXY(x, y);
+					map[x][y] = dirt;
 					x++;
 				}
 				else if(mapTxt.charAt(i) == 'H')
