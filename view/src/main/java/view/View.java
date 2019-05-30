@@ -2,12 +2,7 @@ package view;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Observable;
-import java.util.Observer;
-
 import contract.*;
-
-import entity.Entity;
 
 
 /**
@@ -33,7 +28,6 @@ public final class View extends JFrame implements IView, Runnable {
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.getContentPane().add(new JButton("Pause"), BorderLayout.SOUTH);
 		this.model.getObservable().addObserver(this.components);
 		this.setVisible(true);
 	}
