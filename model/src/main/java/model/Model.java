@@ -74,11 +74,13 @@ public final class Model extends Observable implements IModel {
 					{
 						heros = new Heros();
 						heros.setXY(x, y);
+						map[x][y] = heros;
 					}
 					else if(map[x][y].getBaseSprite().getIcon() == 'E')
 					{
 						exit = new Exit();
 						exit.setXY(x, y);
+						map[x][y] = exit;
 					}
 				}
 			}
