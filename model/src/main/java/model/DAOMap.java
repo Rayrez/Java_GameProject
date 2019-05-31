@@ -150,7 +150,6 @@ public class DAOMap {
 				}
 				else if(mapTxt.charAt(i) == 'E')
 				{
-					exit = new Exit();
 					exit.setXY(x, y);
 					Dirt dirt = new Dirt();
 					dirt.setXY(x, y);
@@ -159,7 +158,6 @@ public class DAOMap {
 				}
 				else if(mapTxt.charAt(i) == 'H')
 				{
-					heros = new Heros();
 					heros.setXY(x, y);
 					map[x][y] = heros;
 					x++;
