@@ -1,8 +1,18 @@
 package entity;
 
+/**
+ * The Direction Enum.
+ *
+ * @author Pierre GARRIDO
+ */
 public enum Direction {
-	
+
+	/** The Right */
 	RIGHT,
+
+	/** The Left */
 	LEFT,
-	FACE;
+
+	/** The Face */
+	FACE
 }

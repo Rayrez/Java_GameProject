@@ -1,9 +1,8 @@
 package entity;
 /**
- * <h1>The Breakability Enum.</h1>
+ * The Breakability Enum.
  *
  * @author Pierre GARRIDO
- * @version 0.1
  */
 public enum Capacities {
 
