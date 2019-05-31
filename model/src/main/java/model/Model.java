@@ -158,9 +158,10 @@ public final class Model extends Observable implements IModel {
 			{
 				if(order == ControllerOrder.MoveLeft)
 				{
+					System.out.print(map[heros.getX() - 1][heros.getY()].getCapacity());
 					if(map[heros.getX() - 1][heros.getY()].getCapacity() == Capacities.UNBREAKABLE)
 					{
-						heros.setDir(Direction.RIGHT);
+						heros.setDir(Direction.LEFT);
 						this.setChanged();
 						this.notifyObservers();
 					}
@@ -189,7 +190,7 @@ public final class Model extends Observable implements IModel {
 							map[heros.getX()][heros.getY()] = pen;
 							penetrables.add(pen);
 						}
-						heros.setDir(Direction.RIGHT);
+						heros.setDir(Direction.LEFT);
 						heros.setX(heros.getX() - 1);
 						this.setChanged();
 						this.notifyObservers();
