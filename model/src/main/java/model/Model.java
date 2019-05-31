@@ -138,7 +138,7 @@ public final class Model extends Observable implements IModel {
 		{
 			if(!pause)
 			{
-				if(order == ControllerOrder.MoveRight)
+				if(order == ControllerOrder.MoveLeft)
 				{
 					if(map[heros.getX() - 1][heros.getY()].getCapacity() == Capacities.UNBREAKABLE)
 					{
@@ -171,7 +171,7 @@ public final class Model extends Observable implements IModel {
 						}
 						heros.setDir(Direction.RIGHT);
 						heros.setX(heros.getX() - 1);
-						this.testFallRight();
+						this.testFallLeft();
 					}
 					else if(map[heros.getX() - 1][heros.getY()].getCapacity() == Capacities.COLLECTIBLE)
 					{
@@ -195,7 +195,7 @@ public final class Model extends Observable implements IModel {
 		}
 	}
 	
-	private void testFallRight() {
+	private void testFallLeft() {
 		int i = 0;
 		
 		if(map[heros.getX() - 1][heros.getY() - 1].getCapacity() == Capacities.MOVABLE)
