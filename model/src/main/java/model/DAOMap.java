@@ -152,9 +152,7 @@ public class DAOMap {
 				{
 					Exit exit = new Exit();
 					exit.setXY(x, y);
-					Dirt dirt = new Dirt();
-					dirt.setXY(x, y);
-					map[x][y] = dirt;
+					map[x][y] = exit;
 					x++;
 				}
 				else if(mapTxt.charAt(i) == 'H')

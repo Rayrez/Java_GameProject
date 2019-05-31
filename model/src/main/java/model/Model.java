@@ -8,6 +8,7 @@ import java.util.Observer;
 import contract.*;
 import entity.*;
 import entity.breakable.Breakable;
+import entity.breakable.Dirt;
 import entity.movable.*;
 import entity.movable.collectible.*;
 import entity.movable.ennemy.*;
@@ -78,10 +79,11 @@ public final class Model extends Observable implements IModel {
 					}
 					else if(map[x][y].getBaseSprite().getIcon() == 'E')
 					{
-						System.out.print("OK");
 						exit = new Exit();
 						exit.setXY(x, y);
-						map[x][y] = exit;
+						Dirt d = new Dirt();
+						d.setXY(x, y);
+						map[x][y] = d;
 					}
 				}
 			}
