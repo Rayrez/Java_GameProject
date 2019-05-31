@@ -23,6 +23,7 @@ public final class Controller implements IController {
 	public Controller() {
 		model = new Model(1);
 		view = new View(model);
+		this.view.setController(this);
 	}
 
 	/**
@@ -40,7 +41,19 @@ public final class Controller implements IController {
      */
 	@Override
 	public void giveKey(char character) {
-		
+
+	      if (character == 'Z'){
+	          this.model.giveOrder(ControllerOrder.MoveUp);
+	      }
+	      else if (character == 'S'){
+	          this.model.giveOrder(ControllerOrder.MoveDown);
+	      }
+	      else if (character == 'Q'){
+	          this.model.giveOrder(ControllerOrder.MoveLeft);
+	      }
+	      else if (character == 'D'){
+	          this.model.giveOrder(ControllerOrder.MoveRight);
+	      }
 	}
 
 }

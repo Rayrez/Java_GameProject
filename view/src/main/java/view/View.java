@@ -8,7 +8,7 @@ import contract.*;
  *
  * @author Bastien Aelters, Benjamin Brifault
  */
-public class View extends JFrame implements IView, Runnable {
+public class View extends JFrame implements IView {
 
 	/**
 	 * Variable declarations.
@@ -16,6 +16,7 @@ public class View extends JFrame implements IView, Runnable {
 	private static final long serialVersionUID = 3729391891433730765L;
 	private final IModel model;
 	private Components components;
+	private IController controller;
 
 	public View(IModel modelP) {
 		this.model = modelP;
@@ -26,21 +27,14 @@ public class View extends JFrame implements IView, Runnable {
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.model.getObservable().addObserver(this.components);
-		this.setVisible(true);
-	}
-
-	public void printMessage(final String message) {
-
-	}
-
-	public void run() {
-
 	}
 
 	@Override
-	public void setController(final IController controller) {
-		
+	public void setController(final IController controllerP) {
+		this.controller = controllerP;
+		this.model.getObservable().addObserver(this.components);
+		this.addKeyListener(new DashKeyListener(this.controller));
+		this.setVisible(true);
 	}
 
 }

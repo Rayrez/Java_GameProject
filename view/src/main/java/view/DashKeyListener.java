@@ -1,83 +1,60 @@
 package view;
 
-import contract.ControllerOrder;
-import contract.IModel;
-import entity.Entity;
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import contract.IController;
 import java.awt.event.KeyEvent;
-import java.util.Observable;
+import java.awt.event.KeyListener;
 
 /**
  * The Class KeyListener.
  *
  * @author Bastien Aelters, Benjamin Brifault
  */
-public class KeyListener extends View implements ActionListener, IModel {
+public class DashKeyListener implements KeyListener {
 
 
-    public KeyListener(IModel modelP) {
-        super(modelP);
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 6957355209405412190L;
+	
+	private IController controler;
+
+	public DashKeyListener(IController controlerP) {
+		this.controler = controlerP;
     }
 
-    public void keyPressed(KeyEvent e){
-        int keycode = e.getKeyCode();
-
-        if (keycode == KeyEvent.VK_UP){
-            giveOrder(ControllerOrder.MoveUp);
-        }
-
-        if (keycode == KeyEvent.VK_DOWN){
-            giveOrder(ControllerOrder.MoveDown);
-        }
-
-        if (keycode == KeyEvent.VK_LEFT){
-            giveOrder(ControllerOrder.MoveLeft);
-        }
-
-        if (keycode == KeyEvent.VK_RIGHT){
-            giveOrder(ControllerOrder.MoveRight);
-        }
+	@Override
+    public void keyPressed(KeyEvent arg0){
     }
 
-    @Override
-    public Entity[][] getMap() {
-        return new Entity[0][];
-    }
+	@Override
+	public void keyReleased(KeyEvent e) {
+		
+		 int keycode = e.getKeyCode();
 
-    @Override
-    public boolean isDead() {
-        return false;
-    }
+	     if (keycode == KeyEvent.VK_UP){
+	         this.controler.giveKey('Z');
+	     }
 
-    @Override
-    public boolean hasWon() {
-        return false;
-    }
+	     if (keycode == KeyEvent.VK_DOWN){
+	        this.controler.giveKey('S');
+	     }
+	     
+	     if (keycode == KeyEvent.VK_LEFT){
+	       	this.controler.giveKey('Q');
+	     }
 
-    @Override
-    public void giveOrder(ControllerOrder order) {
+	     if (keycode == KeyEvent.VK_RIGHT){
+	        this.controler.giveKey('D');
+	     }
+		
+	}
 
-    }
+	@Override
+	public void keyTyped(KeyEvent arg0) {		
+	}
 
-    @Override
-    public int getScore() {
-        return 0;
-    }
-
-    @Override
-    public int getDiamonds_remaining() {
-        return 0;
-    }
-
-    @Override
-    public Observable getObservable() {
-        return null;
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
-    }
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 }
