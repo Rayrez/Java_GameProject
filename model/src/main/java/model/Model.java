@@ -45,7 +45,7 @@ public final class Model extends Observable implements IModel {
 		Model.penetrables = new ArrayList<Penetrable>();
 		Model.unbreakables = new ArrayList<Unbreakable>();
 		Model.breakables = new ArrayList<Breakable>();
-		this.loadMap(numberMapP);
+		this.loadMap(numberMapP);		
 		Model.diamonds_remaining = collec.size();
 		Model.heros = new Heros();
 		Model.exit = new Exit();
@@ -66,7 +66,22 @@ public final class Model extends Observable implements IModel {
 	private void loadMap(int mapNumber) {
 		try {
 			final DAOMap daoMap = new DAOMap(DBConnection.getInstance().getConnection());
-			Model.map = daoMap.load(mapNumber, mouv, collec, heros, enemies, penetrables, unbreakables, breakables, exit);
+			Model.map = daoMap.load(mapNumber, mouv, collec, enemies, penetrables, unbreakables, breakables);
+			int x, y;
+			for(x = 0;x < 25;x++)
+			{
+				for(y = 0;y < 28;y++)
+				{
+					if(map[x][y].getBaseSprite().getIcon() == 'H')
+					{
+						heros.setXY(x, y);
+					}
+					else if(map[x][y].getBaseSprite().getIcon() == 'E')
+					{
+						exit.setXY(x, y);
+					}
+				}
+			}
 		} catch (final SQLException e) {
 			e.printStackTrace();e.printStackTrace();
 		} catch (final RuntimeException e2) {

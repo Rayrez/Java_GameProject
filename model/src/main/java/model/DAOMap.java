@@ -77,7 +77,7 @@ public class DAOMap {
 	 * @throws SQLException
 	 * @throws RuntimeException
 	 */
-	public Entity[][] load(int mapNumber, ArrayList<Movable> movables, ArrayList<Collectible> collec, Heros heros, ArrayList<Ennemy> enemies, ArrayList<Penetrable> penetrables, ArrayList<Unbreakable> unbreakables, ArrayList<Breakable> breakables, Exit exit) throws SQLException, RuntimeException {
+	public Entity[][] load(int mapNumber, ArrayList<Movable> movables, ArrayList<Collectible> collec, ArrayList<Ennemy> enemies, ArrayList<Penetrable> penetrables, ArrayList<Unbreakable> unbreakables, ArrayList<Breakable> breakables) throws SQLException, RuntimeException {
 
 		java.sql.PreparedStatement statement = this.connection.prepareStatement("CALL getMaps(?);");
 		statement.setInt(1, mapNumber);
@@ -150,6 +150,7 @@ public class DAOMap {
 				}
 				else if(mapTxt.charAt(i) == 'E')
 				{
+					Exit exit = new Exit();
 					exit.setXY(x, y);
 					Dirt dirt = new Dirt();
 					dirt.setXY(x, y);
@@ -158,6 +159,7 @@ public class DAOMap {
 				}
 				else if(mapTxt.charAt(i) == 'H')
 				{
+					Heros heros = new Heros();
 					heros.setXY(x, y);
 					map[x][y] = heros;
 					x++;
