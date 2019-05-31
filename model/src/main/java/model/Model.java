@@ -47,8 +47,6 @@ public final class Model extends Observable implements IModel {
 		Model.breakables = new ArrayList<Breakable>();
 		this.loadMap(numberMapP);		
 		Model.diamonds_remaining = collec.size();
-		Model.heros = new Heros();
-		Model.exit = new Exit();
 	}
 
 	/**
@@ -74,10 +72,12 @@ public final class Model extends Observable implements IModel {
 				{
 					if(map[x][y].getBaseSprite().getIcon() == 'H')
 					{
+						heros = new Heros();
 						heros.setXY(x, y);
 					}
 					else if(map[x][y].getBaseSprite().getIcon() == 'E')
 					{
+						exit = new Exit();
 						exit.setXY(x, y);
 					}
 				}
