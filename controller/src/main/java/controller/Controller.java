@@ -6,6 +6,8 @@ import view.View;
 
 /**
  * The Class Controller.
+ *
+ * @author Mattias Huros
  */
 public final class Controller implements IController {
 
@@ -26,11 +28,6 @@ public final class Controller implements IController {
 	/**
      * Control.
      */
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see contract.IController#control()
-	 */
 	public void control() {
 
 	}
@@ -41,11 +38,6 @@ public final class Controller implements IController {
      * @param controllerOrder
      *            the controller order
      */
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see contract.IController#orderPerform(contract.ControllerOrder)
-	 */
 	public void orderPerform(final ControllerOrder controllerOrder) {
 
 	}

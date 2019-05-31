@@ -3,16 +3,15 @@ package view;
 import javax.swing.*;
 import contract.*;
 
-
 /**
  * The Class View.
  *
- * @author Jean-Aymeric Diet
+ * @author Bastien Aelters, Benjamin Brifault
  */
-public final class View extends JFrame implements IView, Runnable {
+public class View extends JFrame implements IView, Runnable {
 
 	/**
-	 * 
+	 * Variable declarations.
 	 */
 	private static final long serialVersionUID = 3729391891433730765L;
 	private final IModel model;
@@ -23,7 +22,7 @@ public final class View extends JFrame implements IView, Runnable {
 		this.components = new Components(modelP);
 		this.setContentPane(this.components);
 		this.setTitle("Boulder Dash");
-		this.setSize(407, 510);
+		this.setSize(407, 483);
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -31,30 +30,14 @@ public final class View extends JFrame implements IView, Runnable {
 		this.setVisible(true);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see contract.IView#printMessage(java.lang.String)
-	 */
 	public void printMessage(final String message) {
 
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see java.lang.Runnable#run()
-	 */
 	public void run() {
 
 	}
 
-	/**
-	 * Sets the controller.
-	 *
-	 * @param controller
-	 *          the new controller
-	 */
 	public void setController(final IController controller) {
 	}
 

@@ -9,7 +9,7 @@ import controller.Controller;
 /**
  * The Class Main.
  *
- * @author Jean-Aymeric Diet
+ * @author Benjamin Brifault, Pierre Garrido, Bastien Aelters, Mattias Huros
  */
 public abstract class 
 Main {

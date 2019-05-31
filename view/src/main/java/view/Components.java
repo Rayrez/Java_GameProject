@@ -9,10 +9,15 @@ import javax.swing.JPanel;
 import contract.IModel;
 import entity.Entity;
 
+/**
+ * The Class Components.
+ *
+ * @author Bastien Aelters, Benjamin Brifault
+ */
 public class Components extends JPanel implements Observer {
 
 	/**
-	 * 
+	 * Variable declarations.
 	 */
 	private static final long serialVersionUID = 1656551668798903799L;
 	private Entity[][] map;
@@ -45,5 +50,4 @@ public class Components extends JPanel implements Observer {
 
 		this.repaint();
 	}
-
 }
