@@ -164,8 +164,6 @@ public final class Model extends Observable implements IModel {
 					if(map[heros.getX() - 1][heros.getY()].getCapacity() == Capacities.UNBREAKABLE)
 					{
 						heros.setDir(Direction.LEFT);
-						this.setChanged();
-						this.notifyObservers();
 					}
 					else if(map[heros.getX() - 1][heros.getY()].getCapacity() == Capacities.PENETRABLE)
 					{
@@ -194,6 +192,7 @@ public final class Model extends Observable implements IModel {
 						}
 						heros.setDir(Direction.LEFT);
 						heros.setX(heros.getX() - 1);
+						this.testFallLeft();
 					}
 					else if(map[heros.getX() - 1][heros.getY()].getCapacity() == Capacities.COLLECTIBLE)
 					{
@@ -211,6 +210,7 @@ public final class Model extends Observable implements IModel {
 						map[heros.getX() - 1][heros.getY()] = heros;
 						map[heros.getX()][heros.getY()] = pen;
 						penetrables.add(pen);
+						this.testFallLeft();
 					}
 					else if(map[heros.getX() - 1][heros.getY()].getCapacity() == Capacities.BREAKABLE)
 					{
@@ -239,10 +239,10 @@ public final class Model extends Observable implements IModel {
 						}
 						heros.setDir(Direction.LEFT);
 						heros.setX(heros.getX() - 1);
+						this.testFallLeft();
 					}
 					this.setChanged();
 					this.notifyObservers();
-					this.testFallLeft();
 				}
 			}
 		}
