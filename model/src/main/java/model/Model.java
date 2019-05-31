@@ -46,6 +46,7 @@ public final class Model extends Observable implements IModel {
 		this.unbreakables = new ArrayList<Unbreakable>();
 		this.breakables = new ArrayList<Breakable>();
 		this.loadMap(numberMapP);
+		this.diamonds_remaining = collec.size();
 	}
 
 	/**
@@ -143,8 +144,38 @@ public final class Model extends Observable implements IModel {
 					{
 						heros.setDir(Direction.RIGHT);
 					}
-					else if((map[heros.getX() - 1][heros.getY()].getCapacity() == Capacities.PENETRABLE))
+					else if(map[heros.getX() - 1][heros.getY()].getCapacity() == Capacities.PENETRABLE)
 					{
+						if(exit.getX() == (heros.getX() - 1) && exit.getY() == heros.getY())
+						{
+							Penetrable pen = new Background();
+							pen.setXY(heros.getX(), heros.getY());
+							map[heros.getX() - 1][heros.getY()] = heros;
+							map[heros.getX()][heros.getY()] = pen;
+						}
+						else
+						{
+							int i = 0;
+							for(i = 0;i < penetrables.size();i++)
+							{
+								if(penetrables.get(i).getX() == (heros.getX() - 1) && penetrables.get(i).getY() == heros.getY())
+								{
+									penetrables.remove(i);
+								}
+							}
+							Penetrable pen = new Background();
+							pen.setXY(heros.getX(), heros.getY());
+							map[heros.getX() - 1][heros.getY()] = heros;
+							map[heros.getX()][heros.getY()] = pen;
+							penetrables.add(pen);
+						}
+						heros.setDir(Direction.RIGHT);
+						heros.setX(heros.getX() - 1);
+						this.testFallRight();
+					}
+					else if(map[heros.getX() - 1][heros.getY()].getCapacity() == Capacities.COLLECTIBLE)
+					{
+						heros.setDir(Direction.RIGHT);
 						int i = 0;
 						for(i = 0;i < penetrables.size();i++)
 						{
@@ -158,14 +189,75 @@ public final class Model extends Observable implements IModel {
 						map[heros.getX() - 1][heros.getY()] = heros;
 						map[heros.getX()][heros.getY()] = pen;
 						penetrables.add(pen);
-						heros.setDir(Direction.RIGHT);
-						heros.setX(heros.getX() - 1);
-						
 					}
 				}
 			}
 		}
 	}
+	
+	private void testFallRight() {
+		int i = 0;
+		
+		if(map[heros.getX() - 1][heros.getY() - 1].getCapacity() == Capacities.MOVABLE)
+		{
+			for(i = 0;i < mouv.size();i++)
+			{
+				if(mouv.get(i).getX() == (heros.getX() - 1) && mouv.get(i).getY() == (heros.getY() - 1))
+				{
+					if(mouv.get(i).isSubmittedToGravity())
+					{
+						Thread t = new Thread(new Fall(mouv.get(i)));
+						t.run();
+					}
+				}
+			}
+		}
+		else if(map[heros.getX() - 2][heros.getY()].getCapacity() == Capacities.MOVABLE && map[heros.getX() - 2][heros.getY()].getCapacity() == Capacities.PENETRABLE)
+		{
+			for(i = 0;i < mouv.size();i++)
+			{
+				if(mouv.get(i).getX() == (heros.getX() - 2) && mouv.get(i).getY() == heros.getY())
+				{
+					if(mouv.get(i).isSubmittedToGravity())
+					{
+						Thread t = new Thread(new Fall(mouv.get(i)));
+						t.run();
+					}
+				}
+			}
+		}
+		else if(map[heros.getX() - 1][heros.getY() - 1].getCapacity() == Capacities.COLLECTIBLE)
+		{
+			for(i = 0;i < mouv.size();i++)
+			{
+				if(mouv.get(i).getX() == (heros.getX() - 1) && mouv.get(i).getY() == (heros.getY() - 1))
+				{
+					if(mouv.get(i).isSubmittedToGravity())
+					{
+						Thread t = new Thread(new Fall(mouv.get(i)));
+						t.run();
+					}
+				}
+			}
+		}
+		else if(map[heros.getX() - 2][heros.getY()].getCapacity() == Capacities.COLLECTIBLE && map[heros.getX() - 2][heros.getY()].getCapacity() == Capacities.PENETRABLE)
+		{
+			for(i = 0;i < mouv.size();i++)
+			{
+				if(mouv.get(i).getX() == (heros.getX() - 2) && mouv.get(i).getY() == heros.getY())
+				{
+					if(mouv.get(i).isSubmittedToGravity())
+					{
+						Thread t = new Thread(new Fall(mouv.get(i)));
+						t.run();
+					}
+				}
+			}
+		}
+
+		
+	}
+
 
 	/**
      * Gets the score.
