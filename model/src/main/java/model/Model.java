@@ -211,6 +211,7 @@ public final class Model extends Observable implements IModel {
 					}
 					else if(map[heros.getX() - 1][heros.getY()].getCapacity() == Capacities.BREAKABLE)
 					{
+						System.out.print(exit);
 						if(exit.getX() == (heros.getX() - 1) && exit.getY() == heros.getY())
 						{
 							Penetrable pen = new Background();
