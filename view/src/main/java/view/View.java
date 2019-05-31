@@ -38,7 +38,9 @@ public class View extends JFrame implements IView, Runnable {
 
 	}
 
+	@Override
 	public void setController(final IController controller) {
+		
 	}
 
 }

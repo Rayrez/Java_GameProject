@@ -8,10 +8,10 @@ package contract;
 public interface IView {
 
 	/**
-	 * Prints the message.
+	 * Sets the controller.
 	 *
-	 * @param message
-	 *          the message
+	 * @param controller
+	 *          the controllers
 	 */
-	
+	public void setController(final IController controller);
 }
