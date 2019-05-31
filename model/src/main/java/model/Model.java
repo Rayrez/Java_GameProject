@@ -21,32 +21,32 @@ import entity.unbreakable.*;
  */
 public final class Model extends Observable implements IModel {
 	
-	private Entity[][] map;
-	private int score;
-	private int diamonds_remaining;
-	private ArrayList<Movable> mouv;
-	private ArrayList<Collectible> collec;
-	private Heros heros;
-	private Exit exit;
-	private ArrayList<Ennemy> enemies;
-	private ArrayList<Penetrable> penetrables;
-	private ArrayList<Unbreakable> unbreakables;
-	private ArrayList<Breakable> breakables;
-	private boolean pause;
+	private static Entity[][] map;
+	private static int score;
+	private static int diamonds_remaining;
+	private static ArrayList<Movable> mouv;
+	private static ArrayList<Collectible> collec;
+	private static Heros heros;
+	private static Exit exit;
+	private static ArrayList<Ennemy> enemies;
+	private static ArrayList<Penetrable> penetrables;
+	private static ArrayList<Unbreakable> unbreakables;
+	private static ArrayList<Breakable> breakables;
+	private static boolean pause;
 
 	/**
 	 * Instantiates a new model.
 	 */
 	public Model(int numberMapP) {
-		this.score = 0;
-		this.mouv = new ArrayList<Movable>();
-		this.collec = new ArrayList<Collectible>();
-		this.enemies = new ArrayList<Ennemy>();
-		this.penetrables = new ArrayList<Penetrable>();
-		this.unbreakables = new ArrayList<Unbreakable>();
-		this.breakables = new ArrayList<Breakable>();
+		Model.score = 0;
+		Model.mouv = new ArrayList<Movable>();
+		Model.collec = new ArrayList<Collectible>();
+		Model.enemies = new ArrayList<Ennemy>();
+		Model.penetrables = new ArrayList<Penetrable>();
+		Model.unbreakables = new ArrayList<Unbreakable>();
+		Model.breakables = new ArrayList<Breakable>();
 		this.loadMap(numberMapP);
-		this.diamonds_remaining = collec.size();
+		Model.diamonds_remaining = collec.size();
 	}
 
 	/**
@@ -62,10 +62,9 @@ public final class Model extends Observable implements IModel {
 	 * @see contract.IModel#getMap(entity.Entity)
 	 */
 	private void loadMap(int mapNumber) {
-		Entity[][] map;
 		try {
 			final DAOMap daoMap = new DAOMap(DBConnection.getInstance().getConnection());
-			this.map = daoMap.load(mapNumber, mouv, collec, heros, enemies, penetrables, unbreakables, breakables, exit);
+			Model.map = daoMap.load(mapNumber, mouv, collec, heros, enemies, penetrables, unbreakables, breakables, exit);
 		} catch (final SQLException e) {
 			e.printStackTrace();e.printStackTrace();
 		} catch (final RuntimeException e2) {
@@ -78,13 +77,13 @@ public final class Model extends Observable implements IModel {
      */
 	private void resetModel() {
 		
-		this.mouv.removeAll(this.mouv);
-		this.collec.removeAll(this.collec);
-		this.heros = new Heros();
-		this.enemies.removeAll(this.enemies);
-		this.penetrables.removeAll(this.penetrables);
-		this.unbreakables.removeAll(this.unbreakables);
-		this.map = null;
+		Model.mouv.removeAll(Model.mouv);
+		Model.collec.removeAll(Model.collec);
+		Model.heros = new Heros();
+		Model.enemies.removeAll(Model.enemies);
+		Model.penetrables.removeAll(Model.penetrables);
+		Model.unbreakables.removeAll(Model.unbreakables);
+		Model.map = null;
 	}
 
 	/**
@@ -108,7 +107,7 @@ public final class Model extends Observable implements IModel {
      */
 	@Override
 	public Entity[][] getMap() {
-		return this.map;
+		return Model.map;
 	}
 
 	@Override
@@ -266,7 +265,7 @@ public final class Model extends Observable implements IModel {
      */
 	@Override
 	public int getScore() {
-		return this.score;
+		return Model.score;
 	}
 
 	/**
@@ -276,7 +275,7 @@ public final class Model extends Observable implements IModel {
      */
 	@Override
 	public int getDiamonds_remaining() {
-		return this.diamonds_remaining;
+		return Model.diamonds_remaining;
 	}
 
 	@Override
