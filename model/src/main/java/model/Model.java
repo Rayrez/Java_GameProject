@@ -78,6 +78,7 @@ public final class Model extends Observable implements IModel {
 					}
 					else if(map[x][y].getBaseSprite().getIcon() == 'E')
 					{
+						System.out.print("OK");
 						exit = new Exit();
 						exit.setXY(x, y);
 						map[x][y] = exit;
@@ -211,7 +212,6 @@ public final class Model extends Observable implements IModel {
 					}
 					else if(map[heros.getX() - 1][heros.getY()].getCapacity() == Capacities.BREAKABLE)
 					{
-						System.out.print(exit);
 						if(exit.getX() == (heros.getX() - 1) && exit.getY() == heros.getY())
 						{
 							Penetrable pen = new Background();
