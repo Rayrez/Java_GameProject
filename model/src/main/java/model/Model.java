@@ -139,6 +139,10 @@ public final class Model extends Observable implements IModel {
 			{
 				if(order == ControllerOrder.MoveLeft)
 				{
+					if(map[heros.getX() - 1][heros.getY()] == null)
+					{
+						System.err.println("BUGGGGGGGGGGGGGGGGGGGG");
+					}
 					if(map[heros.getX() - 1][heros.getY()].getCapacity() == Capacities.UNBREAKABLE)
 					{
 						heros.setDir(Direction.RIGHT);
