@@ -33,13 +33,14 @@ public final class Controller implements IController {
 	}
 
 	/**
-     * Order perform.
+     * Give a key
      *
-     * @param controllerOrder
-     *            the controller order
+     * @param character
+     *            the given character by the view
      */
-	public void orderPerform(final ControllerOrder controllerOrder) {
-
+	@Override
+	public void giveKey(char character) {
+		
 	}
 
 }
