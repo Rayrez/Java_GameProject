@@ -158,7 +158,6 @@ public final class Model extends Observable implements IModel {
 			{
 				if(order == ControllerOrder.MoveLeft)
 				{
-					System.out.print(map[heros.getX() - 1][heros.getY()].getCapacity());
 					if(map[heros.getX() - 1][heros.getY()].getCapacity() == Capacities.UNBREAKABLE)
 					{
 						heros.setDir(Direction.LEFT);
@@ -192,9 +191,6 @@ public final class Model extends Observable implements IModel {
 						}
 						heros.setDir(Direction.LEFT);
 						heros.setX(heros.getX() - 1);
-						this.setChanged();
-						this.notifyObservers();
-						this.testFallLeft();
 					}
 					else if(map[heros.getX() - 1][heros.getY()].getCapacity() == Capacities.COLLECTIBLE)
 					{
@@ -212,10 +208,38 @@ public final class Model extends Observable implements IModel {
 						map[heros.getX() - 1][heros.getY()] = heros;
 						map[heros.getX()][heros.getY()] = pen;
 						penetrables.add(pen);
-						this.setChanged();
-						this.notifyObservers();
-						this.testFallLeft();
 					}
+					else if(map[heros.getX() - 1][heros.getY()].getCapacity() == Capacities.BREAKABLE)
+					{
+						if(exit.getX() == (heros.getX() - 1) && exit.getY() == heros.getY())
+						{
+							Penetrable pen = new Background();
+							pen.setXY(heros.getX(), heros.getY());
+							map[heros.getX() - 1][heros.getY()] = heros;
+							map[heros.getX()][heros.getY()] = pen;
+						}
+						else
+						{
+							int i = 0;
+							for(i = 0;i < breakables.size();i++)
+							{
+								if(breakables.get(i).getX() == (heros.getX() - 1) && breakables.get(i).getY() == heros.getY())
+								{
+									breakables.remove(i);
+								}
+							}
+							Penetrable pen = new Background();
+							pen.setXY(heros.getX(), heros.getY());
+							map[heros.getX() - 1][heros.getY()] = heros;
+							map[heros.getX()][heros.getY()] = pen;
+							penetrables.add(pen);
+						}
+						heros.setDir(Direction.LEFT);
+						heros.setX(heros.getX() - 1);
+					}
+					this.setChanged();
+					this.notifyObservers();
+					this.testFallLeft();
 				}
 			}
 		}
