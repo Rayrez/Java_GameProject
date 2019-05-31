@@ -139,7 +139,7 @@ public final class Model extends Observable implements IModel {
 			{
 				if(order == ControllerOrder.MoveLeft)
 				{
-					if(map[heros.getX() - 1][heros.getY()] == null)
+					if(heros == null)
 					{
 						System.err.println("BUGGGGGGGGGGGGGGGGGGGG");
 					}
