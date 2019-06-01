@@ -417,7 +417,7 @@ private void moveRight() {
 		
 		if((heros.getX() - 2) >= 0)
 		{
-			if(map[heros.getX() - 2][heros.getY()].getCapacity() == Capacities.MOVABLE && map[heros.getX() - 2][heros.getY() + 1].getCapacity() == Capacities.PENETRABLE)
+			if(map[heros.getX() - 2][heros.getY()].getCapacity() == Capacities.MOVABLE && map[heros.getX() - 2][heros.getY() + 1].getCapacity() == Capacities.PENETRABLE && (map[heros.getX() - 2][heros.getY() + 1].getCapacity() == Capacities.MOVABLE || map[heros.getX() - 2][heros.getY() + 1].getCapacity() == Capacities.COLLECTIBLE))
 			{
 				for(i = 0;i < mouv.size();i++)
 				{
@@ -451,7 +451,7 @@ private void moveRight() {
 		
 		if((heros.getX() - 2) >= 0)
 		{
-			if(map[heros.getX() - 2][heros.getY()].getCapacity() == Capacities.COLLECTIBLE && map[heros.getX() - 2][heros.getY() + 1].getCapacity() == Capacities.PENETRABLE)
+			if(map[heros.getX() - 2][heros.getY()].getCapacity() == Capacities.COLLECTIBLE && map[heros.getX() - 2][heros.getY() + 1].getCapacity() == Capacities.PENETRABLE && (map[heros.getX() - 2][heros.getY() + 1].getCapacity() == Capacities.MOVABLE || map[heros.getX() - 2][heros.getY() + 1].getCapacity() == Capacities.COLLECTIBLE))
 			{
 				for(i = 0;i < mouv.size();i++)
 				{
@@ -490,7 +490,7 @@ private void moveRight() {
 		
 		if((heros.getX() + 2) <= 25)
 		{
-			if(map[heros.getX() + 2][heros.getY()].getCapacity() == Capacities.MOVABLE && map[heros.getX() + 2][heros.getY() + 1].getCapacity() == Capacities.PENETRABLE)
+			if(map[heros.getX() + 2][heros.getY()].getCapacity() == Capacities.MOVABLE && map[heros.getX() + 1][heros.getY() + 1].getCapacity() == Capacities.PENETRABLE && (map[heros.getX() + 2][heros.getY() + 1].getCapacity() == Capacities.MOVABLE || map[heros.getX() + 2][heros.getY() + 1].getCapacity() == Capacities.COLLECTIBLE))
 			{
 				for(i = 0;i < mouv.size();i++)
 				{
@@ -524,7 +524,7 @@ private void moveRight() {
 		
 		if((heros.getX() + 2) <= 25)
 		{
-			if(map[heros.getX() + 2][heros.getY()].getCapacity() == Capacities.COLLECTIBLE && map[heros.getX() + 2][heros.getY() + 1].getCapacity() == Capacities.PENETRABLE)
+			if(map[heros.getX() + 2][heros.getY()].getCapacity() == Capacities.COLLECTIBLE && map[heros.getX() + 2][heros.getY() + 1].getCapacity() == Capacities.PENETRABLE && (map[heros.getX() + 2][heros.getY() + 1].getCapacity() == Capacities.MOVABLE || map[heros.getX() + 2][heros.getY() + 1].getCapacity() == Capacities.COLLECTIBLE))
 			{
 				for(i = 0;i < mouv.size();i++)
 				{
