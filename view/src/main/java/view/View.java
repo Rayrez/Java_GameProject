@@ -18,6 +18,11 @@ public class View extends JFrame implements IView {
 	private Components components;
 	private IController controller;
 
+	/**
+	 * Created a window
+	 *
+	 * @param modelP
+	 */
 	public View(IModel modelP) {
 		this.model = modelP;
 		this.components = new Components(modelP);
