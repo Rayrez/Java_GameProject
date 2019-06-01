@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import entity.Entity;
 import entity.breakable.Breakable;
 import entity.breakable.BreakableFactory;
-import entity.breakable.Dirt;
 import entity.movable.Movable;
 import entity.movable.MovableFactory;
 import entity.movable.collectible.Collectible;
