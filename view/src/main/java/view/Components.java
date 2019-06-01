@@ -22,7 +22,12 @@ public class Components extends JPanel implements Observer {
 	private static final long serialVersionUID = 1656551668798903799L;
 	private Entity[][] map;
 	private IModel model;
-	
+
+	/**
+	 * Connexion with Model class via IModel class.
+	 *
+	 * @param modelP
+	 */
 	public Components(IModel modelP) {
 		super();
 		this.model = modelP;

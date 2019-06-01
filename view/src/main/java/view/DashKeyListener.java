@@ -13,12 +13,16 @@ public class DashKeyListener implements KeyListener {
 
 
     /**
-	 * 
+	 * Variable declarations.
 	 */
 	private static final long serialVersionUID = 6957355209405412190L;
-	
 	private IController controler;
 
+	/**
+	 * Connexion with controller class via IController class.
+	 *
+	 * @param controlerP
+	 */
 	public DashKeyListener(IController controlerP) {
 		this.controler = controlerP;
     }
