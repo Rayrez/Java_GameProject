@@ -160,95 +160,244 @@ public final class Model extends Observable implements IModel {
 			if(!pause)
 			{
 				if(order == ControllerOrder.MoveLeft)
-				{
-					if(map[heros.getX() - 1][heros.getY()].getCapacity() == Capacities.UNBREAKABLE)
-					{
-						heros.setDir(Direction.LEFT);
-					}
-					else if(map[heros.getX() - 1][heros.getY()].getCapacity() == Capacities.PENETRABLE)
-					{
-						if(exit.getX() == (heros.getX() - 1) && exit.getY() == heros.getY())
-						{
-							Penetrable pen = new Background();
-							pen.setXY(heros.getX(), heros.getY());
-							map[heros.getX() - 1][heros.getY()] = heros;
-							map[heros.getX()][heros.getY()] = pen;
-						}
-						else
-						{
-							int i = 0;
-							for(i = 0;i < penetrables.size();i++)
-							{
-								if(penetrables.get(i).getX() == (heros.getX() - 1) && penetrables.get(i).getY() == heros.getY())
-								{
-									penetrables.remove(i);
-								}
-							}
-							Penetrable pen = new Background();
-							pen.setXY(heros.getX(), heros.getY());
-							map[heros.getX() - 1][heros.getY()] = heros;
-							map[heros.getX()][heros.getY()] = pen;
-							penetrables.add(pen);
-						}
-						heros.setDir(Direction.LEFT);
-						heros.setX(heros.getX() - 1);
-						this.testFallLeft();
-					}
-					else if(map[heros.getX() - 1][heros.getY()].getCapacity() == Capacities.COLLECTIBLE)
-					{
-						heros.setDir(Direction.RIGHT);
-						int i = 0;
-						for(i = 0;i < penetrables.size();i++)
-						{
-							if(penetrables.get(i).getX() == (heros.getX() - 1) && penetrables.get(i).getY() == heros.getY())
-							{
-								penetrables.remove(i);
-							}
-						}
-						Penetrable pen = new Background();
-						pen.setXY(heros.getX(), heros.getY());
-						map[heros.getX() - 1][heros.getY()] = heros;
-						map[heros.getX()][heros.getY()] = pen;
-						penetrables.add(pen);
-						this.testFallLeft();
-					}
-					else if(map[heros.getX() - 1][heros.getY()].getCapacity() == Capacities.BREAKABLE)
-					{
-						if(exit.getX() == (heros.getX() - 1) && exit.getY() == heros.getY())
-						{
-							Penetrable pen = new Background();
-							pen.setXY(heros.getX(), heros.getY());
-							map[heros.getX() - 1][heros.getY()] = heros;
-							map[heros.getX()][heros.getY()] = pen;
-						}
-						else
-						{
-							int i = 0;
-							for(i = 0;i < breakables.size();i++)
-							{
-								if(breakables.get(i).getX() == (heros.getX() - 1) && breakables.get(i).getY() == heros.getY())
-								{
-									breakables.remove(i);
-								}
-							}
-							Penetrable pen = new Background();
-							pen.setXY(heros.getX(), heros.getY());
-							map[heros.getX() - 1][heros.getY()] = heros;
-							map[heros.getX()][heros.getY()] = pen;
-							penetrables.add(pen);
-						}
-						heros.setDir(Direction.LEFT);
-						heros.setX(heros.getX() - 1);
-						this.testFallLeft();
-					}
-					this.setChanged();
-					this.notifyObservers();
-				}
+					this.moveLeft();
+				else if(order == ControllerOrder.MoveRight)
+					this.moveRight();
 			}
 		}
 	}
 	
-	private void testFallLeft() {
+	private void moveLeft() {
+		
+		if(map[heros.getX() - 1][heros.getY()].getCapacity() == Capacities.UNBREAKABLE)
+		{
+			heros.setDir(Direction.LEFT);
+		}
+		else if(map[heros.getX() - 1][heros.getY()].getCapacity() == Capacities.PENETRABLE)
+		{
+			if(exit.getX() == (heros.getX() - 1) && exit.getY() == heros.getY())
+			{
+				Penetrable pen = new Background();
+				pen.setXY(heros.getX(), heros.getY());
+				map[heros.getX() - 1][heros.getY()] = heros;
+				map[heros.getX()][heros.getY()] = pen;
+			}
+			else
+			{
+				int i = 0;
+				for(i = 0;i < penetrables.size();i++)
+				{
+					if(penetrables.get(i).getX() == (heros.getX() - 1) && penetrables.get(i).getY() == heros.getY())
+					{
+						penetrables.remove(i);
+					}
+				}
+				Penetrable pen = new Background();
+				pen.setXY(heros.getX(), heros.getY());
+				map[heros.getX() - 1][heros.getY()] = heros;
+				map[heros.getX()][heros.getY()] = pen;
+				penetrables.add(pen);
+			}
+			heros.setDir(Direction.LEFT);
+			heros.setX(heros.getX() - 1);
+			this.testFallLeft();
+		}
+		else if(map[heros.getX() - 1][heros.getY()].getCapacity() == Capacities.COLLECTIBLE)
+		{
+			int i = 0;
+			for(i = 0;i < collec.size();i++)
+			{
+				if(collec.get(i).getX() == (heros.getX() - 1) && collec.get(i).getY() == heros.getY())
+				{
+					collec.remove(i);
+				}
+			}
+			Penetrable pen = new Background();
+			pen.setXY(heros.getX(), heros.getY());
+			map[heros.getX() - 1][heros.getY()] = heros;
+			map[heros.getX()][heros.getY()] = pen;
+			diamonds_remaining = collec.size(); 
+			penetrables.add(pen);
+			heros.setDir(Direction.LEFT);
+			this.testFallLeft();
+		}
+		else if(map[heros.getX() - 1][heros.getY()].getCapacity() == Capacities.BREAKABLE)
+		{
+			if(exit.getX() == (heros.getX() - 1) && exit.getY() == heros.getY())
+			{
+				Penetrable pen = new Background();
+				pen.setXY(heros.getX(), heros.getY());
+				map[heros.getX() - 1][heros.getY()] = heros;
+				map[heros.getX()][heros.getY()] = pen;
+			}
+			else
+			{
+				int i = 0;
+				for(i = 0;i < breakables.size();i++)
+				{
+					if(breakables.get(i).getX() == (heros.getX() - 1) && breakables.get(i).getY() == heros.getY())
+					{
+						breakables.remove(i);
+					}
+				}
+				Penetrable pen = new Background();
+				pen.setXY(heros.getX(), heros.getY());
+				map[heros.getX() - 1][heros.getY()] = heros;
+				map[heros.getX()][heros.getY()] = pen;
+				penetrables.add(pen);
+			}
+			heros.setDir(Direction.LEFT);
+			heros.setX(heros.getX() - 1);
+			this.testFallLeft();
+		}
+		else if(map[heros.getX() - 1][heros.getY()].getCapacity() == Capacities.MOVABLE)
+		{
+			if((heros.getX() - 2) >= 0)
+			{
+				if(map[heros.getX() - 2][heros.getY()].getCapacity() == Capacities.PENETRABLE)
+				{
+					int i = 0;
+					Movable m = null;
+					for(i = 0;i < mouv.size();i++)
+					{
+						if(mouv.get(i).getX() == (heros.getX() - 1) && mouv.get(i).getY() == heros.getY())
+						{
+							m = mouv.get(i);
+						}
+					}
+					Penetrable pen = new Background();
+					pen.setXY(heros.getX(), heros.getY());
+					map[heros.getX() - 1][heros.getY()] = heros;
+					map[heros.getX() - 2][heros.getY()] = m;
+					m.setX(heros.getX() - 2);
+					map[heros.getX()][heros.getY()] = pen;
+					penetrables.add(pen);
+				}
+			}
+			heros.setDir(Direction.LEFT);
+			heros.setX(heros.getX() - 1);
+			this.testFallLeft();
+		}
+		this.setChanged();
+		this.notifyObservers();
+	}
+	
+private void moveRight() {
+		
+		if(map[heros.getX() + 1][heros.getY()].getCapacity() == Capacities.UNBREAKABLE)
+		{
+			heros.setDir(Direction.RIGHT);
+		}
+		else if(map[heros.getX() + 1][heros.getY()].getCapacity() == Capacities.PENETRABLE)
+		{
+			if(exit.getX() == (heros.getX() + 1) && exit.getY() == heros.getY())
+			{
+				Penetrable pen = new Background();
+				pen.setXY(heros.getX(), heros.getY());
+				map[heros.getX() + 1][heros.getY()] = heros;
+				map[heros.getX()][heros.getY()] = pen;
+			}
+			else
+			{
+				int i = 0;
+				for(i = 0;i < penetrables.size();i++)
+				{
+					if(penetrables.get(i).getX() == (heros.getX() + 1) && penetrables.get(i).getY() == heros.getY())
+					{
+						penetrables.remove(i);
+					}
+				}
+				Penetrable pen = new Background();
+				pen.setXY(heros.getX(), heros.getY());
+				map[heros.getX() + 1][heros.getY()] = heros;
+				map[heros.getX()][heros.getY()] = pen;
+				penetrables.add(pen);
+			}
+			heros.setDir(Direction.RIGHT);
+			heros.setX(heros.getX() + 1);
+			this.testFallLeft();
+		}
+		else if(map[heros.getX() + 1][heros.getY()].getCapacity() == Capacities.COLLECTIBLE)
+		{
+			int i = 0;
+			for(i = 0;i < collec.size();i++)
+			{
+				if(collec.get(i).getX() == (heros.getX() + 1) && collec.get(i).getY() == heros.getY())
+				{
+					collec.remove(i);
+				}
+			}
+			Penetrable pen = new Background();
+			pen.setXY(heros.getX(), heros.getY());
+			map[heros.getX() + 1][heros.getY()] = heros;
+			map[heros.getX()][heros.getY()] = pen;
+			diamonds_remaining = collec.size(); 
+			penetrables.add(pen);
+			heros.setDir(Direction.RIGHT);
+			this.testFallLeft();
+		}
+		else if(map[heros.getX() + 1][heros.getY()].getCapacity() == Capacities.BREAKABLE)
+		{
+			if(exit.getX() == (heros.getX() + 1) && exit.getY() == heros.getY())
+			{
+				Penetrable pen = new Background();
+				pen.setXY(heros.getX(), heros.getY());
+				map[heros.getX() + 1][heros.getY()] = heros;
+				map[heros.getX()][heros.getY()] = pen;
+			}
+			else
+			{
+				int i = 0;
+				for(i = 0;i < breakables.size();i++)
+				{
+					if(breakables.get(i).getX() == (heros.getX() + 1) && breakables.get(i).getY() == heros.getY())
+					{
+						breakables.remove(i);
+					}
+				}
+				Penetrable pen = new Background();
+				pen.setXY(heros.getX(), heros.getY());
+				map[heros.getX() + 1][heros.getY()] = heros;
+				map[heros.getX()][heros.getY()] = pen;
+				penetrables.add(pen);
+			}
+			heros.setDir(Direction.RIGHT);
+			heros.setX(heros.getX() + 1);
+			this.testFallRight();
+		}
+		else if(map[heros.getX() + 1][heros.getY()].getCapacity() == Capacities.MOVABLE)
+		{
+			if((heros.getX() + 2) <= 25)
+			{
+				if(map[heros.getX() + 2][heros.getY()].getCapacity() == Capacities.PENETRABLE)
+				{
+					int i = 0;
+					Movable m = null;
+					for(i = 0;i < mouv.size();i++)
+					{
+						if(mouv.get(i).getX() == (heros.getX() + 1) && mouv.get(i).getY() == heros.getY())
+						{
+							m = mouv.get(i);
+						}
+					}
+					Penetrable pen = new Background();
+					pen.setXY(heros.getX(), heros.getY());
+					map[heros.getX() + 1][heros.getY()] = heros;
+					map[heros.getX() + 2][heros.getY()] = m;
+					m.setX(heros.getX() + 2);
+					map[heros.getX()][heros.getY()] = pen;
+					penetrables.add(pen);
+				}
+			}
+			heros.setDir(Direction.RIGHT);
+			heros.setX(heros.getX() + 1);
+			this.testFallRight();
+		}
+		this.setChanged();
+		this.notifyObservers();
+	}
+	
+	private void testFallRight() {
 		int i = 0;
 		
 		if(map[heros.getX() - 1][heros.getY() - 1].getCapacity() == Capacities.MOVABLE)
@@ -265,21 +414,27 @@ public final class Model extends Observable implements IModel {
 				}
 			}
 		}
-		else if(map[heros.getX() - 2][heros.getY()].getCapacity() == Capacities.MOVABLE && map[heros.getX() - 2][heros.getY()].getCapacity() == Capacities.PENETRABLE)
+		
+		if((heros.getX() - 2) >= 0)
 		{
-			for(i = 0;i < mouv.size();i++)
+			if(map[heros.getX() - 2][heros.getY()].getCapacity() == Capacities.MOVABLE && map[heros.getX() - 2][heros.getY() + 1].getCapacity() == Capacities.PENETRABLE)
 			{
-				if(mouv.get(i).getX() == (heros.getX() - 2) && mouv.get(i).getY() == heros.getY())
+				for(i = 0;i < mouv.size();i++)
 				{
-					if(mouv.get(i).isSubmittedToGravity())
+					if(mouv.get(i).getX() == (heros.getX() - 2) && mouv.get(i).getY() == heros.getY())
 					{
-						Thread t = new Thread(new Fall(mouv.get(i)));
-						t.run();
+						if(mouv.get(i).isSubmittedToGravity())
+						{
+							Thread t = new Thread(new Fall(mouv.get(i)));
+							t.run();
+						}
 					}
 				}
 			}
 		}
-		else if(map[heros.getX() - 1][heros.getY() - 1].getCapacity() == Capacities.COLLECTIBLE)
+		
+		
+		if(map[heros.getX() - 1][heros.getY() - 1].getCapacity() == Capacities.COLLECTIBLE)
 		{
 			for(i = 0;i < mouv.size();i++)
 			{
@@ -293,16 +448,93 @@ public final class Model extends Observable implements IModel {
 				}
 			}
 		}
-		else if(map[heros.getX() - 2][heros.getY()].getCapacity() == Capacities.COLLECTIBLE && map[heros.getX() - 2][heros.getY()].getCapacity() == Capacities.PENETRABLE)
+		
+		if((heros.getX() - 2) >= 0)
+		{
+			if(map[heros.getX() - 2][heros.getY()].getCapacity() == Capacities.COLLECTIBLE && map[heros.getX() - 2][heros.getY() + 1].getCapacity() == Capacities.PENETRABLE)
+			{
+				for(i = 0;i < mouv.size();i++)
+				{
+					if(mouv.get(i).getX() == (heros.getX() - 2) && mouv.get(i).getY() == heros.getY())
+					{
+						if(mouv.get(i).isSubmittedToGravity())
+						{
+							Thread t = new Thread(new Fall(mouv.get(i)));
+							t.run();
+						}
+					}
+				}
+			}
+		}
+
+		
+	}
+	
+	private void testFallLeft() {
+		int i = 0;
+		
+		if(map[heros.getX() + 1][heros.getY() - 1].getCapacity() == Capacities.MOVABLE)
 		{
 			for(i = 0;i < mouv.size();i++)
 			{
-				if(mouv.get(i).getX() == (heros.getX() - 2) && mouv.get(i).getY() == heros.getY())
+				if(mouv.get(i).getX() == (heros.getX() + 1) && mouv.get(i).getY() == (heros.getY() - 1))
 				{
 					if(mouv.get(i).isSubmittedToGravity())
 					{
 						Thread t = new Thread(new Fall(mouv.get(i)));
 						t.run();
+					}
+				}
+			}
+		}
+		
+		if((heros.getX() + 2) <= 25)
+		{
+			if(map[heros.getX() + 2][heros.getY()].getCapacity() == Capacities.MOVABLE && map[heros.getX() + 2][heros.getY() + 1].getCapacity() == Capacities.PENETRABLE)
+			{
+				for(i = 0;i < mouv.size();i++)
+				{
+					if(mouv.get(i).getX() == (heros.getX() + 2) && mouv.get(i).getY() == heros.getY())
+					{
+						if(mouv.get(i).isSubmittedToGravity())
+						{
+							Thread t = new Thread(new Fall(mouv.get(i)));
+							t.run();
+						}
+					}
+				}
+			}
+		}
+		
+		
+		if(map[heros.getX() + 1][heros.getY() - 1].getCapacity() == Capacities.COLLECTIBLE)
+		{
+			for(i = 0;i < mouv.size();i++)
+			{
+				if(mouv.get(i).getX() == (heros.getX() + 1) && mouv.get(i).getY() == (heros.getY() - 1))
+				{
+					if(mouv.get(i).isSubmittedToGravity())
+					{
+						Thread t = new Thread(new Fall(mouv.get(i)));
+						t.run();
+					}
+				}
+			}
+		}
+		
+		if((heros.getX() + 2) <= 25)
+		{
+			if(map[heros.getX() + 2][heros.getY()].getCapacity() == Capacities.COLLECTIBLE && map[heros.getX() + 2][heros.getY() + 1].getCapacity() == Capacities.PENETRABLE)
+			{
+				for(i = 0;i < mouv.size();i++)
+				{
+					if(mouv.get(i).getX() == (heros.getX() + 2) && mouv.get(i).getY() == heros.getY())
+					{
+						if(mouv.get(i).isSubmittedToGravity())
+						{
+							Thread t = new Thread(new Fall(mouv.get(i)));
+							t.run();
+						}
 					}
 				}
 			}
