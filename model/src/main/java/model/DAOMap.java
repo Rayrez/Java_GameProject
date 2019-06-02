@@ -76,7 +76,7 @@ public class DAOMap {
 	 * @throws SQLException
 	 * @throws RuntimeException
 	 */
-	public Entity[][] load(int mapNumber, ArrayList<Movable> movables, ArrayList<Collectible> collec, ArrayList<Ennemy> enemies, ArrayList<Penetrable> penetrables, ArrayList<Unbreakable> unbreakables, ArrayList<Breakable> breakables) throws SQLException, RuntimeException {
+	public Entity[][] load(int mapNumber, ArrayList<Movable> movables, ArrayList<Collectible> collec, ArrayList<Ennemy> enemies, ArrayList<Penetrable> penetrables, ArrayList<Unbreakable> unbreakables, ArrayList<Breakable> breakables, ArrayList<MoveEnnemy> move_ennemy) throws SQLException, RuntimeException {
 
 		java.sql.PreparedStatement statement = this.connection.prepareStatement("CALL getMaps(?);");
 		statement.setInt(1, mapNumber);
@@ -142,6 +142,7 @@ public class DAOMap {
 				{
 					Ennemy entity = EnnemyFactory.getFromFileSymbol(mapTxt.charAt(i));
 					entity.setXY(x, y);
+					move_ennemy.add(new MoveEnnemy(entity));
 					movables.add(entity);
 					enemies.add(entity);
 					map[x][y] = entity;

@@ -10,5 +10,6 @@ public enum ControllerOrder {
 	MoveRight,
 	MoveUp,
 	MoveDown,
-	Pause
+	Pause,
+	Reset
 }

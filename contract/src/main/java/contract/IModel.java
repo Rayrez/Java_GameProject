@@ -60,4 +60,10 @@ public interface IModel {
 	 * @return the observable
 	 */
 	Observable getObservable();
+	
+	/**
+	 * Launch the model.
+	 *
+	 */
+	void launch();
 }
