@@ -1,6 +1,7 @@
 package model;
 
 import java.sql.SQLException;
+
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
@@ -15,6 +16,7 @@ import entity.movable.ennemy.*;
 import entity.movable.heros.Heros;
 import entity.penetrable.*;
 import entity.unbreakable.*;
+
 /**
  * The Class Model.
  *
@@ -113,7 +115,7 @@ public final class Model extends Observable implements IModel {
 		this.loadMap(numberMap);
 		this.launch();
 		this.setChanged();
-		this.notify();
+		this.notifyObservers();;
 	}
 
 	/**
@@ -660,6 +662,6 @@ private void moveUp() {
 	
 	@Override
 	public boolean isPaused() {
-		return this.pause;
+		return pause;
 	}
 }
