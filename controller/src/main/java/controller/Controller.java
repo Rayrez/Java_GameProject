@@ -7,7 +7,7 @@ import view.View;
 /**
  * The Class Controller.
  *
- * @author Mattias Huros
+ * @author Mattias HUROS
  */
 public final class Controller implements IController {
 
@@ -37,7 +37,7 @@ public final class Controller implements IController {
 	/**
      * Give a key.
      *
-     * @param character;
+     * @param character
      *            the given character by the view.
      */
 	@Override

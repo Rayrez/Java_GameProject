@@ -29,7 +29,7 @@ public abstract class MovableFactory {
 	/**
 	 * Gets the sprite from the symbols.
 	 *
-	 * @param symbol;
+	 * @param symbol
 	 * 			The symbol on the map file for the rock.
 	 * @return the sprite of the rock.
 	 */

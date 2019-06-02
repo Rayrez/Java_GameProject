@@ -27,7 +27,7 @@ public abstract class BreakableFactory {
 	/**
 	 * Gets the sprite from the symbols.
 	 *
-	 * @param symbol;
+	 * @param symbol
 	 * 			The symbol on the map file for the dirt.
 	 * @return the sprite of the dirt.
 	 */

@@ -19,8 +19,10 @@ public abstract class Entity {
 	/**
 	 * Instantiates a new Entity.
 	 *
-	 * @param symbol;
-	 * @param fileName;
+	 * @param symbol
+	 * 			The symbol.
+	 * @param fileName
+	 * 			Name of a sprite file.
 	 */
 	public Entity(char symbol, String fileName) {
 		this.baseSprite = new Sprite(symbol, fileName);
@@ -56,9 +58,9 @@ public abstract class Entity {
 	/**
 	 * Set the position (X and Y) to xP and Yp.
 	 *
-	 * @param xP;
+	 * @param xP
 	 * 			the X position.
-	 * @param yP;
+	 * @param yP
 	 * 			the Y position.
 	 */
 	public void setXY(int xP, int yP) {

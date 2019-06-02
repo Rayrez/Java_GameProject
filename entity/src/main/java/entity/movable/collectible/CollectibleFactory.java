@@ -29,7 +29,7 @@ public abstract class CollectibleFactory {
 	/**
 	 * Gets the sprite from the symbols.
 	 *
-	 * @param symbol;
+	 * @param symbol
 	 * 			The symbol on the map file for the diamond.
 	 * @return the sprite of the diamond.
 	 */

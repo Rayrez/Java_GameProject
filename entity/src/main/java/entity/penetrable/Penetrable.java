@@ -13,8 +13,10 @@ public abstract class Penetrable extends Entity {
 	/**
 	 * Set the capacity Penetrable.
 	 *
-	 * @param symbol;
-	 * @param fileName;
+	 * @param symbol
+	 * 			The symbol.
+	 * @param fileName
+	 * 			Name of a sprite file.
 	 */
 	public Penetrable(char symbol, String fileName) {
 		super(symbol, fileName);

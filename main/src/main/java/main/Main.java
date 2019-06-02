@@ -17,7 +17,7 @@ Main {
     /**
      * The main method.
      *
-     * @param args;
+     * @param args
      *            the arguments.
      */
     public static void main(final String[] args) {

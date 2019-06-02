@@ -57,7 +57,7 @@ public abstract class UnbreakableFactory {
 	/**
 	 * Gets the sprite from the symbols.
 	 *
-	 * @param symbol;
+	 * @param symbol
 	 * 			The symbol on the map file for the dirt.
 	 * @return The sprite of the Blue wall or Grey wall or Explosion.
 	 */

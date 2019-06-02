@@ -29,7 +29,7 @@ public abstract class PenetrableFactory {
 	/**
 	 * Gets the sprite from the symbols.
 	 *
-	 * @param symbol;
+	 * @param symbol
 	 * 			The symbol on the map file for the dirt.
 	 * @return The sprite of the background.
 	 */

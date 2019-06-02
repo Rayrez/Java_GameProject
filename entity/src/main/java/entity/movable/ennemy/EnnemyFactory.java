@@ -29,7 +29,7 @@ public abstract class EnnemyFactory {
 	/**
 	 * Gets the sprite from the symbols.
 	 *
-	 * @param symbol;
+	 * @param symbol
 	 * 			The symbol on the map file for the octopus.
 	 * @return the sprite of the octopus.
 	 */
