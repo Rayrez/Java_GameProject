@@ -26,7 +26,7 @@ final class DBConnection {
 	/**
 	 * Gets the single instance of DBConnection.
 	 *
-	 * @return single instance of DBConnection
+	 * @return single instance of DBConnection.
 	 */
 	public static synchronized DBConnection getInstance() {
 		if (DBConnection.INSTANCE == null) {
@@ -38,7 +38,7 @@ final class DBConnection {
 	/**
 	 * Open.
 	 *
-	 * @return the boolean
+	 * @return the boolean.
 	 */
 	private Boolean open() {
 		final DBProperties dbProperties = new DBProperties();
@@ -56,7 +56,7 @@ final class DBConnection {
 	/**
 	 * Gets the connection.
 	 *
-	 * @return the connection
+	 * @return the connection.
 	 */
 	public Connection getConnection() {
 		return this.connection;

@@ -18,19 +18,19 @@ public abstract class EnnemyFactory {
 	private static Ennemy[] entities = {octopus};
 
 	/**
-	 * Create the octopus
+	 * Create the octopus.
 	 *
-	 * @return octopus
+	 * @return octopus.
 	 */
 	public Ennemy createOctopus() {
 		return octopus;
 	}
 
 	/**
-	 * Gets the sprite from the symbols
+	 * Gets the sprite from the symbols.
 	 *
-	 * @param symbol
-	 * 			The symbol on the map file for the octopus
+	 * @param symbol;
+	 * 			The symbol on the map file for the octopus.
 	 * @return the sprite of the octopus.
 	 */
 	public static Ennemy getFromFileSymbol(char symbol) {

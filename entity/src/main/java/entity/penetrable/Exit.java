@@ -1,14 +1,14 @@
 package entity.penetrable;
 
 /**
- * The class Exit
+ * The class Exit.
  *
  * @author Pierre GARRIDO
  */
 public class Exit extends Penetrable {
 
 	/**
-	 * Variable declarations
+	 * Variable declarations.
 	 */
 	private boolean visible;
 
@@ -20,18 +20,18 @@ public class Exit extends Penetrable {
 	}
 
 	/**
-	 * Show the exit
+	 * Show the exit.
 	 *
-	 * @return The exit display
+	 * @return The exit display.
 	 */
 	public boolean isVisible() {
 		return this.visible;
 	}
 
 	/**
-	 * Set if the exit is visible or not
+	 * Set if the exit is visible or not.
 	 *
-	 * @param visibleP
+	 * @param visibleP;
 	 */
 	public void setVisible(boolean visibleP) {
 		this.visible = visibleP;

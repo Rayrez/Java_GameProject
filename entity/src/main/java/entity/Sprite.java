@@ -14,19 +14,19 @@ import javax.imageio.ImageIO;
 public class Sprite {
 
 	/**
-	 * Variable declarations
+	 * Variable declarations.
 	 */
 	private Image spriteImage;
 	private char baseIcon;
 	private String fileName;
 
 	/**
-	 * Instantiates a new sprite
+	 * Instantiates a new sprite.
 	 *
-	 * @param icon
-	 * 			The icon's picture
-	 * @param file
-	 * 			The file path
+	 * @param icon;
+	 * 			The icon's picture.
+	 * @param file;
+	 * 			The file path.
 	 */
 	public Sprite(char icon, String file) {
 		this.baseIcon = icon;
@@ -41,18 +41,18 @@ public class Sprite {
 	}
 
 	/**
-	 * Gets the Image
+	 * Gets the Image.
 	 *
-	 * @return The image (the sprite)
+	 * @return The image (the sprite).
 	 */
 	public Image getImage() {
 		return this.spriteImage;
 	}
 
 	/**
-	 * Gets the icon
+	 * Gets the icon.
 	 *
-	 * @return the icon
+	 * @return the icon.
 	 */
 	public char getIcon() {
 		return this.baseIcon;

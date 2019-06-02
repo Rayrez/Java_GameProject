@@ -4,17 +4,17 @@ import entity.Capacities;
 import entity.Entity;
 
 /**
- * The abstract class Unbreakable
+ * The abstract class Unbreakable.
  *
  * @author Pierre GARRIDO
  */
 public abstract class Unbreakable extends Entity {
 
 	/**
-	 * Set the capacity Unbreakable
+	 * Set the capacity Unbreakable.
 	 *
-	 * @param symbol
-	 * @param fileName
+	 * @param symbol;
+	 * @param fileName;
 	 */
 	public Unbreakable(char symbol, String fileName) {
 		super(symbol, fileName);

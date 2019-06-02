@@ -1,7 +1,7 @@
 package entity.movable.ennemy;
 
 /**
- * The class Octopus
+ * The class Octopus.
  *
  * @author Pierre GARRIDO
  */

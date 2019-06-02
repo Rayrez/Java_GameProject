@@ -35,10 +35,10 @@ public final class Controller implements IController {
 	}
 
 	/**
-     * Give a key
+     * Give a key.
      *
-     * @param character
-     *            the given character by the view
+     * @param character;
+     *            the given character by the view.
      */
 	@Override
 	public void giveKey(char character) {

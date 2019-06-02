@@ -11,7 +11,7 @@ import entity.Entity;
 public abstract class Movable extends Entity {
 
 	/**
-	 * Variable declarations
+	 * Variable declarations.
 	 */
 	protected boolean submittedToGravity;
 	protected boolean alive = true;
@@ -20,8 +20,8 @@ public abstract class Movable extends Entity {
 	/**
 	 * Set the capacity Breakable.
 	 *
-	 * @param symbol
-	 * @param fileName
+	 * @param symbol;
+	 * @param fileName;
 	 */
 	public Movable(char symbol, String fileName) {
 		super(symbol, fileName);
@@ -31,8 +31,8 @@ public abstract class Movable extends Entity {
 	/**
 	 * Set X.
 	 *
-	 * @param xP
-	 * 			Variable who contains X value
+	 * @param xP;
+	 * 			Variable who contains X value.
 	 */
 	public void setX(int xP) {
 		if(xP < 0)
@@ -48,8 +48,8 @@ public abstract class Movable extends Entity {
 	/**
 	 * Set Y.
 	 *
-	 * @param yP
-	 * 			Variable who contains Y value
+	 * @param yP;
+	 * 			Variable who contains Y value.
 	 */
 	public void setY(int yP) {
 		if(yP < 0)
@@ -74,7 +74,7 @@ public abstract class Movable extends Entity {
 	/**
 	 * Return if the entity is alive or not.
 	 *
-	 * @return the boolean alive
+	 * @return the boolean alive.
 	 */
 	public boolean isAlive() {
 		return this.alive;
@@ -102,7 +102,7 @@ public abstract class Movable extends Entity {
 	/**
 	 * Return if the entity is mortal or not.
 	 *
-	 * @return the boolean mortal
+	 * @return the boolean mortal.
 	 */
 	public boolean isMortal() {
 		return this.mortal;

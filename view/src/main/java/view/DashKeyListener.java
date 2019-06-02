@@ -7,7 +7,7 @@ import java.awt.event.KeyListener;
 /**
  * The Class KeyListener.
  *
- * @author Bastien Aelters, Benjamin Brifault
+ * @author Bastien AELTERS, Benjamin BRIFAULT
  */
 public class DashKeyListener implements KeyListener {
 
@@ -21,7 +21,7 @@ public class DashKeyListener implements KeyListener {
 	/**
 	 * Connexion with controller class via IController class.
 	 *
-	 * @param controlerP
+	 * @param controlerP;
 	 */
 	public DashKeyListener(IController controlerP) {
 		this.controler = controlerP;

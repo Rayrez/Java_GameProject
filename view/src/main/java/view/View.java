@@ -6,7 +6,7 @@ import contract.*;
 /**
  * The Class View.
  *
- * @author Bastien Aelters, Benjamin Brifault
+ * @author Bastien AELTERS, Benjamin BRIFAULT
  */
 public class View extends JFrame implements IView {
 
@@ -19,9 +19,9 @@ public class View extends JFrame implements IView {
 	private IController controller;
 
 	/**
-	 * Created a window
+	 * Created a window.
 	 *
-	 * @param modelP
+	 * @param modelP;
 	 */
 	public View(IModel modelP) {
 		this.model = modelP;

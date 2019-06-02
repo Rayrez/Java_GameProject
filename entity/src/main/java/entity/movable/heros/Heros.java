@@ -5,14 +5,14 @@ import entity.Sprite;
 import entity.movable.Movable;
 
 /**
- * The class Heros
+ * The class Heros.
  *
  * @author Pierre GARRIDO
  */
 public class Heros extends Movable {
 
 	/**
-	 * Variable declarations
+	 * Variable declarations.
 	 */
 	private Sprite left;
 	private Sprite right;
@@ -33,15 +33,15 @@ public class Heros extends Movable {
 	/**
 	 * Get the direction where the hero go.
 	 *
-	 * @return The direction
+	 * @return The direction.
 	 */
 	public Direction getDir() {
 		return this.dir;
 	}
 
 	/**
-	 * Set the good sprite to each direction
-	 * @param dirP
+	 * Set the good sprite to each direction.
+	 * @param dirP;
 	 */
 	public void setDir(Direction dirP) {
 		this.dir = dirP;
@@ -57,9 +57,9 @@ public class Heros extends Movable {
 	}
 
 	/**
-	 * Set the sprite of the hero
+	 * Set the sprite of the hero.
 	 *
-	 * @param sP
+	 * @param sP;
 	 */
 	private void setBaseSprite(Sprite sP)
 	{

@@ -1,7 +1,7 @@
 package entity.breakable;
 
 /**
- * The abstract class BreakableFactory
+ * The abstract class BreakableFactory.
  */
 public abstract class BreakableFactory {
 
@@ -16,19 +16,19 @@ public abstract class BreakableFactory {
 	private static Breakable[] entities = {dirt};
 
 	/**
-	 * Create the dirt block
+	 * Create the dirt block.
 	 *
-	 * @return dirt
+	 * @return dirt.
 	 */
 	public static Breakable createDirt() {
 		return dirt;
 	}
 
 	/**
-	 * Gets the sprite from the symbols
+	 * Gets the sprite from the symbols.
 	 *
-	 * @param symbol
-	 * 			The symbol on the map file for the dirt
+	 * @param symbol;
+	 * 			The symbol on the map file for the dirt.
 	 * @return the sprite of the dirt.
 	 */
 	public static Breakable getFromFileSymbol(char symbol) {

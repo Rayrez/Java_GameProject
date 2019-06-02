@@ -1,7 +1,7 @@
 package entity.movable;
 
 /**
- * The class rock
+ * The class rock.
  *
  * @author Pierre GARRIDO
  */

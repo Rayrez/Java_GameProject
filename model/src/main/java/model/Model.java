@@ -41,6 +41,8 @@ public final class Model extends Observable implements IModel {
 
 	/**
 	 * Instantiates a new model.
+	 *
+	 * @param numberMapP;
 	 */
 	public Model(int numberMapP) {
 		Model.numberMap = numberMapP;
@@ -59,9 +61,8 @@ public final class Model extends Observable implements IModel {
 	/**
      * Load the initial map.
      *
-	 * @param mapNumber
-	 *            the number of the map
-	 * @return
+	 * @param mapNumber;
+	 *            the number of the map.
 	 */
 	/*
 	 * (non-Javadoc)
@@ -101,7 +102,7 @@ public final class Model extends Observable implements IModel {
 	}
 	
 	/**
-     * Reset the model
+     * Reset the model.
      */
 	private void resetModel() {
 		
@@ -121,7 +122,7 @@ public final class Model extends Observable implements IModel {
 	/**
      * Gets the observable.
      *
-     * @return the observable
+     * @return the observable.
      */
 	/*
 	 * (non-Javadoc)
@@ -132,11 +133,6 @@ public final class Model extends Observable implements IModel {
 		return this;
 	}
 
-	/**
-     * Gets the map.
-     *
-     * @return the map
-     */
 	@Override
 	public Entity[][] getMap() {
 		return Model.map;
@@ -155,9 +151,6 @@ public final class Model extends Observable implements IModel {
 			return false;
 	}
 
-	/**
-     * Manage orders
-     */
 	@Override
 	public void giveOrder(ControllerOrder order) {
 		
@@ -625,7 +618,7 @@ private void moveUp() {
 	/**
      * Gets the score.
      *
-     * @return the score
+     * @return the score.
      */
 	@Override
 	public int getScore() {
@@ -635,7 +628,7 @@ private void moveUp() {
 	/**
      * Gets the number of remaining diamonds.
      *
-     * @return the number of remaining diamond
+     * @return the number of remaining diamond.
      */
 	@Override
 	public int getDiamonds_remaining() {

@@ -74,7 +74,7 @@ public class SpriteTest {
 
 	/**
 	 * The test to get a sprite.
-	 * If the test fail, the method send the message "No image"
+	 * If the test fail, the method send the message "No image".
 	 */
 	@Test
 	public void testGetImage() {

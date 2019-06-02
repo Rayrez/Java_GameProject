@@ -6,15 +6,15 @@ import entity.Entity;
 /**
  * The abstract class Breakable.
  *
- * @Author PIERRE GARRIDO
+ * @author Pierre GARRIDO
  */
 public abstract class Breakable extends Entity {
 
 	/**
 	 * Set the capacity Breakable.
 	 *
-	 * @param symbol
-	 * @param fileName
+	 * @param symbol;
+	 * @param fileName;
 	 */
 	public Breakable(char symbol, String fileName) {
 		super(symbol, fileName);

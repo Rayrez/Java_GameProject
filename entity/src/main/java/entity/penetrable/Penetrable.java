@@ -4,17 +4,17 @@ import entity.Capacities;
 import entity.Entity;
 
 /**
- * The abstract class Penetrable
+ * The abstract class Penetrable.
  *
  * @author Pierre GARRIDO
  */
 public abstract class Penetrable extends Entity {
 
 	/**
-	 * Set the capacity Penetrable
+	 * Set the capacity Penetrable.
 	 *
-	 * @param symbol
-	 * @param fileName
+	 * @param symbol;
+	 * @param fileName;
 	 */
 	public Penetrable(char symbol, String fileName) {
 		super(symbol, fileName);

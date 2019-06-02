@@ -35,10 +35,10 @@ public class DAOMap {
 	/**
 	 * Instantiates a new DAO entity.
 	 *
-	 * @param connection
-	 *          the connection
+	 * @param connection;
+	 *          the connection.
 	 * @throws SQLException
-	 *           the SQL exception
+	 *           the SQL exception.
 	 */
 	public DAOMap(final Connection connection) throws SQLException {
 		this.connection = connection;
@@ -47,32 +47,52 @@ public class DAOMap {
 	/**
 	 * Gets the connection.
 	 *
-	 * @return the connection
+	 * @return the connection.
 	 */
 	protected Connection getConnection() {
 		return this.connection;
 	}
-
+/**
+ * Load the maps.
+ *
+ * @param mapNumber;
+ *          The number of the map.
+ * @param movables;
+ *          The movables.
+ * @param collec;
+ *          The collectibles.
+ * @param enemies;
+ *          The enemies.
+ * @param penetrables;
+ *          The penetrable.
+ * @param unbreakables;
+ *          The unbreakables.
+ * @param breakables;
+ *          The breakables   .
+ * @throws SQLException
+ * @throws RuntimeException
+ */
 
 	/**
-	 * Load the maps.
+	 * Load the map.
 	 *
 	 * @param mapNumber
-	 *          The number of the map
+	 *          The number of the map.
 	 * @param movables
-	 *          The movables
+	 *          The movables.
 	 * @param collec
-	 *          The collectibles
-	 * @param heros
-	 *          The heros
+	 * 			The collectible.
 	 * @param enemies
-	 *          The enemies
+	 * 			The ennemies.
 	 * @param penetrables
-	 *          The penetrable
+	 * 			The penetrable.
 	 * @param unbreakables
-	 *          The unbreakables
+	 *          The unbreakables.
 	 * @param breakables
-	 *          The breakables          
+	 *          The breakables.
+	 * @param move_ennemy
+	 * 			The move of ennemy.
+	 * @return the map.
 	 * @throws SQLException
 	 * @throws RuntimeException
 	 */

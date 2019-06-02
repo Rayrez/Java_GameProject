@@ -9,7 +9,7 @@ import controller.Controller;
 /**
  * The Class Main.
  *
- * @author Benjamin Brifault, Pierre Garrido, Bastien Aelters, Mattias Huros
+ * @author Benjamin BRIFAULT, Pierre GARRIDO, Bastien AELTERS, Mattias HUROS
  */
 public abstract class 
 Main {
@@ -17,8 +17,8 @@ Main {
     /**
      * The main method.
      *
-     * @param args
-     *            the arguments
+     * @param args;
+     *            the arguments.
      */
     public static void main(final String[] args) {
         final Controller controller = new Controller();

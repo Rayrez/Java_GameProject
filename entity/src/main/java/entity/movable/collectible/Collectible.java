@@ -16,10 +16,10 @@ public abstract class Collectible extends Movable {
 	protected String name;
 
 	/**
-	 * Set the capacity collectible
+	 * Set the capacity collectible.
 	 *
-	 * @param symbol
-	 * @param fileName
+	 * @param symbol;
+	 * @param fileName;
 	 */
 	public Collectible(char symbol, String fileName) {
 		super(symbol, fileName);
@@ -27,9 +27,9 @@ public abstract class Collectible extends Movable {
 	}
 
 	/**
-	 * Get the name of the collectible
+	 * Get the name of the collectible.
 	 *
-	 * @return the name
+	 * @return the name.
 	 */
 	public String getName() {
 		return this.name;

@@ -12,7 +12,7 @@ import entity.Entity;
 /**
  * The Class Components.
  *
- * @author Bastien Aelters, Benjamin Brifault
+ * @author Bastien AELTERS, Benjamin BRIFAULT
  */
 public class Components extends JPanel implements Observer {
 
@@ -26,7 +26,7 @@ public class Components extends JPanel implements Observer {
 	/**
 	 * Connexion with Model class via IModel class.
 	 *
-	 * @param modelP
+	 * @param modelP;
 	 */
 	public Components(IModel modelP) {
 		super();

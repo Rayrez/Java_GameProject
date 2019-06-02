@@ -1,7 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0869726-3ddf-44e8-85ca-0183e9690e4f" name="Default Changelist" comment="" />
+    <list default="true" id="e0869726-3ddf-44e8-85ca-0183e9690e4f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Java_GameProject.iws" beforeDir="false" afterPath="$PROJECT_DIR$/Java_GameProject.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contract/src/main/java/contract/IController.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract/src/main/java/contract/IController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contract/src/main/java/contract/IModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract/src/main/java/contract/IModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contract/src/main/java/contract/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract/src/main/java/contract/IView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/src/main/java/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/controller/src/main/java/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity/src/main/java/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/entity/src/main/java/entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity/src/main/java/entity/Sprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/entity/src/main/java/entity/Sprite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity/src/main/java/entity/breakable/Breakable.java" beforeDir="false" afterPath="$PROJECT_DIR$/entity/src/main/java/entity/breakable/Breakable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity/src/main/java/entity/breakable/BreakableFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/entity/src/main/java/entity/breakable/BreakableFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity/src/main/java/entity/movable/Movable.java" beforeDir="false" afterPath="$PROJECT_DIR$/entity/src/main/java/entity/movable/Movable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity/src/main/java/entity/movable/MovableFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/entity/src/main/java/entity/movable/MovableFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity/src/main/java/entity/movable/Rock.java" beforeDir="false" afterPath="$PROJECT_DIR$/entity/src/main/java/entity/movable/Rock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity/src/main/java/entity/movable/collectible/Collectible.java" beforeDir="false" afterPath="$PROJECT_DIR$/entity/src/main/java/entity/movable/collectible/Collectible.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity/src/main/java/entity/movable/collectible/CollectibleFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/entity/src/main/java/entity/movable/collectible/CollectibleFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity/src/main/java/entity/movable/collectible/Diamond.java" beforeDir="false" afterPath="$PROJECT_DIR$/entity/src/main/java/entity/movable/collectible/Diamond.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity/src/main/java/entity/movable/ennemy/Ennemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/entity/src/main/java/entity/movable/ennemy/Ennemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity/src/main/java/entity/movable/ennemy/EnnemyFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/entity/src/main/java/entity/movable/ennemy/EnnemyFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity/src/main/java/entity/movable/ennemy/Octopus.java" beforeDir="false" afterPath="$PROJECT_DIR$/entity/src/main/java/entity/movable/ennemy/Octopus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity/src/main/java/entity/movable/heros/Heros.java" beforeDir="false" afterPath="$PROJECT_DIR$/entity/src/main/java/entity/movable/heros/Heros.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity/src/main/java/entity/penetrable/Background.java" beforeDir="false" afterPath="$PROJECT_DIR$/entity/src/main/java/entity/penetrable/Background.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity/src/main/java/entity/penetrable/Exit.java" beforeDir="false" afterPath="$PROJECT_DIR$/entity/src/main/java/entity/penetrable/Exit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity/src/main/java/entity/penetrable/Penetrable.java" beforeDir="false" afterPath="$PROJECT_DIR$/entity/src/main/java/entity/penetrable/Penetrable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity/src/main/java/entity/penetrable/PenetrableFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/entity/src/main/java/entity/penetrable/PenetrableFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity/src/main/java/entity/unbreakable/BlueWall.java" beforeDir="false" afterPath="$PROJECT_DIR$/entity/src/main/java/entity/unbreakable/BlueWall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity/src/main/java/entity/unbreakable/Explosion.java" beforeDir="false" afterPath="$PROJECT_DIR$/entity/src/main/java/entity/unbreakable/Explosion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity/src/main/java/entity/unbreakable/GreyWall.java" beforeDir="false" afterPath="$PROJECT_DIR$/entity/src/main/java/entity/unbreakable/GreyWall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity/src/main/java/entity/unbreakable/Unbreakable.java" beforeDir="false" afterPath="$PROJECT_DIR$/entity/src/main/java/entity/unbreakable/Unbreakable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity/src/main/java/entity/unbreakable/UnbreakableFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/entity/src/main/java/entity/unbreakable/UnbreakableFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity/src/test/java/entity/SpriteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/entity/src/test/java/entity/SpriteTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/DAOMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/DAOMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/DBConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/DBProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/DBProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/src/main/java/view/Components.java" beforeDir="false" afterPath="$PROJECT_DIR$/view/src/main/java/view/Components.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/src/main/java/view/DashKeyListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/view/src/main/java/view/DashKeyListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/src/main/java/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/view/src/main/java/view/View.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/bin/" />
     <ignored path="$PROJECT_DIR$/main/target/" />
@@ -67,43 +105,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/src/main/java/view/Components.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="48" selection-start-line="48" selection-end-line="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/src/main/java/view/DashKeyListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1088">
-              <caret line="68" column="9" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
-              <folding>
-                <element signature="e#1491#1492#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-243">
-              <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/src/main/java/model/DBConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+            <state relative-caret-position="204">
+              <caret line="58" column="30" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -111,17 +116,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/src/main/java/model/DBProperties.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+            <state relative-caret-position="357">
+              <caret line="99" column="33" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/contract/src/main/java/contract/ControllerOrder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/src/main/java/model/Model.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7417">
-              <caret line="178" column="26" selection-start-line="178" selection-start-column="26" selection-end-line="178" selection-end-column="26" />
+            <state relative-caret-position="4760">
+              <caret line="280" column="47" selection-start-line="280" selection-start-column="45" selection-end-line="280" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3237#3238#0" expanded="true" />
@@ -151,10 +165,49 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/contract/src/main/java/contract/IController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/src/main/java/model/MoveEnnemy.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
               <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/contract/src/main/java/contract/IModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/contract/src/main/java/contract/IView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/model/src/main/java/model/DAOMap.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-5">
+              <caret line="95" column="27" selection-start-line="95" selection-start-column="27" selection-end-line="95" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -180,34 +233,43 @@
         <option value="$PROJECT_DIR$/contract/src/main/java/contract/ControllerOrder.java" />
         <option value="$PROJECT_DIR$/model/src/main/resources/model.properties" />
         <option value="$PROJECT_DIR$/entity/src/main/java/entity/breakable/Dirt.java" />
+        <option value="$PROJECT_DIR$/view/src/main/java/view/KeyListener.java" />
+        <option value="$PROJECT_DIR$/entity/src/main/java/entity/breakable/Breakable.java" />
+        <option value="$PROJECT_DIR$/entity/src/main/java/entity/movable/collectible/Collectible.java" />
+        <option value="$PROJECT_DIR$/entity/src/main/java/entity/Entity.java" />
+        <option value="$PROJECT_DIR$/entity/src/main/java/entity/movable/collectible/CollectibleFactory.java" />
+        <option value="$PROJECT_DIR$/entity/src/main/java/entity/movable/collectible/Diamond.java" />
+        <option value="$PROJECT_DIR$/entity/src/main/java/entity/movable/ennemy/Ennemy.java" />
+        <option value="$PROJECT_DIR$/entity/src/main/java/entity/movable/ennemy/EnnemyFactory.java" />
+        <option value="$PROJECT_DIR$/entity/src/main/java/entity/movable/ennemy/Octopus.java" />
+        <option value="$PROJECT_DIR$/entity/src/main/java/entity/breakable/BreakableFactory.java" />
         <option value="$PROJECT_DIR$/entity/src/main/java/entity/penetrable/Background.java" />
+        <option value="$PROJECT_DIR$/entity/src/main/java/entity/penetrable/Exit.java" />
+        <option value="$PROJECT_DIR$/entity/src/main/java/entity/penetrable/Penetrable.java" />
+        <option value="$PROJECT_DIR$/entity/src/main/java/entity/penetrable/PenetrableFactory.java" />
+        <option value="$PROJECT_DIR$/entity/src/main/java/entity/Sprite.java" />
+        <option value="$PROJECT_DIR$/entity/src/main/java/entity/movable/Movable.java" />
+        <option value="$PROJECT_DIR$/entity/src/main/java/entity/movable/MovableFactory.java" />
+        <option value="$PROJECT_DIR$/entity/src/main/java/entity/movable/Rock.java" />
+        <option value="$PROJECT_DIR$/entity/src/main/java/entity/movable/heros/Heros.java" />
         <option value="$PROJECT_DIR$/entity/src/main/java/entity/unbreakable/BlueWall.java" />
         <option value="$PROJECT_DIR$/entity/src/main/java/entity/unbreakable/Explosion.java" />
         <option value="$PROJECT_DIR$/entity/src/main/java/entity/unbreakable/GreyWall.java" />
-        <option value="$PROJECT_DIR$/entity/src/main/java/entity/movable/Rock.java" />
-        <option value="$PROJECT_DIR$/entity/src/main/java/entity/movable/collectible/Diamond.java" />
-        <option value="$PROJECT_DIR$/entity/src/main/java/entity/movable/ennemy/Octopus.java" />
         <option value="$PROJECT_DIR$/entity/src/main/java/entity/unbreakable/UnbreakableFactory.java" />
-        <option value="$PROJECT_DIR$/entity/src/main/java/entity/penetrable/PenetrableFactory.java" />
-        <option value="$PROJECT_DIR$/entity/src/main/java/entity/movable/MovableFactory.java" />
-        <option value="$PROJECT_DIR$/entity/src/main/java/entity/movable/ennemy/EnnemyFactory.java" />
-        <option value="$PROJECT_DIR$/entity/src/main/java/entity/movable/collectible/CollectibleFactory.java" />
-        <option value="$PROJECT_DIR$/entity/src/main/java/entity/breakable/BreakableFactory.java" />
-        <option value="$PROJECT_DIR$/entity/src/main/java/entity/movable/heros/Heros.java" />
-        <option value="$PROJECT_DIR$/entity/src/main/java/entity/penetrable/Exit.java" />
-        <option value="$PROJECT_DIR$/model/src/main/java/model/DAOMap.java" />
-        <option value="$PROJECT_DIR$/main/src/main/java/main/Main.java" />
-        <option value="$PROJECT_DIR$/view/src/main/java/view/KeyListener.java" />
-        <option value="$PROJECT_DIR$/view/src/main/java/view/View.java" />
-        <option value="$PROJECT_DIR$/view/src/main/java/view/Components.java" />
+        <option value="$PROJECT_DIR$/entity/src/main/java/entity/unbreakable/Unbreakable.java" />
+        <option value="$PROJECT_DIR$/entity/src/test/java/entity/SpriteTest.java" />
         <option value="$PROJECT_DIR$/controller/src/main/java/controller/Controller.java" />
-        <option value="$PROJECT_DIR$/model/src/main/java/model/Model.java" />
-        <option value="$PROJECT_DIR$/contract/src/main/java/contract/IModel.java" />
+        <option value="$PROJECT_DIR$/main/src/main/java/main/Main.java" />
+        <option value="$PROJECT_DIR$/view/src/main/java/view/Components.java" />
+        <option value="$PROJECT_DIR$/view/src/main/java/view/DashKeyListener.java" />
+        <option value="$PROJECT_DIR$/view/src/main/java/view/View.java" />
         <option value="$PROJECT_DIR$/contract/src/main/java/contract/IView.java" />
         <option value="$PROJECT_DIR$/contract/src/main/java/contract/IController.java" />
-        <option value="$PROJECT_DIR$/view/src/main/java/view/DashKeyListener.java" />
+        <option value="$PROJECT_DIR$/contract/src/main/java/contract/IModel.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/model/DBConnection.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/model/DBProperties.java" />
+        <option value="$PROJECT_DIR$/model/src/main/java/model/Model.java" />
+        <option value="$PROJECT_DIR$/model/src/main/java/model/DAOMap.java" />
       </list>
     </option>
   </component>
@@ -217,59 +279,24 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1939" />
+    <option name="height" value="1049" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Java_GameProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="Java_GameProject" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java_GameProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java_GameProject" type="462c0819:PsiDirectoryNode" />
-              <item name="contract" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java_GameProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java_GameProject" type="462c0819:PsiDirectoryNode" />
-              <item name="contract" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java_GameProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java_GameProject" type="462c0819:PsiDirectoryNode" />
-              <item name="contract" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java_GameProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java_GameProject" type="462c0819:PsiDirectoryNode" />
-              <item name="contract" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java_GameProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java_GameProject" type="462c0819:PsiDirectoryNode" />
-              <item name="contract" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="contract" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Java_GameProject" type="b2602c69:ProjectViewProjectNode" />
@@ -310,7 +337,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -339,7 +366,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Maven.masterpom [compile,package,install,site...]">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="main" />
@@ -410,17 +437,17 @@
       <workItem from="1559053678412" duration="2132000" />
       <workItem from="1559334094354" duration="2664000" />
       <workItem from="1559383712050" duration="3724000" />
+      <workItem from="1559507610296" duration="2817000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26035000" />
+    <option name="totallyTimeSpent" value="28852000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1704698" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17248322" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -429,13 +456,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.42776203" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.40934843" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32936078" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286119" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32936078" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -455,36 +482,7 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9490dbf4-93e1-4385-8063-8a290f3bc7d1/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/mouvable/collectible/Collectible.java" />
-    <entry file="file://$PROJECT_DIR$/view/.classpath">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/src/main/java/view/ViewFrame.java" />
     <entry file="file://$USER_HOME$/Downloads/Controleur.java" />
-    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/penetrable/Penetrable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/Capacities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contract/src/main/java/contract/ControllerOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/src/test/java/model/ModelTest.java" />
     <entry file="file://$PROJECT_DIR$/model/src/main/resources/model.properties">
       <provider selected="true" editor-type-id="text-editor">
@@ -493,145 +491,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/breakable/Breakable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/breakable/Dirt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="20" lean-forward="true" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-          <folding>
-            <element signature="e#81#82#0" expanded="true" />
-            <element signature="e#128#129#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/penetrable/Background.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="20" lean-forward="true" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-          <folding>
-            <element signature="e#95#96#0" expanded="true" />
-            <element signature="e#148#149#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/unbreakable/BlueWall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="20" lean-forward="true" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-          <folding>
-            <element signature="e#93#94#0" expanded="true" />
-            <element signature="e#142#143#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/unbreakable/GreyWall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="20" lean-forward="true" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-          <folding>
-            <element signature="e#93#94#0" expanded="true" />
-            <element signature="e#144#145#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/unbreakable/Explosion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-          <folding>
-            <element signature="e#95#96#0" expanded="true" />
-            <element signature="e#147#148#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/movable/Rock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="20" lean-forward="true" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/movable/collectible/Diamond.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/movable/ennemy/Octopus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="20" lean-forward="true" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-          <folding>
-            <element signature="e#90#91#0" expanded="true" />
-            <element signature="e#140#141#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa5416.45884/Road.java" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa5416.129/MotionlessElementsFactory.java" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa5416.45399/InsaneVehiclesGames.java" />
-    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/penetrable/PenetrableFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="19" column="32" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="19" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/unbreakable/UnbreakableFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/movable/collectible/Collectible.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/movable/collectible/CollectibleFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/breakable/BreakableFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/movable/ennemy/EnnemyFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/movable/MovableFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" column="16" lean-forward="true" selection-start-line="15" selection-start-column="11" selection-end-line="21" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1575">
@@ -643,39 +505,134 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/movable/heros/Heros.java">
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa5416.41044/InsaneVehiclesGames.java" />
+    <entry file="file://$PROJECT_DIR$/view/src/main/java/view/KeyListener.java" />
+    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/movable/collectible/Collectible.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+        <state relative-caret-position="510">
+          <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa5416.41044/InsaneVehiclesGames.java" />
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/DAOMap.java">
+    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/movable/collectible/Diamond.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" selection-start-line="25" selection-end-line="29" selection-end-column="3" />
+        <state relative-caret-position="238">
+          <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/movable/collectible/CollectibleFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="33" column="41" lean-forward="true" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/breakable/Breakable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/movable/ennemy/Ennemy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/movable/ennemy/EnnemyFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-17">
+          <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/movable/ennemy/Octopus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/breakable/BreakableFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="31" column="38" lean-forward="true" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/penetrable/Background.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="77" selection-start-line="10" selection-start-column="77" selection-end-line="10" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/penetrable/Exit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="33" column="23" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/penetrable/Penetrable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/penetrable/PenetrableFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-39">
+          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="84" column="23" selection-start-line="84" selection-start-column="23" selection-end-line="84" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/Sprite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="45" column="38" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/penetrable/Exit.java">
+    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/movable/Movable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-          <folding>
-            <element signature="e#111#112#0" expanded="true" />
-            <element signature="e#155#156#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="726">
+          <caret line="104" column="34" selection-start-line="104" selection-start-column="34" selection-end-line="104" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/src/main/java/main/Main.java">
+    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/movable/MovableFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+        <state relative-caret-position="182">
+          <caret line="34" column="7" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/movable/Rock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/Capacities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
@@ -686,52 +643,111 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/src/main/java/view/KeyListener.java" />
-    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/Entity.java">
+    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/breakable/Dirt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+        <state relative-caret-position="85">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/Sprite.java">
+    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/movable/heros/Heros.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+        <state relative-caret-position="199">
+          <caret line="61" column="17" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/unbreakable/BlueWall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="84" selection-start-line="10" selection-start-column="84" selection-end-line="10" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/unbreakable/Explosion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/unbreakable/GreyWall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="80" selection-start-line="10" selection-start-column="80" selection-end-line="10" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/unbreakable/UnbreakableFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-90">
+          <caret line="61" column="69" selection-start-line="61" selection-start-column="69" selection-end-line="61" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/unbreakable/Unbreakable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity/src/test/java/entity/SpriteTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="76" column="64" selection-start-line="76" selection-start-column="64" selection-end-line="76" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="50" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/Fall.java">
+    <entry file="file://$PROJECT_DIR$/main/src/main/java/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="238">
+          <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/src/main/java/view/Components.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/src/main/java/view/DashKeyListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-357">
+          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+          <folding>
+            <element signature="e#1461#1462#0" expanded="true" />
+            <element signature="e#1491#1492#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/src/main/java/view/View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+        <state relative-caret-position="510">
+          <caret line="30" column="31" lean-forward="true" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contract/src/main/java/contract/IModel.java">
+    <entry file="file://$PROJECT_DIR$/contract/src/main/java/contract/ControllerOrder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="22" column="6" lean-forward="true" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contract/src/main/java/contract/IView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        <state relative-caret-position="238">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
@@ -742,51 +758,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/src/main/java/view/Components.java">
+    <entry file="file://$PROJECT_DIR$/contract/src/main/java/contract/IModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        <state relative-caret-position="204">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/src/main/java/view/DashKeyListener.java">
+    <entry file="file://$PROJECT_DIR$/contract/src/main/java/contract/IView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="68" column="9" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
-          <folding>
-            <element signature="e#1491#1492#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-243">
-          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="221">
+          <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/src/main/java/model/DBConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+        <state relative-caret-position="204">
+          <caret line="58" column="30" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/src/main/java/model/DBProperties.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+        <state relative-caret-position="357">
+          <caret line="99" column="33" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/Fall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/MoveEnnemy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/src/main/java/model/Model.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7417">
-          <caret line="178" column="26" selection-start-line="178" selection-start-column="26" selection-end-line="178" selection-end-column="26" />
+        <state relative-caret-position="4760">
+          <caret line="280" column="47" selection-start-line="280" selection-start-column="45" selection-end-line="280" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3237#3238#0" expanded="true" />
@@ -801,6 +818,16 @@
             <element signature="e#16999#17000#0" expanded="true" />
             <element signature="e#17326#17327#0" expanded="true" />
             <element signature="e#17345#17346#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/DAOMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5">
+          <caret line="95" column="27" selection-start-line="95" selection-start-column="27" selection-end-line="95" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

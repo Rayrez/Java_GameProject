@@ -19,8 +19,8 @@ public abstract class Entity {
 	/**
 	 * Instantiates a new Entity.
 	 *
-	 * @param symbol
-	 * @param fileName
+	 * @param symbol;
+	 * @param fileName;
 	 */
 	public Entity(char symbol, String fileName) {
 		this.baseSprite = new Sprite(symbol, fileName);
@@ -29,37 +29,37 @@ public abstract class Entity {
 	/**
 	 * Gets the sprite.
 	 *
-	 * @return the sprite
+	 * @return the sprite.
 	 */
 	public Sprite getBaseSprite() {
 		return this.baseSprite;
 	}
 
 	/**
-	 * Gets the X
+	 * Gets the X.
 	 *
-	 * @return the X
+	 * @return the X.
 	 */
 	public int getX() {
 		return this.x;
 	}
 
 	/**
-	 * Gets the Y
+	 * Gets the Y.
 	 *
-	 * @return the Y
+	 * @return the Y.
 	 */
 	public int getY() {
 		return this.y;
 	}
 
 	/**
-	 * Set the position (X and Y) to xP and Yp
+	 * Set the position (X and Y) to xP and Yp.
 	 *
-	 * @param xP
-	 * 			the X position
-	 * @param yP
-	 * 			the Y position
+	 * @param xP;
+	 * 			the X position.
+	 * @param yP;
+	 * 			the Y position.
 	 */
 	public void setXY(int xP, int yP) {
 		if(!set) {
@@ -80,9 +80,9 @@ public abstract class Entity {
 	}
 
 	/**
-	 * Gets the capacity
+	 * Gets the capacity.
 	 *
-	 * @return nothing
+	 * @return nothing.
 	 */
 	public Capacities getCapacity() {
 		return null;
