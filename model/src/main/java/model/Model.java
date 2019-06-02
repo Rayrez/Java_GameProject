@@ -22,7 +22,7 @@ import entity.unbreakable.*;
  *
  * @author Pierre GARRIDO
  */
-public final class Model extends Observable implements IModel {
+public final class Model extends Observable implements IModel, Runnable {
 	
 	static Entity[][] map;
 	private static int score;
@@ -56,6 +56,8 @@ public final class Model extends Observable implements IModel {
 		Model.moveEnnemy = new ArrayList<MoveEnnemy>();
 		this.loadMap(numberMap);		
 		Model.diamonds_remaining = collec.size();
+		Thread t = new Thread(this);
+		t.start();
 	}
 
 	/**
@@ -518,7 +520,7 @@ private void moveRight() {
 		this.notifyObservers();
 	}
 	
-private void moveUp() {
+	private void moveUp() {
 		
 		if(map[heros.getX()][heros.getY() - 1].getCapacity() == Capacities.UNBREAKABLE)
 		{
@@ -649,7 +651,7 @@ private void moveUp() {
 		for(i = 0;i < moveEnnemy.size();i++)
 		{
 			Thread t = new Thread(moveEnnemy.get(i));
-			t.run();
+			t.start();
 		}
 	}
 	
@@ -658,15 +660,15 @@ private void moveUp() {
 		return pause;
 	}
 	
-	int getHerosX() {
+	static int getHerosX() {
 		return heros.getX();
 	}
 	
-	int getHerosY() {
+	static int getHerosY() {
 		return heros.getY();
 	}
 	
-	void killHeros(Ennemy e) {
+	static void killHeros(Ennemy e) {
 		e.killSb(heros);
 		
 		Explosion ex = new Explosion();
@@ -704,8 +706,16 @@ private void moveUp() {
 		ex = new Explosion();
 		ex.setXY(heros.getX() - 1, heros.getY() - 1);
 		map[heros.getX() - 1][heros.getY() - 1] = ex;
+	}
+
+	@Override
+	public void run() {
 		
-		this.setChanged();
-		this.notifyObservers();
+		if(!heros.isAlive())
+		{
+			this.setChanged();
+			this.notifyObservers();
+		}
+		
 	}
 }
