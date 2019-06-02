@@ -304,10 +304,10 @@ public final class Model extends Observable implements IModel {
 					map[heros.getX()][heros.getY()] = pen;
 					penetrables.add(pen);
 				}
-				heros.setDir(Direction.LEFT);
 				heros.setX(heros.getX() - 1);
+				this.testFallMap();
 			}
-			this.testFallMap();
+			heros.setDir(Direction.LEFT);
 		}
 		this.setChanged();
 		this.notifyObservers();
@@ -420,10 +420,10 @@ private void moveRight() {
 					map[heros.getX()][heros.getY()] = pen;
 					penetrables.add(pen);
 				}
-				heros.setDir(Direction.RIGHT);
+				this.testFallMap();
 				heros.setX(heros.getX() + 1);
 			}
-			this.testFallMap();
+			heros.setDir(Direction.RIGHT);
 		}
 		this.setChanged();
 		this.notifyObservers();
