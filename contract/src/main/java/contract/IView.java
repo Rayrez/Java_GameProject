@@ -3,7 +3,7 @@ package contract;
 /**
  * The Interface IView.
  *
- * @author Jean-Aymeric Diet
+ * @author Bastien Aelters, Benjamin Brifault
  */
 public interface IView {
 

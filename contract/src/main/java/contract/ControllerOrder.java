@@ -1,7 +1,7 @@
 package contract;
 
 /**
- * The Enum Order.
+ * The Enum ControllerOrder.
  *
  * @author Pierre GARRIDO
  */

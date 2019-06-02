@@ -3,7 +3,7 @@ package contract;
 /**
  * The Interface IController.
  *
- * @author Jean-Aymeric Diet
+ * @author Mattias Huros
  */
 public interface IController {
 
@@ -15,7 +15,7 @@ public interface IController {
 	/**
 	 * Order perform.
 	 *
-	 * @param controllerOrder
+	 * @param caracter
 	 *          the controller order
 	 */
 	public void giveKey(char caracter);

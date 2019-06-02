@@ -7,7 +7,7 @@ import entity.Entity;
 /**
  * The Interface IModel.
  *
- * @author Jean-Aymeric Diet
+ * @author Pierre Garrido
  */
 public interface IModel {
 
