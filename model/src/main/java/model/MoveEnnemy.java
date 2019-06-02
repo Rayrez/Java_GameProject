@@ -22,7 +22,7 @@ public class MoveEnnemy implements Runnable {
 		
 		while(run) {
 			
-			if((System.currentTimeMillis() - timestamp) > 500)
+			/*if((System.currentTimeMillis() - timestamp) > 500)
 			{
 				if(Model.map[ennemy.getX() + 1][ennemy.getY() - 1].getCapacity() == Capacities.BREAKABLE && Model.map[ennemy.getX()][ennemy.getY() - 1].getCapacity() == Capacities.PENETRABLE)
 				{
@@ -90,7 +90,7 @@ public class MoveEnnemy implements Runnable {
 				}
 				timestamp = System.currentTimeMillis();
 				Model.setEnnemyMove();
-			}
+			}*/
 			
 			if(Model.getHerosX() == ennemy.getX() && Model.getHerosX() == ennemy.getY())
 			{
