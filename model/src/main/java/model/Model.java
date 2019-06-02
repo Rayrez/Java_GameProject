@@ -300,13 +300,13 @@ public final class Model extends Observable implements IModel {
 					pen.setXY(heros.getX(), heros.getY());
 					map[heros.getX() - 1][heros.getY()] = heros;
 					map[heros.getX() - 2][heros.getY()] = m;
-					m.setX(heros.getX() - 2);
+					m.setX(heros.getX() - 1);
 					map[heros.getX()][heros.getY()] = pen;
 					penetrables.add(pen);
 				}
+				heros.setDir(Direction.LEFT);
+				heros.setX(heros.getX() - 1);
 			}
-			heros.setDir(Direction.LEFT);
-			heros.setX(heros.getX() - 1);
 			this.testFallMap();
 		}
 		this.setChanged();
@@ -416,13 +416,13 @@ private void moveRight() {
 					pen.setXY(heros.getX(), heros.getY());
 					map[heros.getX() + 1][heros.getY()] = heros;
 					map[heros.getX() + 2][heros.getY()] = m;
-					m.setX(heros.getX() + 2);
+					m.setX(heros.getX() + 1);
 					map[heros.getX()][heros.getY()] = pen;
 					penetrables.add(pen);
 				}
+				heros.setDir(Direction.RIGHT);
+				heros.setX(heros.getX() + 1);
 			}
-			heros.setDir(Direction.RIGHT);
-			heros.setX(heros.getX() + 1);
 			this.testFallMap();
 		}
 		this.setChanged();
