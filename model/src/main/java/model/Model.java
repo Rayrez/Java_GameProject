@@ -112,6 +112,8 @@ public final class Model extends Observable implements IModel {
 		Model.map = null;
 		this.loadMap(numberMap);
 		this.launch();
+		this.setChanged();
+		this.notify();
 	}
 
 	/**
@@ -654,5 +656,10 @@ private void moveUp() {
 			Thread t = new Thread(moveEnnemy.get(i));
 			t.run();
 		}
+	}
+	
+	@Override
+	public boolean isPaused() {
+		return this.pause;
 	}
 }

@@ -66,4 +66,6 @@ public interface IModel {
 	 *
 	 */
 	void launch();
+	
+	boolean isPaused();
 }
