@@ -657,4 +657,55 @@ private void moveUp() {
 	public boolean isPaused() {
 		return pause;
 	}
+	
+	int getHerosX() {
+		return heros.getX();
+	}
+	
+	int getHerosY() {
+		return heros.getY();
+	}
+	
+	void killHeros(Ennemy e) {
+		e.killSb(heros);
+		
+		Explosion ex = new Explosion();
+		ex.setXY(heros.getX(), heros.getY());
+		map[heros.getX()][heros.getY()] = ex;
+		
+		ex = new Explosion();
+		ex.setXY(heros.getX(), heros.getY() + 1);
+		map[heros.getX()][heros.getY() + 1] = ex;
+		
+		ex = new Explosion();
+		ex.setXY(heros.getX(), heros.getY() - 1);
+		map[heros.getX()][heros.getY() - 1] = ex;
+		
+		ex = new Explosion();
+		ex.setXY(heros.getX() + 1, heros.getY());
+		map[heros.getX() + 1][heros.getY()] = ex;
+		
+		ex = new Explosion();
+		ex.setXY(heros.getX() + 1, heros.getY() + 1);
+		map[heros.getX() + 1][heros.getY() + 1] = ex;
+		
+		ex = new Explosion();
+		ex.setXY(heros.getX() + 1, heros.getY() - 1);
+		map[heros.getX() + 1][heros.getY() - 1] = ex;
+		
+		ex = new Explosion();
+		ex.setXY(heros.getX() - 1, heros.getY());
+		map[heros.getX() - 1][heros.getY()] = ex;
+		
+		ex = new Explosion();
+		ex.setXY(heros.getX() - 1, heros.getY() + 1);
+		map[heros.getX() - 1][heros.getY() + 1] = ex;
+		
+		ex = new Explosion();
+		ex.setXY(heros.getX() - 1, heros.getY() - 1);
+		map[heros.getX() - 1][heros.getY() - 1] = ex;
+		
+		this.setChanged();
+		this.notifyObservers();
+	}
 }
