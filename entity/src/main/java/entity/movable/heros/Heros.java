@@ -42,6 +42,7 @@ public class Heros extends Movable {
 	/**
 	 * Set the good sprite to each direction.
 	 * @param dirP;
+	 *            Direction parameter
 	 */
 	public void setDir(Direction dirP) {
 		this.dir = dirP;
@@ -59,7 +60,8 @@ public class Heros extends Movable {
 	/**
 	 * Set the sprite of the hero.
 	 *
-	 * @param sP;
+	 * @param sP
+	 * 			x parameter.
 	 */
 	private void setBaseSprite(Sprite sP)
 	{

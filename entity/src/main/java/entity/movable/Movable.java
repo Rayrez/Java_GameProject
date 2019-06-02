@@ -20,8 +20,10 @@ public abstract class Movable extends Entity {
 	/**
 	 * Set the capacity Breakable.
 	 *
-	 * @param symbol;
-	 * @param fileName;
+	 * @param symbol
+	 * 			The symbol.
+	 * @param fileName
+	 * 			Name of a sprite file.
 	 */
 	public Movable(char symbol, String fileName) {
 		super(symbol, fileName);
@@ -31,7 +33,7 @@ public abstract class Movable extends Entity {
 	/**
 	 * Set X.
 	 *
-	 * @param xP;
+	 * @param xP
 	 * 			Variable who contains X value.
 	 */
 	public void setX(int xP) {
@@ -48,7 +50,7 @@ public abstract class Movable extends Entity {
 	/**
 	 * Set Y.
 	 *
-	 * @param yP;
+	 * @param yP
 	 * 			Variable who contains Y value.
 	 */
 	public void setY(int yP) {

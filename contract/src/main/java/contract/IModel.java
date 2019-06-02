@@ -35,7 +35,7 @@ public interface IModel {
 	/**
 	 * Permit to give a model order.
 	 *
-	 * @param order;
+	 * @param order
 	 *           the order.
 	 */
 	void giveOrder(ControllerOrder order);

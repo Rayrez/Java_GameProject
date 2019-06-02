@@ -31,7 +31,8 @@ public class Exit extends Penetrable {
 	/**
 	 * Set if the exit is visible or not.
 	 *
-	 * @param visibleP;
+	 * @param visibleP
+	 * 			Visible or not.
 	 */
 	public void setVisible(boolean visibleP) {
 		this.visible = visibleP;

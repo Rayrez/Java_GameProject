@@ -12,8 +12,10 @@ public class Ennemy extends Movable {
 	/**
 	 * Set the enemy not submitted to the gravity.
 	 *
-	 * @param symbol;
-	 * @param fileName;
+	 * @param symbol
+	 * 			The symbol.
+	 * @param fileName
+	 * 			Name of a sprite file.
 	 */
 	public Ennemy(char symbol, String fileName) {
 		super(symbol, fileName);
@@ -23,7 +25,8 @@ public class Ennemy extends Movable {
 	/**
 	 * Kill the victim if the victim touch the ennemy.
 	 *
-	 * @param victim;
+	 * @param victim
+	 * 			The victim.
 	 */
 	public void killSb(Movable victim) {
 		victim.kill();

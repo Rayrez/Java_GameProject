@@ -52,26 +52,6 @@ public class DAOMap {
 	protected Connection getConnection() {
 		return this.connection;
 	}
-/**
- * Load the maps.
- *
- * @param mapNumber;
- *          The number of the map.
- * @param movables;
- *          The movables.
- * @param collec;
- *          The collectibles.
- * @param enemies;
- *          The enemies.
- * @param penetrables;
- *          The penetrable.
- * @param unbreakables;
- *          The unbreakables.
- * @param breakables;
- *          The breakables   .
- * @throws SQLException
- * @throws RuntimeException
- */
 
 	/**
 	 * Load the map.

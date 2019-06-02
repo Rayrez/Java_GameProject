@@ -23,9 +23,9 @@ public class Sprite {
 	/**
 	 * Instantiates a new sprite.
 	 *
-	 * @param icon;
+	 * @param icon
 	 * 			The icon's picture.
-	 * @param file;
+	 * @param file
 	 * 			The file path.
 	 */
 	public Sprite(char icon, String file) {

@@ -18,8 +18,10 @@ public abstract class Collectible extends Movable {
 	/**
 	 * Set the capacity collectible.
 	 *
-	 * @param symbol;
-	 * @param fileName;
+	 * @param symbol
+	 * 			The symbol.
+	 * @param fileName
+	 * 			Name of a sprite file.
 	 */
 	public Collectible(char symbol, String fileName) {
 		super(symbol, fileName);

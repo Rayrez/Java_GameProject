@@ -10,7 +10,7 @@ public interface IView {
 	/**
 	 * Sets the controller.
 	 *
-	 * @param controller;
+	 * @param controller
 	 *          the controllers.
 	 */
 	public void setController(final IController controller);

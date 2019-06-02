@@ -13,8 +13,10 @@ public abstract class Unbreakable extends Entity {
 	/**
 	 * Set the capacity Unbreakable.
 	 *
-	 * @param symbol;
-	 * @param fileName;
+	 * @param symbol
+	 * 			The symbol.
+	 * @param fileName
+	 * 			Name of a sprite file.
 	 */
 	public Unbreakable(char symbol, String fileName) {
 		super(symbol, fileName);
