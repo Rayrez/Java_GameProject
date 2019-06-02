@@ -283,7 +283,7 @@ public final class Model extends Observable implements IModel {
 		}
 		else if(map[heros.getX() - 1][heros.getY()].getCapacity() == Capacities.MOVABLE)
 		{
-			if((heros.getX() - 2) >= 0)
+			if((heros.getX() - 2) > 0)
 			{
 				if(map[heros.getX() - 2][heros.getY()].getCapacity() == Capacities.PENETRABLE)
 				{
@@ -298,13 +298,13 @@ public final class Model extends Observable implements IModel {
 					}
 					Penetrable pen = new Background();
 					pen.setXY(heros.getX(), heros.getY());
+					penetrables.add(pen);
+					map[heros.getX()][heros.getY()] = pen;
 					map[heros.getX() - 1][heros.getY()] = heros;
 					map[heros.getX() - 2][heros.getY()] = m;
-					m.setX(heros.getX() - 1);
-					map[heros.getX()][heros.getY()] = pen;
-					penetrables.add(pen);
+					m.setX(m.getX() - 1);
+					heros.setX(heros.getX() - 1);
 				}
-				heros.setX(heros.getX() - 1);
 				this.testFallMap();
 			}
 			heros.setDir(Direction.LEFT);
@@ -414,14 +414,14 @@ private void moveRight() {
 					}
 					Penetrable pen = new Background();
 					pen.setXY(heros.getX(), heros.getY());
+					penetrables.add(pen);
+					map[heros.getX()][heros.getY()] = pen;
 					map[heros.getX() + 1][heros.getY()] = heros;
 					map[heros.getX() + 2][heros.getY()] = m;
-					m.setX(heros.getX() + 1);
-					map[heros.getX()][heros.getY()] = pen;
-					penetrables.add(pen);
+					m.setX(m.getX() + 1);
+					heros.setX(heros.getX() + 1);
 				}
 				this.testFallMap();
-				heros.setX(heros.getX() + 1);
 			}
 			heros.setDir(Direction.RIGHT);
 		}
