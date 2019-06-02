@@ -111,6 +111,7 @@ public final class Model extends Observable implements IModel {
 		Model.unbreakables.removeAll(Model.unbreakables);
 		Model.map = null;
 		this.loadMap(numberMap);
+		this.launch();
 	}
 
 	/**

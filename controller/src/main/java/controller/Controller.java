@@ -24,6 +24,7 @@ public final class Controller implements IController {
 		model = new Model(1);
 		view = new View(model);
 		this.view.setController(this);
+		this.model.launch();
 	}
 
 	/**
@@ -53,6 +54,12 @@ public final class Controller implements IController {
 	      }
 	      else if (character == 'D'){
 	          this.model.giveOrder(ControllerOrder.MoveRight);
+	      }
+	      else if (character == 'P'){
+	          this.model.giveOrder(ControllerOrder.Pause);
+	      }
+	      else if (character == 'R'){
+	          this.model.giveOrder(ControllerOrder.Reset);
 	      }
 	}
 
