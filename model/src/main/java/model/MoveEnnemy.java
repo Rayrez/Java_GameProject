@@ -89,6 +89,7 @@ public class MoveEnnemy implements Runnable {
 					Model.penetrables.add(pen);	
 				}
 				timestamp = System.currentTimeMillis();
+				Model.setEnnemyMove();
 			}
 			
 			if(Model.getHerosX() == ennemy.getX() && Model.getHerosX() == ennemy.getY())

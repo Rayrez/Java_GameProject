@@ -38,6 +38,7 @@ public final class Model extends Observable implements IModel, Runnable {
 	private static ArrayList<Breakable> breakables;
 	private static boolean pause;
 	private static int numberMap;
+	private static boolean mov_ennemy;
 
 	/**
 	 * Instantiates a new model.
@@ -717,5 +718,15 @@ private void moveRight() {
 			this.notifyObservers();
 		}
 		
+		if(mov_ennemy)
+		{
+			this.setChanged();
+			this.notifyObservers();
+			mov_ennemy = false;
+		}
+	}
+	
+	static void setEnnemyMove() {
+		mov_ennemy = true;
 	}
 }
