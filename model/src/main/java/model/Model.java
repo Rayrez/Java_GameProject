@@ -429,7 +429,7 @@ private void moveRight() {
 		this.notifyObservers();
 	}
 
-	private void moveUp() {
+	private void moveDown() {
 		
 		if(map[heros.getX()][heros.getY() + 1].getCapacity() == Capacities.UNBREAKABLE)
 		{
@@ -521,7 +521,7 @@ private void moveRight() {
 		this.notifyObservers();
 	}
 	
-private void moveDown() {
+private void moveUp() {
 		
 		if(map[heros.getX()][heros.getY() - 1].getCapacity() == Capacities.UNBREAKABLE)
 		{
