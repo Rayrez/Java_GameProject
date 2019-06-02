@@ -568,7 +568,7 @@ private void moveUp() {
 			}
 			Penetrable pen = new Background();
 			pen.setXY(heros.getX(), heros.getY());
-			map[heros.getX()][heros.getY() + 1] = heros;
+			map[heros.getX()][heros.getY() - 1] = heros;
 			map[heros.getX()][heros.getY()] = pen;
 			diamonds_remaining = collec.size(); 
 			penetrables.add(pen);
