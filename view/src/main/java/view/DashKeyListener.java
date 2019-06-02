@@ -51,6 +51,22 @@ public class DashKeyListener implements KeyListener {
 	     if (keycode == KeyEvent.VK_RIGHT){
 	        this.controler.giveKey('D');
 	     }
+
+		if (keycode == KeyEvent.VK_P){
+			this.controler.giveKey('P');
+		}
+
+		if (keycode == KeyEvent.VK_R){
+			this.controler.giveKey('R');
+		}
+
+		if (keycode == KeyEvent.VK_P){
+			this.controler.giveKey('P');
+		}
+
+		if (keycode == KeyEvent.VK_R){
+			this.controler.giveKey('R');
+		}
 		
 	}
 
