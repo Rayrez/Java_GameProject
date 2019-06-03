@@ -34,6 +34,7 @@ public class SpriteTest {
 	 * This method make the correspondence between a symbol in the map, and a sprite.
 	 *
 	 * @throws Exception
+	 * 			Send an exception if the method don't work.
 	 */
 	@Before
 	public void setUp() throws Exception {
