@@ -26,14 +26,14 @@ public class Fall implements Runnable {
 			{
 				Penetrable pen = new Background();
 				pen.setXY(entity.getX(), entity.getY());
-				model.penetrables.add(pen);
+				Model.penetrables.add(pen);
 				model.setElement(entity, pen, entity.getX(), entity.getY() + 1, entity.getX(), entity.getY());
 				int i;
 				for(i = 0;i < Model.penetrables.size();i++)
 				{
-					if(model.penetrables.get(i).getX() == entity.getX() && model.penetrables.get(i).getY() == (entity.getY() + 1))
+					if(Model.penetrables.get(i).getX() == entity.getX() && Model.penetrables.get(i).getY() == (entity.getY() + 1))
 					{
-						model.penetrables.remove(i);
+						Model.penetrables.remove(i);
 					}
 				}
 				entity.setY(entity.getY() + 1);
@@ -74,7 +74,7 @@ public class Fall implements Runnable {
 			{
 				Penetrable pen = new Background();
 				pen.setXY(entity.getX(), entity.getY());
-				model.penetrables.add(pen);
+				Model.penetrables.add(pen);
 				model.setElement(entity, pen, entity.getX() + 1, entity.getY(), entity.getX(), entity.getY());
 				entity.setX(entity.getX() + 1);
 				try {
@@ -87,9 +87,9 @@ public class Fall implements Runnable {
 					int i;
 					for(i = 0;i < Model.penetrables.size();i++)
 					{
-						if(model.penetrables.get(i).getX() == entity.getX() && model.penetrables.get(i).getY() == (entity.getY() + 1))
+						if(Model.penetrables.get(i).getX() == entity.getX() && Model.penetrables.get(i).getY() == (entity.getY() + 1))
 						{
-							model.penetrables.remove(i);
+							Model.penetrables.remove(i);
 						}
 					}
 					entity.setY(entity.getY() + 1);
@@ -122,7 +122,7 @@ public class Fall implements Runnable {
 			{
 				Penetrable pen = new Background();
 				pen.setXY(entity.getX(), entity.getY());
-				model.penetrables.add(pen);
+				Model.penetrables.add(pen);
 				model.setElement(entity, pen, entity.getX() - 1, entity.getY(), entity.getX(), entity.getY());
 				entity.setX(entity.getX() - 1);
 				try {
@@ -135,9 +135,9 @@ public class Fall implements Runnable {
 					int i;
 					for(i = 0;i < Model.penetrables.size();i++)
 					{
-						if(model.penetrables.get(i).getX() == entity.getX() && model.penetrables.get(i).getY() == (entity.getY() + 1))
+						if(Model.penetrables.get(i).getX() == entity.getX() && Model.penetrables.get(i).getY() == (entity.getY() + 1))
 						{
-							model.penetrables.remove(i);
+							Model.penetrables.remove(i);
 						}
 					}
 					entity.setY(entity.getY() + 1);
