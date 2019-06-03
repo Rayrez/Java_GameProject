@@ -11,8 +11,16 @@ import org.junit.Test;
 import entity.Capacities;
 import entity.penetrable.Exit;
 
+/**
+ * The class ExitTest.
+ *
+ * @author Pierre GARRIDO
+ */
 public class ExitTest {
-	
+
+	/**
+	 * Instantiates a new exit.
+	 */
 	Exit exit;
 
 	@BeforeClass
@@ -23,6 +31,12 @@ public class ExitTest {
 	public static void tearDownAfterClass() throws Exception {
 	}
 
+	/**
+	 * Instantiates a new exit before each test.
+	 *
+	 * @throws Exception
+	 * 				Send an exception if the method don't work.
+	 */
 	@Before
 	public void setUp() throws Exception {
 		this.exit = new Exit();
@@ -32,33 +46,51 @@ public class ExitTest {
 	public void tearDown() throws Exception {
 	}
 
+	/**
+	 * Test the method exit.
+	 */
 	@Test
 	public void testExit() {
 		assertEquals(this.exit.getBaseSprite().getIcon(), 'E');
 	}
-	
+
+	/**
+	 * Test the method getCapacity.
+	 */
 	@Test
 	public void testGetCapacity() {
 		assertEquals(this.exit.getCapacity(), Capacities.UNBREAKABLE);
 	}
 
+	/**
+	 * Test the method getBaseSprite.
+	 */
 	@Test
 	public void testGetBaseSprite() {
 		assertEquals(this.exit.getBaseSprite().getIcon(), 'E');
 	}
 
+	/**
+	 * Test the method getX.
+	 */
 	@Test
 	public void testGetX() {
 		this.exit.setXY(2, 3);
 		assertEquals(this.exit.getX(), 2);
 	}
 
+	/**
+	 * Test the method getY.
+	 */
 	@Test
 	public void testGetY() {
 		this.exit.setXY(2, 3);
 		assertEquals(this.exit.getY(), 3);
 	}
 
+	/**
+	 * Test the method setXY.
+	 */
 	@Test
 	public void testSetXY() {
 		

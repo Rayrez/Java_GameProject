@@ -10,8 +10,15 @@ import org.junit.Test;
 
 import entity.Capacities;
 
+/**
+ * The class BlueWallTest.
+ *
+ * @author Pierre GARRIDO
+ */
 public class BlueWallTest {
-	
+	/**
+	 * Instantiates a new blueWall.
+	 */
 	BlueWall blueWall;
 
 	@BeforeClass
@@ -22,6 +29,12 @@ public class BlueWallTest {
 	public static void tearDownAfterClass() throws Exception {
 	}
 
+	/**
+	 * Instantiate a new blueWall before each test.
+	 *
+	 * @throws Exception
+	 * 				Send an exception if the method don't work.
+	 */
 	@Before
 	public void setUp() throws Exception {
 		blueWall = new BlueWall();
@@ -31,33 +44,51 @@ public class BlueWallTest {
 	public void tearDown() throws Exception {
 	}
 
+	/**
+	 * Test the method blueWall.
+	 */
 	@Test
 	public void testBlueWall() {
 		assertEquals(this.blueWall.getBaseSprite().getIcon(), 'B');
 	}
 
+	/**
+	 * Test the method getCapacity.
+	 */
 	@Test
 	public void testGetCapacity() {
 		assertEquals(this.blueWall.getCapacity(), Capacities.UNBREAKABLE);
 	}
 
+	/**
+	 * Test the method getBaseSprite.
+	 */
 	@Test
 	public void testGetBaseSprite() {
 		assertEquals(this.blueWall.getBaseSprite().getIcon(), 'B');
 	}
 
+	/**
+	 * Test the method getX.
+	 */
 	@Test
 	public void testGetX() {
 		this.blueWall.setXY(2, 3);
 		assertEquals(this.blueWall.getX(), 2);
 	}
 
+	/**
+	 * Test the method getY.
+	 */
 	@Test
 	public void testGetY() {
 		this.blueWall.setXY(2, 3);
 		assertEquals(this.blueWall.getY(), 3);
 	}
 
+	/**
+	 * Test the method setXY.
+	 */
 	@Test
 	public void testSetXY() {
 		

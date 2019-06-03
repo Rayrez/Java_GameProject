@@ -10,8 +10,16 @@ import org.junit.Test;
 
 import entity.Capacities;
 
+/**
+ * The class GreyWallTest.
+ *
+ * @author Pierre GARRIDO
+ */
 public class GreyWallTest {
-	
+
+	/**
+	 * Instantiates a new greyWall.
+	 */
 	GreyWall greyWall;
 
 	@BeforeClass
@@ -22,41 +30,66 @@ public class GreyWallTest {
 	public static void tearDownAfterClass() throws Exception {
 	}
 
+	/**
+	 * Instantiates a new greyWall before each test.
+	 *
+	 * @throws Exception
+	 * 				Send an exception if the method don't work.
+	 */
 	@Before
 	public void setUp() throws Exception {
+		this.greyWall = new GreyWall();
 	}
 
 	@After
 	public void tearDown() throws Exception {
 	}
 
+	/**
+	 * Test the method greyWall.
+	 */
 	@Test
 	public void testGreyWall() {
 		assertEquals(this.greyWall.getBaseSprite().getIcon(), 'G');
 	}
 
+	/**
+	 * Test the method getCapacity.
+	 */
 	@Test
 	public void testGetCapacity() {
 		assertEquals(this.greyWall.getCapacity(), Capacities.UNBREAKABLE);
 	}
 
+	/**
+	 * Test the method getBaseSprite.
+	 */
 	@Test
 	public void testGetBaseSprite() {
 		assertEquals(this.greyWall.getBaseSprite().getIcon(), 'G');
 	}
 
+	/**
+	 * Test the method getX.
+	 */
 	@Test
 	public void testGetX() {
 		this.greyWall.setXY(2, 3);
 		assertEquals(this.greyWall.getX(), 2);
 	}
 
+	/**
+	 * Test the method getY.
+	 */
 	@Test
 	public void testGetY() {
 		this.greyWall.setXY(2, 3);
 		assertEquals(this.greyWall.getY(), 3);
 	}
 
+	/**
+	 * Test the method setXY.
+	 */
 	@Test
 	public void testSetXY() {
 		
