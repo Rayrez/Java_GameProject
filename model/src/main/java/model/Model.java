@@ -55,7 +55,7 @@ public final class Model extends Observable implements IModel, Runnable {
 		Model.breakables = new ArrayList<Breakable>();
 		this.loadMap(numberMap);		
 		Model.diamonds_remaining = collec.size();
-		Thread move_ennemy = new Thread(this);
+		move_ennemy = new Thread(this);
 		move_ennemy.start();
 	}
 
@@ -108,7 +108,6 @@ public final class Model extends Observable implements IModel, Runnable {
 	@SuppressWarnings("deprecation")
 	private void resetModel() {
 		
-		move_ennemy.stop();
 		Model.mouv.removeAll(Model.mouv);
 		Model.collec.removeAll(Model.collec);
 		Model.heros = new Heros();
@@ -117,6 +116,7 @@ public final class Model extends Observable implements IModel, Runnable {
 		Model.unbreakables.removeAll(Model.unbreakables);
 		Model.map = null;
 		this.loadMap(numberMap);
+		move_ennemy = new Thread(this);
 		move_ennemy.start();
 		this.setChanged();
 		this.notifyObservers();;
@@ -176,8 +176,6 @@ public final class Model extends Observable implements IModel, Runnable {
 					this.moveUp();
 				else if(order == ControllerOrder.MoveDown)
 					this.moveDown();
-				else if(order == ControllerOrder.Pause)
-					pause = true;
 				else if(order == ControllerOrder.Reset)
 					this.resetModel();
 				
@@ -699,7 +697,6 @@ private void moveRight() {
 		ex = new Explosion();
 		ex.setXY(heros.getX() - 1, heros.getY() - 1);
 		map[heros.getX() - 1][heros.getY() - 1] = ex;
-		move_ennemy.stop();
 		
 		this.setChanged();
 		this.notifyObservers();
@@ -713,7 +710,7 @@ private void moveRight() {
 		
 		while(true)
 		{
-			if((System.currentTimeMillis() - timestamp) > 500)
+			if((System.currentTimeMillis() - timestamp) > 500 && !pause)
 			{
 				for(Ennemy ennemy : enemies)
 				{
