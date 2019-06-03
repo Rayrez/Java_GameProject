@@ -15,6 +15,7 @@ public class Fall implements Runnable {
 	@Override
 	public void run() {
 		int initial_x, initial_y;
+		System.out.println("Fall");
 		
 		//if(map[entity.getX()][entity.getY()])
 	}

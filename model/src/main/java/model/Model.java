@@ -631,7 +631,7 @@ private void moveRight() {
 		
 		for(y = 0;y < 28;y++)
 		{
-			for(x = 0;x < 28;x++)
+			for(x = 0;x < 25;x++)
 			{
 				if(map[x][y].getCapacity() == Capacities.MOVABLE)
 				{
