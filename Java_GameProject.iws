@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0869726-3ddf-44e8-85ca-0183e9690e4f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Java_GameProject.iws" beforeDir="false" afterPath="$PROJECT_DIR$/Java_GameProject.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contract/src/main/java/contract/IController.java" beforeDir="false" afterPath="$PROJECT_DIR$/contract/src/main/java/contract/IController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/src/main/java/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/controller/src/main/java/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diagram/jpublankproject.vpp" beforeDir="false" afterPath="$PROJECT_DIR$/diagram/jpublankproject.vpp" afterDir="false" />
-    </list>
+    <list default="true" id="e0869726-3ddf-44e8-85ca-0183e9690e4f" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/bin/" />
     <ignored path="$PROJECT_DIR$/main/target/" />
@@ -74,8 +69,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+            <state relative-caret-position="314">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -441,7 +436,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Maven.masterpom [compile,package,install,site...]">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="main" />
@@ -514,7 +509,7 @@
       <workItem from="1559383712050" duration="3724000" />
       <workItem from="1559507610296" duration="4854000" />
       <workItem from="1559544858016" duration="3027000" />
-      <workItem from="1559549997150" duration="17763000" />
+      <workItem from="1559549997150" duration="17954000" />
     </task>
     <task id="LOCAL-00001" summary="Debugging Javadoc">
       <created>1559547472824</created>
@@ -565,11 +560,18 @@
       <option name="project" value="LOCAL" />
       <updated>1559573556692</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Debugging controller">
+      <created>1559573818302</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1559573818302</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51679000" />
+    <option name="totallyTimeSpent" value="51870000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -582,7 +584,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-1088" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14072494" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -593,7 +594,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22101842" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.22101842" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -625,7 +626,8 @@
     <MESSAGE value="Implementing gravity" />
     <MESSAGE value="Implementing gravity (Pierre)" />
     <MESSAGE value="Modification of diagrams" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modification of diagrams" />
+    <MESSAGE value="Debugging controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Debugging controller" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/breakable/BreakableFactory.java">
@@ -1017,8 +1019,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+        <state relative-caret-position="314">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
