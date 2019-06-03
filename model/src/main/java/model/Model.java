@@ -24,6 +24,10 @@ import entity.unbreakable.*;
  */
 public final class Model extends Observable implements IModel, Runnable {
 	
+	/**
+	 * The class's attributes.
+	 *
+	 */
 	private static Entity[][] map;
 	private static int score;
 	private static int diamonds_remaining;
@@ -134,20 +138,51 @@ public final class Model extends Observable implements IModel, Runnable {
 	 *
 	 * @see contract.IModel#getObservable()
 	 */
+	@Override
 	public Observable getObservable() {
 		return this;
 	}
 
+	/**
+	 * Gets the map.
+	 *
+	 * @return map.
+	 */
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see contract.IModel#getMap()
+	 */
 	@Override
 	public Entity[][] getMap() {
 		return Model.map;
 	}
 
+	/**
+	 * Gets if the player is dead.
+	 *
+	 * @return true if the player is dead.
+	 */
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see contract.IModel#isDead()
+	 */
 	@Override
 	public boolean isDead() {
 		return heros.isAlive();
 	}
 
+	/**
+	 * Gets if the player has won.
+	 *
+	 * @return true if the player has won.
+	 */
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see contract.IModel#hasWon()
+	 */
 	@Override
 	public boolean hasWon() {
 		if(heros.getX() == exit.getX() && heros.getY() == exit.getY() && diamonds_remaining == 0)
@@ -156,6 +191,14 @@ public final class Model extends Observable implements IModel, Runnable {
 			return false;
 	}
 
+	/**
+	 * Permit to give order to the model.
+	 */
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see contract.IModel#giveOrder()
+	 */
 	@Override
 	public void giveOrder(ControllerOrder order) {
 
@@ -194,6 +237,10 @@ public final class Model extends Observable implements IModel, Runnable {
 		}
 	}
 	
+	
+	/**
+	 * Move the player to the left.
+	 */
 	private void moveLeft() {
 		
 		if(map[heros.getX() - 1][heros.getY()].getCapacity() == Capacities.UNBREAKABLE)
@@ -314,7 +361,10 @@ public final class Model extends Observable implements IModel, Runnable {
 		this.notifyObservers();
 	}
 	
-private void moveRight() {
+	/**
+	 * Move the player to the right.
+	 */
+	private void moveRight() {
 		
 		if(map[heros.getX() + 1][heros.getY()].getCapacity() == Capacities.UNBREAKABLE)
 		{
@@ -434,7 +484,10 @@ private void moveRight() {
 		this.setChanged();
 		this.notifyObservers();
 	}
-
+	
+	/**
+	 * Move the player down.
+	 */
 	private void moveDown() {
 		
 		if(map[heros.getX()][heros.getY() + 1].getCapacity() == Capacities.UNBREAKABLE)
@@ -529,6 +582,9 @@ private void moveRight() {
 		this.notifyObservers();
 	}
 	
+	/**
+	 * Move the player up.
+	 */
 	private void moveUp() {
 		
 		if(map[heros.getX()][heros.getY() - 1].getCapacity() == Capacities.UNBREAKABLE)
@@ -623,6 +679,9 @@ private void moveRight() {
 		this.notifyObservers();
 	}
 	
+	/**
+	 * Tests the map to find places to activate the gravity.
+	 */
 	private void testFallMap() {
 		int x, y;
 		
@@ -666,6 +725,11 @@ private void moveRight() {
      *
      * @return the score.
      */
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see contract.IModel#getScore()
+	 */
 	@Override
 	public int getScore() {
 		return Model.score;
@@ -676,11 +740,19 @@ private void moveRight() {
      *
      * @return the number of remaining diamond.
      */
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see contract.IModel#getDiamonds_remaining()
+	 */
 	@Override
 	public int getDiamonds_remaining() {
 		return Model.diamonds_remaining;
 	}
 
+	/**
+     * Add an observer.
+     */
 	@Override
 	public void addObserver(Observer o) {
 		super.addObserver(o);
@@ -688,11 +760,24 @@ private void moveRight() {
 		this.notifyObservers();
 	}
 	
+	/**
+     * Gets if the game is paused.
+     *
+     * @return true if the game is paused.
+     */
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see contract.IModel#isPaused()
+	 */
 	@Override
 	public boolean isPaused() {
 		return pause;
 	}
 	
+	/**
+     * Kills the heros by an enemy.
+     */
 	void killHeros(Ennemy e) {
 		e.killSb(heros);
 		pause = true;
@@ -737,6 +822,9 @@ private void moveRight() {
 		this.notifyObservers();
 	}
 	
+	/**
+     * Kills the heros by a movable.
+     */
 	void killHeros(Movable e) {
 		pause = true;
 		
@@ -779,7 +867,10 @@ private void moveRight() {
 		this.setChanged();
 		this.notifyObservers();
 	}
-
+	
+	/**
+     * The thread to move automatically the enemies and to detect any changes.
+     */
 	@Override
 	public void run() {
 		
@@ -873,6 +964,11 @@ private void moveRight() {
 		}
 	}
 	
+	/**
+     * Checks if the hero is going to be killed.
+     
+     * @return true if the heros is going to be killed.
+     */
 	private boolean checkKillHeros() {
 		
 		boolean test = false;
@@ -912,6 +1008,9 @@ private void moveRight() {
 		return test;
 	}
 	
+	/**
+     * Kills an enemy.
+     */
 	public void killEnnemy(Ennemy e) {
 		int i;
 		
@@ -979,18 +1078,42 @@ private void moveRight() {
 		}
 	}
 
+	/**
+     * Gets the hero's X position.
+     *
+     * @return the hero's X position.
+     */
 	int getHerosX() {
 		return heros.getX();
 	}
 
+	/**
+     * Gets the hero's Y position.
+     *
+     * @return the hero's Y position.
+     */
 	int getHerosY() {
 		return heros.getY();
 	}
 
+	/**
+     * Gets the entity within the map on a specific position.
+     *
+     * @return the entity
+     */
 	Entity getElement(int x, int y) {
+		if(x > 25 || y > 28)
+			throw new IllegalArgumentException("One of the values is too large");
 		return map[x][y];
 	}
+	
+	/**
+     * Permits to set two entity within the map.
+
+     */
 	void setElement(Entity e1, Entity e2, int x1, int y1, int x2, int y2) {
+		if(x1 > 25 || y2 > 28 || x2 > 25 || y2 > 28)
+			throw new IllegalArgumentException("One of the values is too large");
 		map[x1][y1] = e1;
 		map[x2][y2] = e2;
 		change = true;

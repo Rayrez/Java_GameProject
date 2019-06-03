@@ -8,14 +8,23 @@ import entity.penetrable.Penetrable;
 
 public class Fall implements Runnable {
 
+	/**
+	 * The class's attributes.
+	 */
 	private Movable entity;
 	private final Model model;
 	
+	/**
+	 * Instantiates a new class Fall.
+	 */
 	public Fall(Movable e, Model m) {
 		this.entity = e;
 		this.model = m;
 	}
 	
+	/**
+	 * The main method to use gravity.
+	 */
 	@Override
 	public void run() {
 		
@@ -26,14 +35,14 @@ public class Fall implements Runnable {
 			{
 				Penetrable pen = new Background();
 				pen.setXY(entity.getX(), entity.getY());
-				model.penetrables.add(pen);
+				Model.penetrables.add(pen);
 				model.setElement(entity, pen, entity.getX(), entity.getY() + 1, entity.getX(), entity.getY());
 				int i;
 				for(i = 0;i < Model.penetrables.size();i++)
 				{
-					if(model.penetrables.get(i).getX() == entity.getX() && model.penetrables.get(i).getY() == (entity.getY() + 1))
+					if(Model.penetrables.get(i).getX() == entity.getX() && Model.penetrables.get(i).getY() == (entity.getY() + 1))
 					{
-						model.penetrables.remove(i);
+						Model.penetrables.remove(i);
 					}
 				}
 				entity.setY(entity.getY() + 1);
@@ -70,37 +79,11 @@ public class Fall implements Runnable {
 		else if((model.getElement(entity.getX() + 1, entity.getY() + 1).getCapacity() == Capacities.PENETRABLE || model.getElement(entity.getX() - 1, entity.getY() + 1).getCapacity() == Capacities.PENETRABLE) && (model.getElement(entity.getX() - 1, entity.getY()).getCapacity() == Capacities.PENETRABLE || model.getElement(entity.getX() + 1, entity.getY()).getCapacity() == Capacities.PENETRABLE))
 		{
 			this.entity.setMoving(true);
-			boolean ok = false;
-
-			for(Movable m : Model.mouv)
-			{
-				if(m.getX() == entity.getX() && m.getY() == (entity.getY() + 1))
-				{
-					ok = true;
-				}
-			}
-
-			for(Movable m : Model.collec)
-			{
-				if(m.getX() == entity.getX() && m.getY() == (entity.getY() + 1))
-				{
-					ok = true;
-				}
-			}
-
-			if(model.getElement(entity.getX() + 1, entity.getY() + 1).getCapacity() == Capacities.PENETRABLE && model.getElement(entity.getX() + 1, entity.getY()).getCapacity() == Capacities.PENETRABLE && ok)
+			if(model.getElement(entity.getX() + 1, entity.getY() + 1).getCapacity() == Capacities.PENETRABLE && model.getElement(entity.getX() + 1, entity.getY()).getCapacity() == Capacities.PENETRABLE)
 			{
 				Penetrable pen = new Background();
 				pen.setXY(entity.getX(), entity.getY());
-				model.penetrables.add(pen);
-                int i;
-                for(i = 0;i < Model.penetrables.size();i++)
-                {
-                    if(model.penetrables.get(i).getX() == entity.getX() && model.penetrables.get(i).getY() == (entity.getY() + 1))
-                    {
-                        model.penetrables.remove(i);
-                    }
-                }
+				Model.penetrables.add(pen);
 				model.setElement(entity, pen, entity.getX() + 1, entity.getY(), entity.getX(), entity.getY());
 				entity.setX(entity.getX() + 1);
 				try {
@@ -108,21 +91,47 @@ public class Fall implements Runnable {
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-
-				Thread t = new Thread(new Fall(entity, this.model));
-				t.start();
-				this.entity.setMoving(false);
-			}
-			if(model.getElement(entity.getX() - 1, entity.getY() + 1).getCapacity() == Capacities.PENETRABLE && model.getElement(entity.getX() - 1, entity.getY()).getCapacity() == Capacities.PENETRABLE && ok) {
-				Penetrable pen = new Background();
-				pen.setXY(entity.getX(), entity.getY());
-				model.penetrables.add(pen);
-				int i;
-				for (i = 0; i < Model.penetrables.size(); i++) {
-					if (model.penetrables.get(i).getX() == entity.getX() && model.penetrables.get(i).getY() == (entity.getY() + 1)) {
-						model.penetrables.remove(i);
+				while(model.getElement(entity.getX(), entity.getY() + 1).getCapacity() == Capacities.PENETRABLE)
+				{
+					int i;
+					for(i = 0;i < Model.penetrables.size();i++)
+					{
+						if(Model.penetrables.get(i).getX() == entity.getX() && Model.penetrables.get(i).getY() == (entity.getY() + 1))
+						{
+							Model.penetrables.remove(i);
+						}
+					}
+					entity.setY(entity.getY() + 1);
+					entity.becomeMortal();
+					try {
+						Thread.sleep(250);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
 					}
 				}
+
+				if(model.getHerosX() == entity.getX() && model.getHerosY() == (entity.getY() + 1) && entity.isMortal())
+				{
+					model.killHeros(entity);
+				}
+
+				for(Ennemy en : Model.enemies) {
+					if (en.getX() == entity.getX() && en.getY() == (entity.getY() + 1) && entity.isMortal()) {
+						model.killEnnemy(en);
+						int i;
+						for (i = 0; i < Model.mouv.size(); i++) {
+							if (Model.mouv.get(i).getX() == entity.getX() && Model.mouv.get(i).getY() == entity.getY()) {
+								Model.mouv.remove(i);
+							}
+						}
+					}
+				}
+			}
+			if(model.getElement(entity.getX() - 1, entity.getY() + 1).getCapacity() == Capacities.PENETRABLE && model.getElement(entity.getX() - 1, entity.getY()).getCapacity() == Capacities.PENETRABLE)
+			{
+				Penetrable pen = new Background();
+				pen.setXY(entity.getX(), entity.getY());
+				Model.penetrables.add(pen);
 				model.setElement(entity, pen, entity.getX() - 1, entity.getY(), entity.getX(), entity.getY());
 				entity.setX(entity.getX() - 1);
 				try {
@@ -130,10 +139,47 @@ public class Fall implements Runnable {
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				Thread t = new Thread(new Fall(entity, this.model));
-				t.start();
-				this.entity.setMoving(false);
+				while(model.getElement(entity.getX(), entity.getY() + 1).getCapacity() == Capacities.PENETRABLE)
+				{
+					int i;
+					for(i = 0;i < Model.penetrables.size();i++)
+					{
+						if(Model.penetrables.get(i).getX() == entity.getX() && Model.penetrables.get(i).getY() == (entity.getY() + 1))
+						{
+							Model.penetrables.remove(i);
+						}
+					}
+					entity.setY(entity.getY() + 1);
+					entity.becomeMortal();
+					try {
+						Thread.sleep(250);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+
+				if(model.getHerosX() == entity.getX() && model.getHerosY() == (entity.getY() + 1) && entity.isMortal())
+				{
+					model.killHeros(entity);
+				}
+
+				for(Ennemy en : Model.enemies)
+				{
+					if(en.getX() == entity.getX() && en.getY() == (entity.getY() + 1) && entity.isMortal())
+					{
+						model.killEnnemy(en);
+						int i;
+						for(i = 0;i < Model.mouv.size();i++)
+						{
+							if(Model.mouv.get(i).getX() == entity.getX() && Model.mouv.get(i).getY() == entity.getY())
+							{
+								Model.mouv.remove(i);
+							}
+						}
+					}
+				}
 			}
+			this.entity.setMoving(false);
 		}
 	}
 
