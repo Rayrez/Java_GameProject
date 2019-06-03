@@ -70,11 +70,11 @@ public class DAOMap {
 	 *          The unbreakables.
 	 * @param breakables
 	 *          The breakables.
-	 * @param move_ennemy
-	 * 			The move of ennemy.
 	 * @return the map.
 	 * @throws SQLException
+	 * 			Send an exception if the method don't work.
 	 * @throws RuntimeException
+	 * 			Send an exception if the method don't work.
 	 */
 	public Entity[][] load(int mapNumber, ArrayList<Movable> movables, ArrayList<Collectible> collec, ArrayList<Ennemy> enemies, ArrayList<Penetrable> penetrables, ArrayList<Unbreakable> unbreakables, ArrayList<Breakable> breakables) throws SQLException, RuntimeException {
 
