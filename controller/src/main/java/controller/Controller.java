@@ -24,7 +24,6 @@ public final class Controller implements IController {
 		model = new Model(1);
 		view = new View(model);
 		this.view.setController(this);
-		this.model.launch();
 	}
 
 	/**
