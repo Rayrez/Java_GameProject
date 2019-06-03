@@ -37,7 +37,7 @@ public final class Model extends Observable implements IModel, Runnable {
 	private static ArrayList<Breakable> breakables;
 	private static boolean pause;
 	private static int numberMap;
-	private Thread move_ennemy;
+	private static Thread move_ennemy;
 
 	/**
 	 * Instantiates a new model.
@@ -296,6 +296,8 @@ public final class Model extends Observable implements IModel, Runnable {
 							m = mouv.get(i);
 						}
 					}
+					heros.setX(heros.getX() - 1);
+					this.checkKillHeros();
 					Penetrable pen = new Background();
 					pen.setXY(heros.getX(), heros.getY());
 					penetrables.add(pen);
@@ -303,7 +305,6 @@ public final class Model extends Observable implements IModel, Runnable {
 					map[heros.getX() - 1][heros.getY()] = heros;
 					map[heros.getX() - 2][heros.getY()] = m;
 					m.setX(m.getX() - 1);
-					heros.setX(heros.getX() - 1);
 				}
 				this.testFallMap();
 			}
@@ -401,6 +402,7 @@ private void moveRight() {
 		{
 			if((heros.getX() + 2) <= 25)
 			{
+				
 				if(map[heros.getX() + 2][heros.getY()].getCapacity() == Capacities.PENETRABLE)
 				{
 					int i = 0;
@@ -412,6 +414,8 @@ private void moveRight() {
 							m = mouv.get(i);
 						}
 					}
+					heros.setX(heros.getX() + 1);
+					this.checkKillHeros();
 					Penetrable pen = new Background();
 					pen.setXY(heros.getX(), heros.getY());
 					penetrables.add(pen);
@@ -419,7 +423,6 @@ private void moveRight() {
 					map[heros.getX() + 1][heros.getY()] = heros;
 					map[heros.getX() + 2][heros.getY()] = m;
 					m.setX(m.getX() + 1);
-					heros.setX(heros.getX() + 1);
 				}
 				this.testFallMap();
 			}
@@ -516,6 +519,7 @@ private void moveRight() {
 		else if(map[heros.getX()][heros.getY() + 1].getCapacity() == Capacities.MOVABLE)
 		{
 			heros.setDir(Direction.FACE);
+			this.checkKillHeros();
 		}
 		this.setChanged();
 		this.notifyObservers();
@@ -608,6 +612,7 @@ private void moveRight() {
 		else if(map[heros.getX()][heros.getY() - 1].getCapacity() == Capacities.MOVABLE)
 		{
 			heros.setDir(Direction.FACE);
+			this.checkKillHeros();
 		}
 		this.setChanged();
 		this.notifyObservers();
@@ -699,6 +704,8 @@ private void moveRight() {
 		long timestamp = 0L;
 		int i;
 		
+		System.out.print("Run\n");
+		
 		if((System.currentTimeMillis() - timestamp) > 500)
 		{
 			for(Ennemy ennemy : enemies)
@@ -770,30 +777,41 @@ private void moveRight() {
 				
 				this.setChanged();
 				this.notifyObservers();
-			
-				if(heros.getX() == ennemy.getX() && heros.getY() == ennemy.getY())
-				{
-					this.killHeros(ennemy);
-				}
-				else if(heros.getX() == (ennemy.getX() - 1) && heros.getY() == ennemy.getY())
-				{
-					this.killHeros(ennemy);
-				}
-				else if(heros.getX() == (ennemy.getX() + 1) && heros.getY() == ennemy.getY())
-				{
-					this.killHeros(ennemy);
-				}
-				else if(heros.getX() == ennemy.getX() && heros.getY() == (ennemy.getY() + 1))
-				{
-					this.killHeros(ennemy);
-				}
-				else if(heros.getX() == ennemy.getX() && heros.getY() == (ennemy.getY() - 1))
-				{
-					this.killHeros(ennemy);
-				}	
+				
+				this.checkKillHeros();
 				
 				timestamp = System.currentTimeMillis();
 			}
+		}
+	}
+	
+	private void checkKillHeros() {
+		
+		for(Ennemy ennemy : enemies)
+		{
+			if(heros.getX() == ennemy.getX() && heros.getY() == ennemy.getY())
+			{
+				this.killHeros(ennemy);
+			}
+			else if(heros.getX() == (ennemy.getX() - 1) && heros.getY() == ennemy.getY())
+			{
+				this.killHeros(ennemy);
+			}
+			else if(heros.getX() == (ennemy.getX() + 1) && heros.getY() == ennemy.getY())
+			{
+				this.killHeros(ennemy);
+			}
+			else if(heros.getX() == ennemy.getX() && heros.getY() == (ennemy.getY() + 1))
+			{
+				this.killHeros(ennemy);
+			}
+			else if(heros.getX() == ennemy.getX() && heros.getY() == (ennemy.getY() - 1))
+			{
+				this.killHeros(ennemy);
+			}	
+			
+			this.setChanged();
+			this.notifyObservers();
 		}
 	}
 }
