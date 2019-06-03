@@ -5,15 +5,18 @@ import entity.movable.Movable;
 public class Fall implements Runnable {
 
 	private Movable entity;
+	private final Model model;
 	
-	public Fall(Movable e) {
+	public Fall(Movable e, Model m) {
 		this.entity = e;
+		this.model = m;
 	}
 	
 	@Override
 	public void run() {
-		System.out.print("Je tombe !!!");
-		entity.isMortal();
+		int initial_x, initial_y;
+		
+		//if(map[entity.getX()][entity.getY()])
 	}
 
 }
