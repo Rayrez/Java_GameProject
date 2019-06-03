@@ -133,7 +133,6 @@ public class DAOMap {
 				{
 					Collectible entity = CollectibleFactory.getFromFileSymbol(mapTxt.charAt(i));
 					entity.setXY(x, y);
-					movables.add(entity);
 					collec.add(entity);
 					map[x][y] = entity;
 					x++;
@@ -142,7 +141,6 @@ public class DAOMap {
 				{
 					Ennemy entity = EnnemyFactory.getFromFileSymbol(mapTxt.charAt(i));
 					entity.setXY(x, y);
-					movables.add(entity);
 					enemies.add(entity);
 					map[x][y] = entity;
 					x++;

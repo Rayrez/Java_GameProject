@@ -16,6 +16,7 @@ public abstract class Movable extends Entity {
 	protected boolean submittedToGravity;
 	protected boolean alive = true;
 	private boolean mortal = false;
+	private boolean isMoving = false;
 
 	/**
 	 * Set the capacity Breakable.
@@ -95,7 +96,7 @@ public abstract class Movable extends Entity {
 	}
 
 	/**
-	 * Set an entity to mortal : she can be killed.
+	 * Set an entity to mortal : it can kill.
 	 */
 	public void becomeMortal() {
 		this.mortal = true;
@@ -108,5 +109,21 @@ public abstract class Movable extends Entity {
 	 */
 	public boolean isMortal() {
 		return this.mortal;
+	}
+
+	/**
+	 * Return if the entity is moving or not.
+	 *
+	 * @return the boolean mortal.
+	 */
+	public boolean isMoving() {
+		return this.isMoving;
+	}
+
+	/**
+	 * Set if an entity is moving or not
+	 */
+	public void setMoving(boolean moving) {
+		this.isMoving = moving;
 	}
 }
