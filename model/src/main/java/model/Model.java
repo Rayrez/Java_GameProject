@@ -24,20 +24,21 @@ import entity.unbreakable.*;
  */
 public final class Model extends Observable implements IModel, Runnable {
 	
-	static Entity[][] map;
+	private static Entity[][] map;
 	private static int score;
 	private static int diamonds_remaining;
-	private static ArrayList<Movable> mouv;
+	static ArrayList<Movable> mouv;
 	private static ArrayList<Collectible> collec;
 	private static Heros heros;
 	private static Exit exit;
-	private static ArrayList<Ennemy> enemies;
-	private static ArrayList<Penetrable> penetrables;
+	static ArrayList<Ennemy> enemies;
+	static ArrayList<Penetrable> penetrables;
 	private static ArrayList<Unbreakable> unbreakables;
 	private static ArrayList<Breakable> breakables;
 	private static boolean pause;
 	private static int numberMap;
 	private static Thread move_ennemy;
+	private boolean change;
 
 	/**
 	 * Instantiates a new model.
@@ -119,7 +120,8 @@ public final class Model extends Observable implements IModel, Runnable {
 		move_ennemy.start();
 		score = 0;
 		this.setChanged();
-		this.notifyObservers();;
+		this.notifyObservers();
+		pause = false;
 	}
 
 	/**
@@ -156,44 +158,39 @@ public final class Model extends Observable implements IModel, Runnable {
 
 	@Override
 	public void giveOrder(ControllerOrder order) {
-		
-		if(order == ControllerOrder.Pause)
+
+		if(!pause)
 		{
-			if(pause)
-				pause = false;
-			else
+			if(order == ControllerOrder.MoveLeft)
+				this.moveLeft();
+			else if(order == ControllerOrder.MoveRight)
+				this.moveRight();
+			else if(order == ControllerOrder.MoveUp)
+				this.moveUp();
+			else if(order == ControllerOrder.MoveDown)
+				this.moveDown();
+			if (order == ControllerOrder.Pause)
 				pause = true;
+
+			if(collec.size() == 0)
+			{
+				exit.setVisible(true);
+				map[exit.getX()][exit.getY()] = exit;
+				this.setChanged();
+				this.notifyObservers();
+			}
+
+			if(heros.getX() == exit.getX() && heros.getY() == exit.getY() && diamonds_remaining == 0)
+			{
+				pause = true;
+			}
 		}
 		else
 		{
-			if(!pause)
-			{
-				if(order == ControllerOrder.MoveLeft)
-					this.moveLeft();
-				else if(order == ControllerOrder.MoveRight)
-					this.moveRight();
-				else if(order == ControllerOrder.MoveUp)
-					this.moveUp();
-				else if(order == ControllerOrder.MoveDown)
-					this.moveDown();
-				else if(order == ControllerOrder.Reset)
-					this.resetModel();
-				else if(order == ControllerOrder.Pause)
-					pause = true;
-				
-				if(collec.size() == 0)
-				{
-					exit.setVisible(true);
-					map[exit.getX()][exit.getY()] = exit;
-					this.setChanged();
-					this.notifyObservers();
-				}
-				
-				if(heros.getX() == exit.getX() && heros.getY() == exit.getY() && diamonds_remaining == 0)
-				{
-					pause = true;
-				}
-			}
+			if (order == ControllerOrder.Reset)
+				this.resetModel();
+			else if (order == ControllerOrder.Pause)
+				pause = false;
 		}
 	}
 	
@@ -628,25 +625,33 @@ private void moveRight() {
 	
 	private void testFallMap() {
 		int x, y;
-		int i = 0;
 		
 		for(y = 0;y < 28;y++)
 		{
 			for(x = 0;x < 25;x++)
 			{
-				if(map[x][y].getCapacity() == Capacities.MOVABLE)
+				if(map[x][y].getCapacity() == Capacities.MOVABLE || map[x][y].getCapacity() == Capacities.COLLECTIBLE)
 				{
 					for(Movable m : mouv)
 					{
 						if(m.getX() == x && m.getY() == y)
 						{
-							i++;
-							if(m.isSubmittedToGravity() && (map[x][y+1].getCapacity() == Capacities.PENETRABLE || (map[x+1][y+1].getCapacity() == Capacities.PENETRABLE || map[x-1][y+1].getCapacity() == Capacities.PENETRABLE)))
-							{
+							if(m.isSubmittedToGravity() && (map[x][y+1].getCapacity() == Capacities.PENETRABLE || ((map[x+1][y+1].getCapacity() == Capacities.PENETRABLE || map[x-1][y+1].getCapacity() == Capacities.PENETRABLE)) && (map[x-1][y].getCapacity() == Capacities.PENETRABLE || map[x+1][y].getCapacity() == Capacities.PENETRABLE)) && !m.isMoving()) {
 								Thread t = new Thread(new Fall(m, this));
 								t.start();
 							}
-							System.out.println(i);
+						}
+					}
+
+					for(Movable m : collec)
+					{
+						if(m.getX() == x && m.getY() == y)
+						{
+							if(m.isSubmittedToGravity() && (map[x][y+1].getCapacity() == Capacities.PENETRABLE || ((map[x+1][y+1].getCapacity() == Capacities.PENETRABLE || map[x-1][y+1].getCapacity() == Capacities.PENETRABLE)) && (map[x-1][y].getCapacity() == Capacities.PENETRABLE || map[x+1][y].getCapacity() == Capacities.PENETRABLE)) && !m.isMoving()) {
+								System.out.println("Good joob");
+								Thread t = new Thread(new Fall(m, this));
+								t.start();
+							}
 						}
 					}
 				}
@@ -691,43 +696,43 @@ private void moveRight() {
 	void killHeros(Ennemy e) {
 		e.killSb(heros);
 		pause = true;
-		
+
 		Explosion ex = new Explosion();
 		ex.setXY(heros.getX(), heros.getY());
 		map[heros.getX()][heros.getY()] = ex;
-		
+
 		ex = new Explosion();
 		ex.setXY(heros.getX(), heros.getY() + 1);
 		map[heros.getX()][heros.getY() + 1] = ex;
-		
+
 		ex = new Explosion();
 		ex.setXY(heros.getX(), heros.getY() - 1);
 		map[heros.getX()][heros.getY() - 1] = ex;
-		
+
 		ex = new Explosion();
 		ex.setXY(heros.getX() + 1, heros.getY());
 		map[heros.getX() + 1][heros.getY()] = ex;
-		
+
 		ex = new Explosion();
 		ex.setXY(heros.getX() + 1, heros.getY() + 1);
 		map[heros.getX() + 1][heros.getY() + 1] = ex;
-		
+
 		ex = new Explosion();
 		ex.setXY(heros.getX() + 1, heros.getY() - 1);
 		map[heros.getX() + 1][heros.getY() - 1] = ex;
-		
+
 		ex = new Explosion();
 		ex.setXY(heros.getX() - 1, heros.getY());
 		map[heros.getX() - 1][heros.getY()] = ex;
-		
+
 		ex = new Explosion();
 		ex.setXY(heros.getX() - 1, heros.getY() + 1);
 		map[heros.getX() - 1][heros.getY() + 1] = ex;
-		
+
 		ex = new Explosion();
 		ex.setXY(heros.getX() - 1, heros.getY() - 1);
 		map[heros.getX() - 1][heros.getY() - 1] = ex;
-		
+
 		this.setChanged();
 		this.notifyObservers();
 	}
@@ -778,7 +783,7 @@ private void moveRight() {
 	@Override
 	public void run() {
 		
-		long timestamp = 0L;
+		long timestamp = 0L, timestamp2 = 0L;
 		int i;
 		
 		while(true)
@@ -851,14 +856,19 @@ private void moveRight() {
 						ennemy.setX(ennemy.getX() + 1);
 						Model.penetrables.add(pen);	
 					}
-					
-					this.setChanged();
-					this.notifyObservers();
-				
+
 					this.checkKillHeros();
 				
 					timestamp = System.currentTimeMillis();
 				}
+			}
+
+			if((System.currentTimeMillis() - timestamp2) > 50 && !pause && change)
+			{
+				this.testFallMap();
+				this.setChanged();
+				this.notifyObservers();
+				change = false;
 			}
 		}
 	}
@@ -967,5 +977,22 @@ private void moveRight() {
 				map[e.getX() - 1][e.getY() - 1] = dia;
 			}
 		}
+	}
+
+	int getHerosX() {
+		return heros.getX();
+	}
+
+	int getHerosY() {
+		return heros.getY();
+	}
+
+	Entity getElement(int x, int y) {
+		return map[x][y];
+	}
+	void setElement(Entity e1, Entity e2, int x1, int y1, int x2, int y2) {
+		map[x1][y1] = e1;
+		map[x2][y2] = e2;
+		change = true;
 	}
 }

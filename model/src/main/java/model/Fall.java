@@ -1,6 +1,10 @@
 package model;
 
+import entity.Capacities;
 import entity.movable.Movable;
+import entity.movable.ennemy.Ennemy;
+import entity.penetrable.Background;
+import entity.penetrable.Penetrable;
 
 public class Fall implements Runnable {
 
@@ -14,10 +18,160 @@ public class Fall implements Runnable {
 	
 	@Override
 	public void run() {
-		int initial_x, initial_y;
-		System.out.println("Fall");
 		
-		//if(map[entity.getX()][entity.getY()])
+		if(model.getElement(entity.getX(), entity.getY() + 1).getCapacity() == Capacities.PENETRABLE)
+		{
+			this.entity.setMoving(true);
+			while(model.getElement(entity.getX(), entity.getY() + 1).getCapacity() == Capacities.PENETRABLE)
+			{
+				Penetrable pen = new Background();
+				pen.setXY(entity.getX(), entity.getY());
+				model.penetrables.add(pen);
+				model.setElement(entity, pen, entity.getX(), entity.getY() + 1, entity.getX(), entity.getY());
+				int i;
+				for(i = 0;i < Model.penetrables.size();i++)
+				{
+					if(model.penetrables.get(i).getX() == entity.getX() && model.penetrables.get(i).getY() == (entity.getY() + 1))
+					{
+						model.penetrables.remove(i);
+					}
+				}
+				entity.setY(entity.getY() + 1);
+				entity.becomeMortal();
+				try {
+					Thread.sleep(250);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+
+			if(model.getHerosX() == entity.getX() && model.getHerosY() == (entity.getY() + 1) && entity.isMortal())
+			{
+				model.killHeros(entity);
+			}
+
+			for(Ennemy en : Model.enemies)
+			{
+				if(en.getX() == entity.getX() && en.getY() == (entity.getY() + 1) && entity.isMortal())
+				{
+					model.killEnnemy(en);
+					int i;
+					for(i = 0;i < Model.mouv.size();i++)
+					{
+						if(Model.mouv.get(i).getX() == entity.getX() && Model.mouv.get(i).getY() == entity.getY())
+						{
+							Model.mouv.remove(i);
+						}
+					}
+				}
+			}
+			this.entity.setMoving(false);
+		}
+		else if((model.getElement(entity.getX() + 1, entity.getY() + 1).getCapacity() == Capacities.PENETRABLE || model.getElement(entity.getX() - 1, entity.getY() + 1).getCapacity() == Capacities.PENETRABLE) && (model.getElement(entity.getX() - 1, entity.getY()).getCapacity() == Capacities.PENETRABLE || model.getElement(entity.getX() + 1, entity.getY()).getCapacity() == Capacities.PENETRABLE))
+		{
+			this.entity.setMoving(true);
+			if(model.getElement(entity.getX() + 1, entity.getY() + 1).getCapacity() == Capacities.PENETRABLE && model.getElement(entity.getX() + 1, entity.getY()).getCapacity() == Capacities.PENETRABLE)
+			{
+				Penetrable pen = new Background();
+				pen.setXY(entity.getX(), entity.getY());
+				model.penetrables.add(pen);
+				model.setElement(entity, pen, entity.getX() + 1, entity.getY(), entity.getX(), entity.getY());
+				entity.setX(entity.getX() + 1);
+				try {
+					Thread.sleep(250);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				while(model.getElement(entity.getX(), entity.getY() + 1).getCapacity() == Capacities.PENETRABLE)
+				{
+					int i;
+					for(i = 0;i < Model.penetrables.size();i++)
+					{
+						if(model.penetrables.get(i).getX() == entity.getX() && model.penetrables.get(i).getY() == (entity.getY() + 1))
+						{
+							model.penetrables.remove(i);
+						}
+					}
+					entity.setY(entity.getY() + 1);
+					entity.becomeMortal();
+					try {
+						Thread.sleep(250);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+
+				if(model.getHerosX() == entity.getX() && model.getHerosY() == (entity.getY() + 1) && entity.isMortal())
+				{
+					model.killHeros(entity);
+				}
+
+				for(Ennemy en : Model.enemies) {
+					if (en.getX() == entity.getX() && en.getY() == (entity.getY() + 1) && entity.isMortal()) {
+						model.killEnnemy(en);
+						int i;
+						for (i = 0; i < Model.mouv.size(); i++) {
+							if (Model.mouv.get(i).getX() == entity.getX() && Model.mouv.get(i).getY() == entity.getY()) {
+								Model.mouv.remove(i);
+							}
+						}
+					}
+				}
+			}
+			if(model.getElement(entity.getX() - 1, entity.getY() + 1).getCapacity() == Capacities.PENETRABLE && model.getElement(entity.getX() - 1, entity.getY()).getCapacity() == Capacities.PENETRABLE)
+			{
+				Penetrable pen = new Background();
+				pen.setXY(entity.getX(), entity.getY());
+				model.penetrables.add(pen);
+				model.setElement(entity, pen, entity.getX() - 1, entity.getY(), entity.getX(), entity.getY());
+				entity.setX(entity.getX() - 1);
+				try {
+					Thread.sleep(250);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				while(model.getElement(entity.getX(), entity.getY() + 1).getCapacity() == Capacities.PENETRABLE)
+				{
+					int i;
+					for(i = 0;i < Model.penetrables.size();i++)
+					{
+						if(model.penetrables.get(i).getX() == entity.getX() && model.penetrables.get(i).getY() == (entity.getY() + 1))
+						{
+							model.penetrables.remove(i);
+						}
+					}
+					entity.setY(entity.getY() + 1);
+					entity.becomeMortal();
+					try {
+						Thread.sleep(250);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+
+				if(model.getHerosX() == entity.getX() && model.getHerosY() == (entity.getY() + 1) && entity.isMortal())
+				{
+					model.killHeros(entity);
+				}
+
+				for(Ennemy en : Model.enemies)
+				{
+					if(en.getX() == entity.getX() && en.getY() == (entity.getY() + 1) && entity.isMortal())
+					{
+						model.killEnnemy(en);
+						int i;
+						for(i = 0;i < Model.mouv.size();i++)
+						{
+							if(Model.mouv.get(i).getX() == entity.getX() && Model.mouv.get(i).getY() == entity.getY())
+							{
+								Model.mouv.remove(i);
+							}
+						}
+					}
+				}
+			}
+			this.entity.setMoving(false);
+		}
 	}
 
 }

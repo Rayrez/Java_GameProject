@@ -26,6 +26,7 @@ public abstract class Collectible extends Movable {
 	public Collectible(char symbol, String fileName) {
 		super(symbol, fileName);
 		this.capacity = Capacities.COLLECTIBLE;
+		this.submittedToGravity = true;
 	}
 
 	/**
