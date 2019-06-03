@@ -10,8 +10,16 @@ import org.junit.Test;
 
 import entity.Capacities;
 
+/**
+ * The class Dirt.
+ *
+ * @author Pierre GARRIDO
+ */
 public class DirtTest {
-	
+
+	/**
+	 * Instantiates a new dirt.
+	 */
 	Dirt dirt;
 
 	@BeforeClass
@@ -22,6 +30,12 @@ public class DirtTest {
 	public static void tearDownAfterClass() throws Exception {
 	}
 
+	/**
+	 * Instantiates a new dirt before each test.
+	 *
+	 * @throws Exception
+	 *				Send an exception if the method don't work.
+	 */
 	@Before
 	public void setUp() throws Exception {
 		this.dirt = new Dirt();
@@ -31,33 +45,51 @@ public class DirtTest {
 	public void tearDown() throws Exception {
 	}
 
+	/**
+	 * Test the method Dirt.
+	 */
 	@Test
 	public void testDirt() {
 		assertEquals(this.dirt.getBaseSprite().getIcon(), 'D');
 	}
 
+	/**
+	 * Test the method getCapacity.
+	 */
 	@Test
 	public void testGetCapacity() {
 		assertEquals(this.dirt.getCapacity(), Capacities.BREAKABLE);
 	}
 
+	/**
+	 * Test the method getBaseSprite.
+	 */
 	@Test
 	public void testGetBaseSprite() {
 		assertEquals(this.dirt.getBaseSprite().getIcon(), 'D');
 	}
 
+	/**
+	 * Test getX.
+	 */
 	@Test
 	public void testGetX() {
 		this.dirt.setXY(2, 2);
 		assertEquals(this.dirt.getX(), 2);
 	}
 
+	/**
+	 * Test getY.
+	 */
 	@Test
 	public void testGetY() {
 		this.dirt.setXY(2, 2);
 		assertEquals(this.dirt.getY(), 2);
 	}
 
+	/**
+	 * Test the method setXY.
+	 */
 	@Test
 	public void testSetXY() {
 		try {

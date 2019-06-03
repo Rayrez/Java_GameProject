@@ -11,8 +11,16 @@ import org.junit.Test;
 import entity.Capacities;
 import entity.movable.Rock;
 
+/**
+ * The class RockTest.
+ *
+ * @author Pierre GARRIDO
+ */
 public class RockTest {
-	
+
+	/**
+	 * Instantiates a new rock.
+	 */
 	Rock rock;
 
 	@BeforeClass
@@ -23,6 +31,10 @@ public class RockTest {
 	public static void tearDownAfterClass() throws Exception {
 	}
 
+	/**
+	 * Instantiates a new rock before each test
+	 * @throws Exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 		this.rock = new Rock();
