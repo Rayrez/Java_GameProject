@@ -48,7 +48,6 @@
     </orderEntry>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER" level="application" />
-    <orderEntry type="library" name="Maven: junit:junit:4.13-beta-3" level="project" />
     <orderEntry type="module" module-name="contract" />
     <orderEntry type="module" module-name="entity" />
     <orderEntry type="library" name="Maven: junit:junit:4.12" level="project" />

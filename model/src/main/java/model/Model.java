@@ -28,7 +28,7 @@ public final class Model extends Observable implements IModel, Runnable {
 	private static int score;
 	private static int diamonds_remaining;
 	static ArrayList<Movable> mouv;
-	private static ArrayList<Collectible> collec;
+	static ArrayList<Collectible> collec;
 	private static Heros heros;
 	private static Exit exit;
 	static ArrayList<Ennemy> enemies;
