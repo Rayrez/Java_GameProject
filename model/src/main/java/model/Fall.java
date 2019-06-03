@@ -16,7 +16,7 @@ public class Fall implements Runnable {
 	public void run() {
 		int initial_x, initial_y;
 		
-		//if(map[][])
+		//if(map[entity.getX()][entity.getY()])
 	}
 
 }
