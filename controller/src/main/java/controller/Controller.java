@@ -24,13 +24,21 @@ public final class Controller implements IController {
 		model = new Model(1);
 		view = new View(model);
 		this.view.setController(this);
+		this.control();
 	}
 
 	/**
      * Control.
      */
-	public void control() {
-
+	private void control() {
+		while(!model.hasWon());
+		model = new Model(2);
+		while(!model.hasWon());
+		model = new Model(3);
+		while(!model.hasWon());
+		model = new Model(4);
+		while(!model.hasWon());
+		model = new Model(5);
 	}
 
 	@Override
