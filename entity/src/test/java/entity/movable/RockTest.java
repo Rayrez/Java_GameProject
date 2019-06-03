@@ -32,8 +32,10 @@ public class RockTest {
 	}
 
 	/**
-	 * Instantiates a new rock before each test
+	 * Instantiates a new rock before each test.
+	 *
 	 * @throws Exception
+	 * 				Send an exception if the method don't work.
 	 */
 	@Before
 	public void setUp() throws Exception {
@@ -44,11 +46,17 @@ public class RockTest {
 	public void tearDown() throws Exception {
 	}
 
+	/**
+	 * Test the method rock.
+	 */
 	@Test
 	public void testRock() {
 		assertEquals(this.rock.getBaseSprite().getIcon(), 'R');
 	}
 
+	/**
+	 * Test the method setX.
+	 */
 	@Test
 	public void testSetX() {
 		this.rock.setX(8);
@@ -62,6 +70,9 @@ public class RockTest {
 		}
 	}
 
+	/**
+	 * Test the method setY.
+	 */
 	@Test
 	public void testSetY() {
 		this.rock.setY(8);
@@ -75,39 +86,60 @@ public class RockTest {
 		}
 	}
 
+	/**
+	 * Test the method isSubmittedToGravity.
+	 */
 	@Test
 	public void testIsSubmittedToGravity() {
 		assertEquals(this.rock.isSubmittedToGravity(), true);
 	}
 
+	/**
+	 * Test the method isAlive.
+	 */
 	@Test
 	public void testIsAlive() {
 		assertEquals(this.rock.isAlive(), true);
 	}
 
+	/**
+	 * Test the method kill.
+	 */
 	@Test
 	public void testKill() {
 		this.rock.kill();
 		assertEquals(this.rock.isAlive(), false);
 	}
 
+	/**
+	 * Test the method getBaseSprite.
+	 */
 	@Test
 	public void testGetBaseSprite() {
 		assertEquals(this.rock.getBaseSprite().getIcon(), 'R');
 	}
 
+	/**
+	 * Test the method getX.
+	 */
 	@Test
 	public void testGetX() {
 		this.rock.setXY(2, 2);
 		assertEquals(this.rock.getX(), 2);
 	}
 
+	/**
+	 * The method the getY.
+	 */
 	@Test
 	public void testGetY() {
 		this.rock.setXY(2, 2);
 		assertEquals(this.rock.getY(), 2);
 	}
 
+	/**
+	 * Test the method setXY.
+	 */
 	@Test
 	public void testSetXY() {
 		
@@ -136,16 +168,25 @@ public class RockTest {
 		}
 	}
 
+	/**
+	 * Test the method getCapacity.
+	 */
 	@Test
 	public void testGetCapacity() {
 		assertEquals(this.rock.getCapacity(), Capacities.MOVABLE);
 	}
-	
+
+	/**
+	 * Test the method becomeMortal.
+	 */
 	@Test
 	public void testBecomeMortal() {
 		
 	}
-	
+
+	/**
+	 * Test the method isMortal.
+	 */
 	@Test
 	public void testIsMortal() {
 		

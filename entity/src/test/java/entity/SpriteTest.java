@@ -9,7 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
- * The class test for the class sprite
+ * The class SpriteTest.
  *
  * @author Pierre GARRIDO
  */
@@ -17,7 +17,7 @@ import org.junit.Test;
 public class SpriteTest {
 
 	/**
-	 * Instantiates a new sprite for the test
+	 * Instantiates a new sprite for the test.
 	 */
 	Sprite sprite;
 
@@ -30,8 +30,7 @@ public class SpriteTest {
 	}
 
 	/**
-	 * A method to test.
-	 * This method make the correspondence between a symbol in the map, and a sprite.
+	 * Instantiates a new sprite before each test.
 	 *
 	 * @throws Exception
 	 * 			Send an exception if the method don't work.
