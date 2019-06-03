@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0869726-3ddf-44e8-85ca-0183e9690e4f" name="Default Changelist" comment="Debugging Javadoc">
+    <list default="true" id="e0869726-3ddf-44e8-85ca-0183e9690e4f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/Java_GameProject.iws" beforeDir="false" afterPath="$PROJECT_DIR$/Java_GameProject.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/Fall.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/Fall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/model/Model.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/bin/" />
@@ -434,7 +432,7 @@
       <workItem from="1559383712050" duration="3724000" />
       <workItem from="1559507610296" duration="4854000" />
       <workItem from="1559544858016" duration="3027000" />
-      <workItem from="1559549997150" duration="5276000" />
+      <workItem from="1559549997150" duration="5528000" />
     </task>
     <task id="LOCAL-00001" summary="Debugging Javadoc">
       <created>1559547472824</created>
@@ -450,11 +448,18 @@
       <option name="project" value="LOCAL" />
       <updated>1559547562305</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Debugging model">
+      <created>1559561135897</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1559561135897</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39192000" />
+    <option name="totallyTimeSpent" value="39444000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -505,7 +510,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Debugging Javadoc" />
-    <option name="LAST_COMMIT_MESSAGE" value="Debugging Javadoc" />
+    <MESSAGE value="Debugging model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Debugging model" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/entity/src/main/java/entity/breakable/Breakable.java">
