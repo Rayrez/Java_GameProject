@@ -177,6 +177,8 @@ public final class Model extends Observable implements IModel, Runnable {
 					this.moveDown();
 				else if(order == ControllerOrder.Reset)
 					this.resetModel();
+				else if(order == ControllerOrder.Pause)
+					pause = true;
 				
 				if(collec.size() == 0)
 				{
@@ -712,7 +714,7 @@ private void moveRight() {
 			{
 				for(Ennemy ennemy : enemies)
 				{
-					if((Model.map[ennemy.getX() + 1][ennemy.getY() - 1].getCapacity() == Capacities.BREAKABLE || Model.map[ennemy.getX() + 1][ennemy.getY() - 1].getCapacity() == Capacities.UNBREAKABLE) && Model.map[ennemy.getX()][ennemy.getY() - 1].getCapacity() == Capacities.PENETRABLE)
+					if(Model.map[ennemy.getX() + 1][ennemy.getY() - 1].getCapacity() != Capacities.PENETRABLE && Model.map[ennemy.getX()][ennemy.getY() - 1].getCapacity() == Capacities.PENETRABLE)
 					{
 						for(i = 0;i < Model.penetrables.size();i++)
 						{
@@ -728,7 +730,7 @@ private void moveRight() {
 						ennemy.setY(ennemy.getY() - 1);
 						Model.penetrables.add(pen);	
 					}
-					else if((Model.map[ennemy.getX() - 1][ennemy.getY() - 1].getCapacity() == Capacities.BREAKABLE || Model.map[ennemy.getX() - 1][ennemy.getY() - 1].getCapacity() == Capacities.UNBREAKABLE) && Model.map[ennemy.getX() - 1][ennemy.getY()].getCapacity() == Capacities.PENETRABLE)
+					else if(Model.map[ennemy.getX() - 1][ennemy.getY() - 1].getCapacity() != Capacities.PENETRABLE && Model.map[ennemy.getX() - 1][ennemy.getY()].getCapacity() == Capacities.PENETRABLE)
 					{
 						for(i = 0;i < Model.penetrables.size();i++)
 						{
@@ -744,7 +746,7 @@ private void moveRight() {
 						ennemy.setX(ennemy.getX() - 1);
 						Model.penetrables.add(pen);	
 					}
-					else if((Model.map[ennemy.getX() - 1][ennemy.getY() + 1].getCapacity() == Capacities.BREAKABLE || Model.map[ennemy.getX() - 1][ennemy.getY() + 1].getCapacity() == Capacities.UNBREAKABLE) && Model.map[ennemy.getX()][ennemy.getY() + 1].getCapacity() == Capacities.PENETRABLE)
+					else if(Model.map[ennemy.getX() - 1][ennemy.getY() + 1].getCapacity() == Capacities.BREAKABLE && Model.map[ennemy.getX()][ennemy.getY() + 1].getCapacity() == Capacities.PENETRABLE)
 					{
 						for(i = 0;i < Model.penetrables.size();i++)
 						{
@@ -760,7 +762,7 @@ private void moveRight() {
 						ennemy.setY(ennemy.getY() + 1);
 						Model.penetrables.add(pen);	
 					}
-					else if((Model.map[ennemy.getX() + 1][ennemy.getY() + 1].getCapacity() == Capacities.BREAKABLE || Model.map[ennemy.getX() + 1][ennemy.getY() + 1].getCapacity() == Capacities.UNBREAKABLE) && Model.map[ennemy.getX() + 1][ennemy.getY()].getCapacity() == Capacities.PENETRABLE)
+					else if(Model.map[ennemy.getX() + 1][ennemy.getY() + 1].getCapacity() == Capacities.BREAKABLE && Model.map[ennemy.getX() + 1][ennemy.getY()].getCapacity() == Capacities.PENETRABLE)
 					{
 						for(i = 0;i < Model.penetrables.size();i++)
 						{
