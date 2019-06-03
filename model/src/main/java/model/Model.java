@@ -519,7 +519,7 @@ private void moveRight() {
 				map[heros.getX()][heros.getY()] = pen;
 				penetrables.add(pen);
 			}
-			heros.setDir(Direction.RIGHT);
+			heros.setDir(Direction.FACE);
 			heros.setY(heros.getY() + 1);
 			this.testFallMap();
 		}
@@ -613,7 +613,7 @@ private void moveRight() {
 				map[heros.getX()][heros.getY()] = pen;
 				penetrables.add(pen);
 			}
-			heros.setDir(Direction.RIGHT);
+			heros.setDir(Direction.FACE);
 			heros.setY(heros.getY() - 1);
 			this.testFallMap();
 		}
@@ -628,6 +628,7 @@ private void moveRight() {
 	
 	private void testFallMap() {
 		int x, y;
+		int i = 0;
 		
 		for(y = 0;y < 28;y++)
 		{
@@ -639,11 +640,13 @@ private void moveRight() {
 					{
 						if(m.getX() == x && m.getY() == y)
 						{
+							i++;
 							if(m.isSubmittedToGravity() && (map[x][y+1].getCapacity() == Capacities.PENETRABLE || (map[x+1][y+1].getCapacity() == Capacities.PENETRABLE || map[x-1][y+1].getCapacity() == Capacities.PENETRABLE)))
 							{
 								Thread t = new Thread(new Fall(m, this));
 								t.start();
 							}
+							System.out.println(i);
 						}
 					}
 				}
