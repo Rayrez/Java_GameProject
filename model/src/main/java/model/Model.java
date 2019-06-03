@@ -297,14 +297,16 @@ public final class Model extends Observable implements IModel, Runnable {
 						}
 					}
 					heros.setX(heros.getX() - 1);
-					this.checkKillHeros();
-					Penetrable pen = new Background();
-					pen.setXY(heros.getX(), heros.getY());
-					penetrables.add(pen);
-					map[heros.getX()][heros.getY()] = pen;
-					map[heros.getX() - 1][heros.getY()] = heros;
-					map[heros.getX() - 2][heros.getY()] = m;
-					m.setX(m.getX() - 1);
+					if(!this.checkKillHeros())
+					{
+						Penetrable pen = new Background();
+						pen.setXY(heros.getX(), heros.getY());
+						penetrables.add(pen);
+						map[heros.getX()][heros.getY()] = pen;
+						map[heros.getX() - 1][heros.getY()] = heros;
+						map[heros.getX() - 2][heros.getY()] = m;
+						m.setX(m.getX() - 1);
+					}
 				}
 				this.testFallMap();
 			}
@@ -415,14 +417,16 @@ private void moveRight() {
 						}
 					}
 					heros.setX(heros.getX() + 1);
-					this.checkKillHeros();
-					Penetrable pen = new Background();
-					pen.setXY(heros.getX(), heros.getY());
-					penetrables.add(pen);
-					map[heros.getX()][heros.getY()] = pen;
-					map[heros.getX() + 1][heros.getY()] = heros;
-					map[heros.getX() + 2][heros.getY()] = m;
-					m.setX(m.getX() + 1);
+					if(!this.checkKillHeros())
+					{
+						Penetrable pen = new Background();
+						pen.setXY(heros.getX(), heros.getY());
+						penetrables.add(pen);
+						map[heros.getX()][heros.getY()] = pen;
+						map[heros.getX() + 1][heros.getY()] = heros;
+						map[heros.getX() + 2][heros.getY()] = m;
+						m.setX(m.getX() + 1);
+					}
 				}
 				this.testFallMap();
 			}
@@ -657,6 +661,7 @@ private void moveRight() {
 	
 	void killHeros(Ennemy e) {
 		e.killSb(heros);
+		pause = true;
 		
 		Explosion ex = new Explosion();
 		ex.setXY(heros.getX(), heros.getY());
@@ -706,112 +711,124 @@ private void moveRight() {
 		
 		System.out.print("Run\n");
 		
-		if((System.currentTimeMillis() - timestamp) > 500)
+		while(true)
 		{
-			for(Ennemy ennemy : enemies)
+			if((System.currentTimeMillis() - timestamp) > 500)
 			{
-				if(Model.map[ennemy.getX() + 1][ennemy.getY() - 1].getCapacity() == Capacities.BREAKABLE && Model.map[ennemy.getX()][ennemy.getY() - 1].getCapacity() == Capacities.PENETRABLE)
+				for(Ennemy ennemy : enemies)
 				{
-					for(i = 0;i < Model.penetrables.size();i++)
+					if(Model.map[ennemy.getX() + 1][ennemy.getY() - 1].getCapacity() == Capacities.BREAKABLE && Model.map[ennemy.getX()][ennemy.getY() - 1].getCapacity() == Capacities.PENETRABLE)
 					{
-						if(Model.penetrables.get(i).getX() == ennemy.getX() && Model.penetrables.get(i).getY() == (ennemy.getY() - 1))
+						for(i = 0;i < Model.penetrables.size();i++)
 						{
-							Model.penetrables.remove(i);
+							if(Model.penetrables.get(i).getX() == ennemy.getX() && Model.penetrables.get(i).getY() == (ennemy.getY() - 1))
+							{
+								Model.penetrables.remove(i);
+							}
 						}
+						Penetrable pen = new Background();
+						pen.setXY(ennemy.getX(), ennemy.getY());
+						Model.map[ennemy.getX()][ennemy.getY() - 1] = ennemy;
+						Model.map[ennemy.getX()][ennemy.getY()] = pen;
+						ennemy.setY(ennemy.getY() - 1);
+						Model.penetrables.add(pen);	
 					}
-					Penetrable pen = new Background();
-					pen.setXY(ennemy.getX(), ennemy.getY());
-					Model.map[ennemy.getX()][ennemy.getY() - 1] = ennemy;
-					Model.map[ennemy.getX()][ennemy.getY()] = pen;
-					ennemy.setY(ennemy.getY() - 1);
-					Model.penetrables.add(pen);	
-				}
-				else if(Model.map[ennemy.getX() - 1][ennemy.getY() - 1].getCapacity() == Capacities.BREAKABLE && Model.map[ennemy.getX() - 1][ennemy.getY()].getCapacity() == Capacities.PENETRABLE)
-				{
-					for(i = 0;i < Model.penetrables.size();i++)
+					else if(Model.map[ennemy.getX() - 1][ennemy.getY() - 1].getCapacity() == Capacities.BREAKABLE && Model.map[ennemy.getX() - 1][ennemy.getY()].getCapacity() == Capacities.PENETRABLE)
 					{
-						if(Model.penetrables.get(i).getX() == (ennemy.getX() - 1) && Model.penetrables.get(i).getY() == ennemy.getY())
+						for(i = 0;i < Model.penetrables.size();i++)
 						{
-							Model.penetrables.remove(i);
+							if(Model.penetrables.get(i).getX() == (ennemy.getX() - 1) && Model.penetrables.get(i).getY() == ennemy.getY())
+							{
+								Model.penetrables.remove(i);
+							}
 						}
+						Penetrable pen = new Background();
+						pen.setXY(ennemy.getX(), ennemy.getY());
+						Model.map[ennemy.getX() - 1][ennemy.getY()] = ennemy;
+						Model.map[ennemy.getX()][ennemy.getY()] = pen;
+						ennemy.setX(ennemy.getX() - 1);
+						Model.penetrables.add(pen);	
 					}
-					Penetrable pen = new Background();
-					pen.setXY(ennemy.getX(), ennemy.getY());
-					Model.map[ennemy.getX() - 1][ennemy.getY()] = ennemy;
-					Model.map[ennemy.getX()][ennemy.getY()] = pen;
-					ennemy.setX(ennemy.getX() - 1);
-					Model.penetrables.add(pen);	
-				}
-				else if(Model.map[ennemy.getX() - 1][ennemy.getY() + 1].getCapacity() == Capacities.BREAKABLE && Model.map[ennemy.getX()][ennemy.getY() + 1].getCapacity() == Capacities.PENETRABLE)
-				{
-					for(i = 0;i < Model.penetrables.size();i++)
+					else if(Model.map[ennemy.getX() - 1][ennemy.getY() + 1].getCapacity() == Capacities.BREAKABLE && Model.map[ennemy.getX()][ennemy.getY() + 1].getCapacity() == Capacities.PENETRABLE)
 					{
-						if(Model.penetrables.get(i).getX() == ennemy.getX() && Model.penetrables.get(i).getY() == (ennemy.getY() + 1))
+						for(i = 0;i < Model.penetrables.size();i++)
 						{
-							Model.penetrables.remove(i);
+							if(Model.penetrables.get(i).getX() == ennemy.getX() && Model.penetrables.get(i).getY() == (ennemy.getY() + 1))
+							{
+								Model.penetrables.remove(i);
+							}
 						}
+						Penetrable pen = new Background();
+						pen.setXY(ennemy.getX(), ennemy.getY());
+						Model.map[ennemy.getX()][ennemy.getY() + 1] = ennemy;
+						Model.map[ennemy.getX()][ennemy.getY()] = pen;
+						ennemy.setY(ennemy.getY() + 1);
+						Model.penetrables.add(pen);	
 					}
-					Penetrable pen = new Background();
-					pen.setXY(ennemy.getX(), ennemy.getY());
-					Model.map[ennemy.getX()][ennemy.getY() + 1] = ennemy;
-					Model.map[ennemy.getX()][ennemy.getY()] = pen;
-					ennemy.setY(ennemy.getY() + 1);
-					Model.penetrables.add(pen);	
-				}
-				else if(Model.map[ennemy.getX() + 1][ennemy.getY() + 1].getCapacity() == Capacities.BREAKABLE && Model.map[ennemy.getX() + 1][ennemy.getY()].getCapacity() == Capacities.PENETRABLE)
-				{
-					for(i = 0;i < Model.penetrables.size();i++)
+					else if(Model.map[ennemy.getX() + 1][ennemy.getY() + 1].getCapacity() == Capacities.BREAKABLE && Model.map[ennemy.getX() + 1][ennemy.getY()].getCapacity() == Capacities.PENETRABLE)
 					{
-						if(Model.penetrables.get(i).getX() == (ennemy.getX() + 1) && Model.penetrables.get(i).getY() == ennemy.getY())
+						for(i = 0;i < Model.penetrables.size();i++)
 						{
-							Model.penetrables.remove(i);
-						}
-					}	
-					Penetrable pen = new Background();
-					pen.setXY(ennemy.getX(), ennemy.getY());
-					Model.map[ennemy.getX() + 1][ennemy.getY()] = ennemy;
-					Model.map[ennemy.getX()][ennemy.getY()] = pen;
-					ennemy.setX(ennemy.getX() + 1);
-					Model.penetrables.add(pen);	
+							if(Model.penetrables.get(i).getX() == (ennemy.getX() + 1) && Model.penetrables.get(i).getY() == ennemy.getY())
+							{
+								Model.penetrables.remove(i);
+							}	
+						}		
+						Penetrable pen = new Background();
+						pen.setXY(ennemy.getX(), ennemy.getY());
+						Model.map[ennemy.getX() + 1][ennemy.getY()] = ennemy;
+						Model.map[ennemy.getX()][ennemy.getY()] = pen;
+						ennemy.setX(ennemy.getX() + 1);
+						Model.penetrables.add(pen);	
+					}
+					
+					this.setChanged();
+					this.notifyObservers();
+				
+					this.checkKillHeros();
+				
+					timestamp = System.currentTimeMillis();
 				}
-				
-				this.setChanged();
-				this.notifyObservers();
-				
-				this.checkKillHeros();
-				
-				timestamp = System.currentTimeMillis();
 			}
 		}
 	}
 	
-	private void checkKillHeros() {
+	private boolean checkKillHeros() {
+		
+		boolean test = false;
 		
 		for(Ennemy ennemy : enemies)
 		{
 			if(heros.getX() == ennemy.getX() && heros.getY() == ennemy.getY())
 			{
 				this.killHeros(ennemy);
+				test = true;
 			}
 			else if(heros.getX() == (ennemy.getX() - 1) && heros.getY() == ennemy.getY())
 			{
 				this.killHeros(ennemy);
+				test = true;
 			}
 			else if(heros.getX() == (ennemy.getX() + 1) && heros.getY() == ennemy.getY())
 			{
 				this.killHeros(ennemy);
+				test = true;
 			}
 			else if(heros.getX() == ennemy.getX() && heros.getY() == (ennemy.getY() + 1))
 			{
 				this.killHeros(ennemy);
+				test = true;
 			}
 			else if(heros.getX() == ennemy.getX() && heros.getY() == (ennemy.getY() - 1))
 			{
 				this.killHeros(ennemy);
+				test = true;
 			}	
-			
-			this.setChanged();
-			this.notifyObservers();
 		}
+		
+		this.setChanged();
+		this.notifyObservers();
+		
+		return test;
 	}
 }
