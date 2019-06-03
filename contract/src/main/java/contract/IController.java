@@ -3,7 +3,7 @@ package contract;
 /**
  * The Interface IController.
  *
- * @author Mattias HUROS
+ * @author Mattias HUROT
  */
 public interface IController {
 

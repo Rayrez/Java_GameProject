@@ -21,7 +21,8 @@ public class View extends JFrame implements IView {
 	/**
 	 * Created a window.
 	 *
-	 * @param modelP;
+	 * @param modelP
+	 *
 	 */
 	public View(IModel modelP) {
 		this.model = modelP;
