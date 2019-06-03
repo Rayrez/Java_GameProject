@@ -76,10 +76,11 @@ public class DashKeyListener implements KeyListener {
 	}
 
 	/**
+	 * Unique identification.
 	 *
 	 * @return serialVersionUID.
 	 */
-	public static long getSerialversionuid() {
+	public static long getSerialVersionUID() {
 		return serialVersionUID;
 	}
 }
