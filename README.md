@@ -1,7 +1,7 @@
 ﻿# JPU-BlankProject
 
 This project has been realized by 4 people:
-Pierre Garrido, Bastien Aelter, Benjamin Brifault, Mattias Hurot.
+Pierre Garrido, Bastien Aelters, Benjamin Brifault, Mattias Hurot.
 
 Distribution of project tasks:
 
