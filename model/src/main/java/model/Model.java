@@ -659,6 +659,7 @@ private void moveRight() {
 		return pause;
 	}
 	
+	@SuppressWarnings("deprecation")
 	void killHeros(Ennemy e) {
 		e.killSb(heros);
 		pause = true;
@@ -698,6 +699,7 @@ private void moveRight() {
 		ex = new Explosion();
 		ex.setXY(heros.getX() - 1, heros.getY() - 1);
 		map[heros.getX() - 1][heros.getY() - 1] = ex;
+		move_ennemy.stop();
 		
 		this.setChanged();
 		this.notifyObservers();
@@ -708,8 +710,6 @@ private void moveRight() {
 		
 		long timestamp = 0L;
 		int i;
-		
-		System.out.print("Run\n");
 		
 		while(true)
 		{
