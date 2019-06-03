@@ -27,7 +27,7 @@ public class Components extends JPanel implements Observer {
 	 * Connexion with Model class via IModel class.
 	 *
 	 * @param modelP
-	 *
+	 *			The controller.
 	 */
 	public Components(IModel modelP) {
 		super();

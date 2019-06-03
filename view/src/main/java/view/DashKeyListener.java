@@ -22,7 +22,7 @@ public class DashKeyListener implements KeyListener {
 	 * Connexion with controller class via IController class.
 	 *
 	 * @param controlerP
-	 *
+	 *			The controller.
 	 */
 	public DashKeyListener(IController controlerP) {
 		this.controler = controlerP;
