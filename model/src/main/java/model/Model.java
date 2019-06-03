@@ -117,6 +117,7 @@ public final class Model extends Observable implements IModel, Runnable {
 		this.loadMap(numberMap);
 		move_ennemy = new Thread(this);
 		move_ennemy.start();
+		score = 0;
 		this.setChanged();
 		this.notifyObservers();;
 	}
@@ -233,6 +234,7 @@ public final class Model extends Observable implements IModel, Runnable {
 		}
 		else if(map[heros.getX() - 1][heros.getY()].getCapacity() == Capacities.COLLECTIBLE)
 		{
+			score += 50;
 			int i = 0;
 			for(i = 0;i < collec.size();i++)
 			{
@@ -352,6 +354,7 @@ private void moveRight() {
 		}
 		else if(map[heros.getX() + 1][heros.getY()].getCapacity() == Capacities.COLLECTIBLE)
 		{
+			score += 50;
 			int i = 0;
 			for(i = 0;i < collec.size();i++)
 			{
@@ -472,6 +475,7 @@ private void moveRight() {
 		}
 		else if(map[heros.getX()][heros.getY() + 1].getCapacity() == Capacities.COLLECTIBLE)
 		{
+			score += 50;
 			int i = 0;
 			for(i = 0;i < collec.size();i++)
 			{
@@ -565,6 +569,7 @@ private void moveRight() {
 		}
 		else if(map[heros.getX()][heros.getY() - 1].getCapacity() == Capacities.COLLECTIBLE)
 		{
+			score += 50;
 			int i = 0;
 			for(i = 0;i < collec.size();i++)
 			{
@@ -622,6 +627,28 @@ private void moveRight() {
 	}
 	
 	private void testFallMap() {
+		int x, y;
+		
+		for(y = 0;y < 28;y++)
+		{
+			for(x = 0;x < 28;x++)
+			{
+				if(map[x][y].getCapacity() == Capacities.MOVABLE)
+				{
+					for(Movable m : mouv)
+					{
+						if(m.getX() == x && m.getY() == y)
+						{
+							if(m.isSubmittedToGravity() && (map[x][y+1].getCapacity() == Capacities.PENETRABLE || (map[x+1][y+1].getCapacity() == Capacities.PENETRABLE || map[x-1][y+1].getCapacity() == Capacities.PENETRABLE)))
+							{
+								Thread t = new Thread(new Fall(m, this));
+								t.start();
+							}
+						}
+					}
+				}
+			}
+		}
 		
 	}
 
@@ -660,6 +687,49 @@ private void moveRight() {
 	
 	void killHeros(Ennemy e) {
 		e.killSb(heros);
+		pause = true;
+		
+		Explosion ex = new Explosion();
+		ex.setXY(heros.getX(), heros.getY());
+		map[heros.getX()][heros.getY()] = ex;
+		
+		ex = new Explosion();
+		ex.setXY(heros.getX(), heros.getY() + 1);
+		map[heros.getX()][heros.getY() + 1] = ex;
+		
+		ex = new Explosion();
+		ex.setXY(heros.getX(), heros.getY() - 1);
+		map[heros.getX()][heros.getY() - 1] = ex;
+		
+		ex = new Explosion();
+		ex.setXY(heros.getX() + 1, heros.getY());
+		map[heros.getX() + 1][heros.getY()] = ex;
+		
+		ex = new Explosion();
+		ex.setXY(heros.getX() + 1, heros.getY() + 1);
+		map[heros.getX() + 1][heros.getY() + 1] = ex;
+		
+		ex = new Explosion();
+		ex.setXY(heros.getX() + 1, heros.getY() - 1);
+		map[heros.getX() + 1][heros.getY() - 1] = ex;
+		
+		ex = new Explosion();
+		ex.setXY(heros.getX() - 1, heros.getY());
+		map[heros.getX() - 1][heros.getY()] = ex;
+		
+		ex = new Explosion();
+		ex.setXY(heros.getX() - 1, heros.getY() + 1);
+		map[heros.getX() - 1][heros.getY() + 1] = ex;
+		
+		ex = new Explosion();
+		ex.setXY(heros.getX() - 1, heros.getY() - 1);
+		map[heros.getX() - 1][heros.getY() - 1] = ex;
+		
+		this.setChanged();
+		this.notifyObservers();
+	}
+	
+	void killHeros(Movable e) {
 		pause = true;
 		
 		Explosion ex = new Explosion();
@@ -827,5 +897,72 @@ private void moveRight() {
 		this.notifyObservers();
 		
 		return test;
+	}
+	
+	public void killEnnemy(Ennemy e) {
+		int i;
+		
+		for(i = 0;i < enemies.size();i++)
+		{
+			if(e.getX() == enemies.get(i).getX() && e.getY() == enemies.get(i).getY())
+			{
+				e.kill();
+				enemies.remove(i);
+				
+				Diamond dia = new Diamond();
+				dia.setXY(e.getX(), e.getY());
+				if(heros.getX() == dia.getX() && heros.getY() == dia.getY())
+					this.killHeros(dia);
+				map[e.getX()][e.getY()] = dia;
+				
+				dia = new Diamond();
+				dia.setXY(e.getX(), e.getY() + 1);
+				if(heros.getX() == dia.getX() && heros.getY() == dia.getY())
+					this.killHeros(dia);
+				map[e.getX()][e.getY() + 1] = dia;
+				
+				dia = new Diamond();
+				dia.setXY(e.getX(), e.getY() - 1);
+				if(heros.getX() == dia.getX() && heros.getY() == dia.getY())
+					this.killHeros(dia);
+				map[e.getX()][e.getY() - 1] = dia;
+				
+				dia = new Diamond();
+				dia.setXY(e.getX() + 1, e.getY());
+				if(heros.getX() == dia.getX() && heros.getY() == dia.getY())
+					this.killHeros(dia);
+				map[e.getX() + 1][e.getY()] = dia;
+				
+				dia = new Diamond();
+				dia.setXY(e.getX() + 1, e.getY() + 1);
+				if(heros.getX() == dia.getX() && heros.getY() == dia.getY())
+					this.killHeros(dia);
+				map[e.getX() + 1][e.getY() + 1] = dia;
+				
+				dia = new Diamond();
+				dia.setXY(e.getX() + 1, e.getY() - 1);
+				if(heros.getX() == dia.getX() && heros.getY() == dia.getY())
+					this.killHeros(dia);
+				map[e.getX() + 1][e.getY() - 1] = dia;
+				
+				dia = new Diamond();
+				dia.setXY(e.getX() - 1, e.getY());
+				if(heros.getX() == dia.getX() && heros.getY() == dia.getY())
+					this.killHeros(dia);
+				map[e.getX() - 1][e.getY()] = dia;
+				
+				dia = new Diamond();
+				dia.setXY(e.getX() - 1, e.getY() + 1);
+				if(heros.getX() == dia.getX() && heros.getY() == dia.getY())
+					this.killHeros(dia);
+				map[e.getX() - 1][e.getY() + 1] = dia;
+				
+				dia = new Diamond();
+				dia.setXY(e.getX() - 1, e.getY() - 1);
+				if(heros.getX() == dia.getX() && heros.getY() == dia.getY())
+					this.killHeros(dia);
+				map[e.getX() - 1][e.getY() - 1] = dia;
+			}
+		}
 	}
 }
