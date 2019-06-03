@@ -34,24 +34,24 @@ public final class Controller implements IController {
 	}
 
 	@Override
-	public void giveKey(char character) {
+	public void giveKey(char caracter) {
 
-	      if (character == 'Z'){
+	      if (caracter == 'Z'){
 	          this.model.giveOrder(ControllerOrder.MoveUp);
 	      }
-	      else if (character == 'S'){
+	      else if (caracter == 'S'){
 	          this.model.giveOrder(ControllerOrder.MoveDown);
 	      }
-	      else if (character == 'Q'){
+	      else if (caracter == 'Q'){
 	          this.model.giveOrder(ControllerOrder.MoveLeft);
 	      }
-	      else if (character == 'D'){
+	      else if (caracter == 'D'){
 	          this.model.giveOrder(ControllerOrder.MoveRight);
 	      }
-	      else if (character == 'P'){
+	      else if (caracter == 'P'){
 	          this.model.giveOrder(ControllerOrder.Pause);
 	      }
-	      else if (character == 'R'){
+	      else if (caracter == 'R'){
 	          this.model.giveOrder(ControllerOrder.Reset);
 	      }
 	}
