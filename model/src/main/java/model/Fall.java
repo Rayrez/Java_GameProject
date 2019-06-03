@@ -8,14 +8,23 @@ import entity.penetrable.Penetrable;
 
 public class Fall implements Runnable {
 
+	/**
+	 * The class's attributes.
+	 */
 	private Movable entity;
 	private final Model model;
 	
+	/**
+	 * Instantiates a new class Fall.
+	 */
 	public Fall(Movable e, Model m) {
 		this.entity = e;
 		this.model = m;
 	}
 	
+	/**
+	 * The main method to use gravity.
+	 */
 	@Override
 	public void run() {
 		

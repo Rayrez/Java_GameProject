@@ -28,7 +28,6 @@ public final class Model extends Observable implements IModel, Runnable {
 	 * The class's attributes.
 	 *
 	 */
-	
 	private static Entity[][] map;
 	private static int score;
 	private static int diamonds_remaining;
