@@ -11,8 +11,16 @@ import org.junit.Test;
 import entity.Capacities;
 import entity.movable.heros.Heros;
 
+/**
+ * The class OctopusTest.
+ *
+ * @author Pierre GARRIDO
+ */
 public class OctopusTest {
-	
+
+	/**
+	 * Instantiates a new octopus.
+	 */
 	Octopus octopus;
 
 	@BeforeClass
@@ -23,6 +31,12 @@ public class OctopusTest {
 	public static void tearDownAfterClass() throws Exception {
 	}
 
+	/**
+	 * Instantiates a new octopus before each test.
+	 *
+	 * @throws Exception
+	 * 				Send an exception if the method don't work.
+	 */
 	@Before
 	public void setUp() throws Exception {
 		this.octopus = new Octopus();
@@ -32,6 +46,9 @@ public class OctopusTest {
 	public void tearDown() throws Exception {
 	}
 
+	/**
+	 * Test the method killsb.
+	 */
 	@Test
 	public void testKillSb() {
 		Heros heros = new Heros();
@@ -39,11 +56,17 @@ public class OctopusTest {
 		assertEquals(heros.isAlive(), false);
 	}
 
+	/**
+	 * Test the method getCapacity.
+	 */
 	@Test
 	public void testGetCapacity() {
 		assertEquals(this.octopus.getCapacity(), Capacities.MOVABLE);
 	}
 
+	/**
+	 * Test the method setX.
+	 */
 	@Test
 	public void testSetX() {
 		this.octopus.setX(8);
@@ -57,6 +80,9 @@ public class OctopusTest {
 		}
 	}
 
+	/**
+	 * Test the method setY.
+	 */
 	@Test
 	public void testSetY() {
 		this.octopus.setY(6);
@@ -70,39 +96,60 @@ public class OctopusTest {
 		}
 	}
 
+	/**
+	 * Test the method isSubmittedToGravity.
+	 */
 	@Test
 	public void testIsSubmittedToGravity() {
 		assertEquals(this.octopus.isSubmittedToGravity(), false);
 	}
 
+	/**
+	 * Test the method isAlive.
+	 */
 	@Test
 	public void testIsAlive() {
 		assertEquals(this.octopus.isAlive(), true);
 	}
 
+	/**
+	 * Test the method kill.
+	 */
 	@Test
 	public void testKill() {
 		this.octopus.kill();
 		assertEquals(this.octopus.isAlive(), false);
 	}
 
+	/**
+	 * Test the method getBaseSprite.
+	 */
 	@Test
 	public void testGetBaseSprite() {
 		assertEquals(this.octopus.getBaseSprite().getIcon(), 'K');
 	}
 
+	/**
+	 * Test the method getX.
+	 */
 	@Test
 	public void testGetX() {
 		this.octopus.setXY(2, 2);
 		assertEquals(this.octopus.getX(), 2);
 	}
 
+	/**
+	 * Test the method getY.
+	 */
 	@Test
 	public void testGetY() {
 		this.octopus.setXY(2, 2);
 		assertEquals(this.octopus.getY(), 2);
 	}
 
+	/**
+	 * Test the method setXY.
+	 */
 	@Test
 	public void testSetXY() {
 		
