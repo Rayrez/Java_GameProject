@@ -62,10 +62,9 @@ public interface IModel {
 	Observable getObservable();
 	
 	/**
-	 * Launch the model.
+	 * Gets if the model is paused.
 	 *
+	 * @return if paused.
 	 */
-	void launch();
-	
 	boolean isPaused();
 }
