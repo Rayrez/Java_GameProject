@@ -14,4 +14,9 @@ public interface IController {
 	 *          the controller order.
 	 */
 	public void giveKey(char caracter);
+
+	/**
+	 * Controls the game.
+	 */
+	public void control();
 }

@@ -30,15 +30,9 @@ public final class Controller implements IController {
 	/**
      * Control.
      */
-	private void control() {
-		while(!model.hasWon());
-		model = new Model(2);
-		while(!model.hasWon());
-		model = new Model(3);
-		while(!model.hasWon());
-		model = new Model(4);
-		while(!model.hasWon());
-		model = new Model(5);
+	@Override
+	public void control() {
+
 	}
 
 	@Override
